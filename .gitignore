@@ -1,0 +1,16 @@
+# binaries
+*.dvi
+*.pdf
+
+# pdflatex auto generated junk
+*.aux
+*.log
+*.out
+*.toc
+
+# AUCTeX and preview-latex junk
+*.prv
+auto
+
+# SyncTeX junk
+*.synctex.gz
