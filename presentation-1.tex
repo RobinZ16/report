@@ -1,0 +1,134 @@
+\documentclass{amsart}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Here are some common packages used in almost all documents.
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+
+
+%%%%%%%%%%%%%%%%%%%%%%% amsthm theorem styles %%%%%%%%%%%%%%%%%%%%%%%%
+
+% Current styles are based on suggestions by the amsthm package
+% authors.
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{claim}[theorem]{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+\newtheorem{case}{Case}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% custom definitions %%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Since we are collaborating, we need to be careful with personal
+% shortcuts to avoid clash.
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\newcommand{\preper}{\mathrm{PrePer}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% document body %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\section{The Uniform Boundedness Conjecture}
+
+\begin{definition}[Projective space]
+\end{definition}
+
+\begin{definition}[Rational maps and morphisms between projective spaces]
+  A \emph{rational map of degree $d$} between projective spaces is a
+  map
+  \[
+  \begin{gathered}
+    \phi: \P^N \to \P^M,\\
+    \phi(P) = [f_0(P), \dots, f_M(P)],
+  \end{gathered}
+  \]
+  where $f_0, \dots, f_M \in \bar{K}[X_0, \dots, X_N]$ are homogeneous
+  polynomials of degree $d$ with no common factors. The rational map
+  $\phi$ is \emph{defined at} $P$ if at least one of the values
+  $f_0(P), \dots, f_M(P)$ is nonzero. The rational map $\phi$ is
+  called a \emph{morphism} if it is defined at every point of
+  $\P^N(\bar{K})$, or equivalently, if the only solution to the
+  simultaneous equations
+  \[
+  f_0(X_0, \dots, X_N) = \cdots = f_M(X_0, \dots, X_N) = 0
+  \]
+  is the trivial solution $X_0 = \cdots = X_N = 0$. If the polynomials
+  $f_0, \dots, f_N$ have coefficients in $K$, we say that $\phi$
+  \emph{is defined over} $K$.
+\end{definition}
+
+\begin{example}[Morphism]
+\end{example}
+
+\begin{definition}[Preperiod points in $P^N(K)$]
+\end{definition}
+
+\begin{theorem}[Northcott, 1950]
+  Let $\phi: \P^N \to \P^N$ be a morphism of degree $d \ge 2$ defined
+  over a number field $K$. Then $\preper(\phi, \P^N(K))$ is finite.
+\end{theorem}
+
+\begin{remark}
+  So for each combination of $\phi$, $N$ and $K/\Q$, the number of
+  period points is finite. However, it is not clear if there is a
+  uniform bound. Morton and Silverman conjectured in 1994 that there
+  is a uniform bound depending only on the degree of the morphism, the
+  dimension of the projective space, and the degree of the number
+  field.
+\end{remark}
+
+\begin{conjecture}[Morton---Silverman, 1994]
+  Fix integers $d \ge 2$, $N \ge 1$, and $D \ge 1$. There is a
+  constant $C(d, N, D)$ such that for all number fields $K/\Q$ of
+  degree at most $D$ and all morphisms $\phi: \P^N \to \P^N$ of degree
+  $d$ defined over $K$,
+  \[
+  \#\preper(\phi, \P^N(K)) \le C(d, N, D).
+  \]
+\end{conjecture}
+
+\begin{remark}
+  The conjecture is not even proved in the simplest case $(d, N, D) =
+  (2, 1, 1)$, i.e., rational preperiod points of degree-two morphisms
+  over $\Q$. Specializing further, there are some partial results
+  about degree-two polynomials over $\Q$.
+
+  Before we proceed, note that the sizes of finite orbits are $PGL_2$
+  invariant (invariant under conjugation by fractional linear
+  transformations). In the case of any quadratic polynomial $g$, there
+  exists a linear function $l$ such that $l \circ g \circ l^{-1}$ is
+  of the form $z^2 + c$. So it suffices to consider $z^2 + c$.
+
+  It has been proved in several papers that
+\end{remark}
+
+\begin{theorem}
+  There are infinitely many quadratic polynomials with a rational
+  point of exact point 3, while there are no quadratic polynomials
+  with a rational point of exact period 4 or 5.
+\end{theorem}
+
+Over the past weeks we have been studying these papers, and we will
+summarize the basic ideas and techniques here.
+
+\end{document}

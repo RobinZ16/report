@@ -11,6 +11,7 @@
 # AUCTeX and preview-latex junk
 *.prv
 auto
+_region_.tex
 
 # SyncTeX junk
 *.synctex.gz
