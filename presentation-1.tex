@@ -58,38 +58,38 @@
   map
   \[
   \begin{gathered}
-    \phi: \P^N \to \P^M,\\
-    \phi(P) = [f_0(P), \dots, f_M(P)],
+    \phi: \P^n \to \P^m,\\
+    \phi(P) = [f_0(P), \dots, f_m(P)],
   \end{gathered}
   \]
-  where $f_0, \dots, f_M \in \bar{K}[X_0, \dots, X_N]$ are homogeneous
+  where $f_0, \dots, f_m \in \bar{K}[X_0, \dots, X_n]$ are homogeneous
   polynomials of degree $d$ with no common factors. The rational map
   $\phi$ is \emph{defined at} $P$ if at least one of the values
-  $f_0(P), \dots, f_M(P)$ is nonzero. The rational map $\phi$ is
+  $f_0(P), \dots, f_m(P)$ is nonzero. The rational map $\phi$ is
   called a \emph{morphism} if it is defined at every point of
-  $\P^N(\bar{K})$, or equivalently, if the only solution to the
+  $\P^n(\bar{K})$, or equivalently, if the only solution to the
   simultaneous equations
   \[
-  f_0(X_0, \dots, X_N) = \cdots = f_M(X_0, \dots, X_N) = 0
+  f_0(X_0, \dots, X_n) = \cdots = f_m(X_0, \dots, X_n) = 0
   \]
-  is the trivial solution $X_0 = \cdots = X_N = 0$. If the polynomials
-  $f_0, \dots, f_N$ have coefficients in $K$, we say that $\phi$
+  is the trivial solution $X_0 = \cdots = X_n = 0$. If the polynomials
+  $f_0, \dots, f_n$ have coefficients in $K$, we say that $\phi$
   \emph{is defined over} $K$.
 \end{definition}
 
 \begin{example}[Morphism]
 \end{example}
 
-\begin{definition}[Preperiod points in $P^N(K)$]
+\begin{definition}[Preperiod points in $P^n(K)$]
 \end{definition}
 
 \begin{theorem}[Northcott, 1950]
-  Let $\phi: \P^N \to \P^N$ be a morphism of degree $d \ge 2$ defined
-  over a number field $K$. Then $\preper(\phi, \P^N(K))$ is finite.
+  Let $\phi: \P^n \to \P^n$ be a morphism of degree $d \ge 2$ defined
+  over a number field $K$. Then $\preper(\phi, \P^n(K))$ is finite.
 \end{theorem}
 
 \begin{remark}
-  So for each combination of $\phi$, $N$ and $K/\Q$, the number of
+  So for each combination of $\phi$, $n$ and $K/\Q$, the number of
   period points is finite. However, it is not clear if there is a
   uniform bound. Morton and Silverman conjectured in 1994 that there
   is a uniform bound depending only on the degree of the morphism, the
@@ -98,17 +98,17 @@
 \end{remark}
 
 \begin{conjecture}[Morton---Silverman, 1994]
-  Fix integers $d \ge 2$, $N \ge 1$, and $D \ge 1$. There is a
-  constant $C(d, N, D)$ such that for all number fields $K/\Q$ of
-  degree at most $D$ and all morphisms $\phi: \P^N \to \P^N$ of degree
+  Fix integers $d \ge 2$, $n \ge 1$, and $D \ge 1$. There is a
+  constant $C(d, n, D)$ such that for all number fields $K/\Q$ of
+  degree at most $D$ and all morphisms $\phi: \P^n \to \P^n$ of degree
   $d$ defined over $K$,
   \[
-  \#\preper(\phi, \P^N(K)) \le C(d, N, D).
+  \#\preper(\phi, \P^n(K)) \le C(d, n, D).
   \]
 \end{conjecture}
 
 \begin{remark}
-  The conjecture is not even proved in the simplest case $(d, N, D) =
+  The conjecture is not even proved in the simplest case $(d, n, D) =
   (2, 1, 1)$, i.e., rational preperiod points of degree-two morphisms
   over $\Q$. Specializing further, there are some partial results
   about degree-two polynomials over $\Q$.
@@ -131,41 +131,63 @@
 Over the past weeks we have been studying these papers, and we will
 summarize the basic ideas and techniques here.
 
+
+
 \section{Morton's Result on Rational 4-Cycles of Quadratic Maps}
 
 \begin{theorem} [Morton, 1998]
-	The quadratic map $f(z) = z^2 + c$ for $c \in \Q$ has no rational
-	points of exact period 4.
+  The quadratic map $f(z) = z^2 + c$ for $c \in \Q$ has no rational
+  points of exact period 4.
 \end{theorem}
 
+% The following definition is somewhat problematic. The basic ideas
+% are correct, but there are some crucial paradigm shifts here (e.g.,
+% univariate polynomial for specific $f = z^2 + c$ to multivariate
+% polynomial characterizing both $f$ and $z$; polynomial equation to
+% algebraic curve), so I suppose we should better be precise.
+
+% $C_1(N)$ is a curve, not a polynomial function. The polynomial
+% function is denoted $\Phi_{n, \sigma}(x)$ (should be converted to
+% $\Phi_{N, f}(z)$ or better yet $\Phi_{N, c}(z)$ using our notation).
+
+% The curve $C_1(N)$ is defined as the curve consisting of pairs $(c,
+% z)$ ($c$ stands for the polynomial $z^2 + c$, same thing) satisfying
+% the polynomial $\Phi_N(c, z)$.
+
+% Also, I think we should give a little bit more details about how the
+% rational points are dealt with. Otherwise it will be quite confusing
+% (or totally boring due to lack of math) to the audience.
+
+% I'll add some details later.
+
 \begin{definition}
-	$C_1(N)$ is the algebraic curve consisting of pairs of quadratic
-	polynomials and points of period $N$.
-	\[
-	C_1(N) = \prod_{d|n}(f^d(x) - x)^{\mu(n/d)}
-	\]
+  $C_1(N)$ is the algebraic curve consisting of pairs of quadratic
+  polynomials and points of period $N$.
+  \[
+  C_1(N) = \prod_{d|n}(f^d(x) - x)^{\mu(n/d)}
+  \]
 \end{definition}
 
 \begin{example}
-	$C_1(4) = \frac{f^4(x) - x}{f^2(x) - x}$ when considering a 
-	particular function $f$.
+  $C_1(4) = \frac{f^4(x) - x}{f^2(x) - x}$ when considering a
+  particular function $f$.
 \end{example}
 
 \begin{remark}
-	From the above example, we can see that the roots of $C_1(4)$ are 
-	precisely the points with exact period 4. Morton demonstrates 
-	that $C_1(4)$ is a model for the modular curve $X_1(16)$ for 
-	which its rational points were already known. $C_1(4)$ can then 
-	be shown to have no finite rational points.
+  From the above example, we can see that the roots of $C_1(4)$ are
+  precisely the points with exact period 4. Morton demonstrates that
+  $C_1(4)$ is a model for the modular curve $X_1(16)$ for which its
+  rational points were already known. $C_1(4)$ can then be shown to
+  have no finite rational points.
 	
-	One of our current goals is to study the methods used in Morton's 
-	paper and see if it is reproducible over quadratic fields.
+  One of our current goals is to study the methods used in Morton's
+  paper and see if it is reproducible over quadratic fields.
 \end{remark}
 
 \begin{remark}
-	The strategy of comparing $C_1(N)$ to modular curves, however, 
-	does not work for case $N = 5$ as shown in the following paper 
-	and is unlikely to work for $N > 5$.
+  The strategy of comparing $C_1(N)$ to modular curves, however, does
+  not work for case $N = 5$ as shown in the following paper and is
+  unlikely to work for $N > 5$.
 \end{remark}
 
 \end{document}
