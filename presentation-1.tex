@@ -131,4 +131,41 @@
 Over the past weeks we have been studying these papers, and we will
 summarize the basic ideas and techniques here.
 
+\section{Morton's Result on Rational 4-Cycles of Quadratic Maps}
+
+\begin{theorem} [Morton, 1998]
+	The quadratic map $f(z) = z^2 + c$ for $c \in \Q$ has no rational
+	points of exact period 4.
+\end{theorem}
+
+\begin{definition}
+	$C_1(N)$ is the algebraic curve consisting of pairs of quadratic
+	polynomials and points of period $N$.
+	\[
+	C_1(N) = \prod_{d|n}(f^d(x) - x)^{\mu(n/d)}
+	\]
+\end{definition}
+
+\begin{example}
+	$C_1(4) = \frac{f^4(x) - x}{f^2(x) - x}$ when considering a 
+	particular function $f$.
+\end{example}
+
+\begin{remark}
+	From the above example, we can see that the roots of $C_1(4)$ are 
+	precisely the points with exact period 4. Morton demonstrates 
+	that $C_1(4)$ is a model for the modular curve $X_1(16)$ for 
+	which its rational points were already known. $C_1(4)$ can then 
+	be shown to have no finite rational points.
+	
+	One of our current goals is to study the methods used in Morton's 
+	paper and see if it is reproducible over quadratic fields.
+\end{remark}
+
+\begin{remark}
+	The strategy of comparing $C_1(N)$ to modular curves, however, 
+	does not work for case $N = 5$ as shown in the following paper 
+	and is unlikely to work for $N > 5$.
+\end{remark}
+
 \end{document}
