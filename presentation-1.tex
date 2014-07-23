@@ -58,38 +58,38 @@
   map
   \[
   \begin{gathered}
-    \phi: \P^N \to \P^M,\\
-    \phi(P) = [f_0(P), \dots, f_M(P)],
+    \phi: \P^n \to \P^m,\\
+    \phi(P) = [f_0(P), \dots, f_m(P)],
   \end{gathered}
   \]
-  where $f_0, \dots, f_M \in \bar{K}[X_0, \dots, X_N]$ are homogeneous
+  where $f_0, \dots, f_m \in \bar{K}[X_0, \dots, X_n]$ are homogeneous
   polynomials of degree $d$ with no common factors. The rational map
   $\phi$ is \emph{defined at} $P$ if at least one of the values
-  $f_0(P), \dots, f_M(P)$ is nonzero. The rational map $\phi$ is
+  $f_0(P), \dots, f_m(P)$ is nonzero. The rational map $\phi$ is
   called a \emph{morphism} if it is defined at every point of
-  $\P^N(\bar{K})$, or equivalently, if the only solution to the
+  $\P^n(\bar{K})$, or equivalently, if the only solution to the
   simultaneous equations
   \[
-  f_0(X_0, \dots, X_N) = \cdots = f_M(X_0, \dots, X_N) = 0
+  f_0(X_0, \dots, X_n) = \cdots = f_m(X_0, \dots, X_n) = 0
   \]
-  is the trivial solution $X_0 = \cdots = X_N = 0$. If the polynomials
-  $f_0, \dots, f_N$ have coefficients in $K$, we say that $\phi$
+  is the trivial solution $X_0 = \cdots = X_n = 0$. If the polynomials
+  $f_0, \dots, f_n$ have coefficients in $K$, we say that $\phi$
   \emph{is defined over} $K$.
 \end{definition}
 
 \begin{example}[Morphism]
 \end{example}
 
-\begin{definition}[Preperiod points in $P^N(K)$]
+\begin{definition}[Preperiod points in $P^n(K)$]
 \end{definition}
 
 \begin{theorem}[Northcott, 1950]
-  Let $\phi: \P^N \to \P^N$ be a morphism of degree $d \ge 2$ defined
-  over a number field $K$. Then $\preper(\phi, \P^N(K))$ is finite.
+  Let $\phi: \P^n \to \P^n$ be a morphism of degree $d \ge 2$ defined
+  over a number field $K$. Then $\preper(\phi, \P^n(K))$ is finite.
 \end{theorem}
 
 \begin{remark}
-  So for each combination of $\phi$, $N$ and $K/\Q$, the number of
+  So for each combination of $\phi$, $n$ and $K/\Q$, the number of
   period points is finite. However, it is not clear if there is a
   uniform bound. Morton and Silverman conjectured in 1994 that there
   is a uniform bound depending only on the degree of the morphism, the
@@ -98,17 +98,17 @@
 \end{remark}
 
 \begin{conjecture}[Morton---Silverman, 1994]
-  Fix integers $d \ge 2$, $N \ge 1$, and $D \ge 1$. There is a
-  constant $C(d, N, D)$ such that for all number fields $K/\Q$ of
-  degree at most $D$ and all morphisms $\phi: \P^N \to \P^N$ of degree
+  Fix integers $d \ge 2$, $n \ge 1$, and $D \ge 1$. There is a
+  constant $C(d, n, D)$ such that for all number fields $K/\Q$ of
+  degree at most $D$ and all morphisms $\phi: \P^n \to \P^n$ of degree
   $d$ defined over $K$,
   \[
-  \#\preper(\phi, \P^N(K)) \le C(d, N, D).
+  \#\preper(\phi, \P^n(K)) \le C(d, n, D).
   \]
 \end{conjecture}
 
 \begin{remark}
-  The conjecture is not even proved in the simplest case $(d, N, D) =
+  The conjecture is not even proved in the simplest case $(d, n, D) =
   (2, 1, 1)$, i.e., rational preperiod points of degree-two morphisms
   over $\Q$. Specializing further, there are some partial results
   about degree-two polynomials over $\Q$.
