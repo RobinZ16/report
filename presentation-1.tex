@@ -42,6 +42,9 @@
 \newcommand{\Q}{\mathbb{Q}}
 
 \newcommand{\preper}{\mathrm{PrePer}}
+\newcommand{\gal}{\mathrm{Gal}}
+
+\newcommand{\tup}[1]{\left<#1\right>}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% document body %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -159,6 +162,12 @@ summarize the basic ideas and techniques here.
 % (or totally boring due to lack of math) to the audience.
 
 % I'll add some details later.
+%
+% ---
+%
+% Update: We also need to explain why we are only concerned with
+% affine rational points of $C_1(N)$, which is likely a sentence or
+% two but nevertheless very important.
 
 \begin{definition}
   $C_1(N)$ is the algebraic curve consisting of pairs of quadratic
@@ -189,5 +198,58 @@ summarize the basic ideas and techniques here.
   not work for case $N = 5$ as shown in the following paper and is
   unlikely to work for $N > 5$.
 \end{remark}
+
+
+
+\section{The case of 5-cycles}
+
+The case of 5-cycles is more complicated, since $C_1(5)$ is a much
+more difficult to study than $C_1(4)$. In fact, $C_1(4)$ has genus 2,
+while $C_1(5)$ has genus 14.
+
+However, we notice that there is an obvious automorphism on
+$C_1(N)$. In fact, if $z$ is in an exact $N$-cycle of $f(z) = z^2 + c$,
+then $f(z)$ is also in the same $N$-cycle; so $\sigma: (z, c) \mapsto
+(z^2 + c, c)$ defines an automorphism on the curve $C_1(N)$. Moreover,
+$\sigma$ has order $N$, since $f^{\circ N}(z) = z$ for any $z$ in any
+$N$-cycle. So we can consider the quotient curve $C_0(N) =
+C_1(N)/\tup{\sigma}$. It turns out that $C_0(N)$ is also a nonsingular
+algebraic curve over $\Q$, whose rational points correspond to pairs
+of a quadratic polynomial $z^2 + c$ with $c \in \Q$, and a
+$\gal(\bar{\Q}/\Q)$-stable $N$-cycle.
+
+$C_0(N)$ is much more manageable than $C_1(N)$. For our case $N = 5$,
+$C_1(5)$ has genus 14, while $C_0(5)$ only has genus 2, so it is
+easier to study. However, here is a subtle point. A
+$\gal(\bar{\Q}/\Q)$-stable $N$-cycle might not be a rational cycle,
+that is, might not correspond to rational points on $C_1(N)$.
+
+\begin{example}[$\gal(\bar{\Q}/\Q)$-stable $N$-cycle not in $\Q$]
+  The paper gives an example on p.~3, but we might as well give a
+  conceptual example in the talk to demonstrate the point, e.g., a
+  2-cycle $\{a + b \sqrt{2},\ a - b \sqrt{2}\}$.
+\end{example}
+
+So our goal is basically to find all rational points on $C_0(5)$ (as
+in the $N=4$ case), and to prove that these rational points are either
+at infinity or do not correspond to rational points on $C_1(5)$.
+
+With some change of coordinates we can show that $C_0(5)$ is
+birationally equivalent to the hyperelliptic curve
+\[
+y^2 = x^6 + 8x^5 + 22x^4 + 22x^3 + 5x^2 + 6x + 1.
+\]
+
+It is easy to find six rational points on this curve: $(0,\, \pm 1)$,
+$(-3,\, \pm 1)$, and two points at infinity. After we recovery $c$
+from these points (by tracing back through the change of coordinates
+we did before), we can show that three such points correspond to $c =
+\infty$, and the remaining three correspond to $5$-cycles defined over
+degree-5 extensions of $\Q$.
+
+The difficult part of the proof is to show that we have found all the
+rational points on $C_0(5)$, i.e., there are only six rational
+points. This part requires machinery from algebraic geometry, and the
+techinques involved are not applicable to larger $N$.
 
 \end{document}
