@@ -42,6 +42,9 @@
 \newcommand{\Q}{\mathbb{Q}}
 
 \newcommand{\preper}{\mathrm{PrePer}}
+\newcommand{\gal}{\mathrm{Gal}}
+
+\newcommand{\tup}[1]{\left<#1\right>}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% document body %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -58,38 +61,38 @@
   map
   \[
   \begin{gathered}
-    \phi: \P^N \to \P^M,\\
-    \phi(P) = [f_0(P), \dots, f_M(P)],
+    \phi: \P^n \to \P^m,\\
+    \phi(P) = [f_0(P), \dots, f_m(P)],
   \end{gathered}
   \]
-  where $f_0, \dots, f_M \in \bar{K}[X_0, \dots, X_N]$ are homogeneous
+  where $f_0, \dots, f_m \in \bar{K}[X_0, \dots, X_n]$ are homogeneous
   polynomials of degree $d$ with no common factors. The rational map
   $\phi$ is \emph{defined at} $P$ if at least one of the values
-  $f_0(P), \dots, f_M(P)$ is nonzero. The rational map $\phi$ is
+  $f_0(P), \dots, f_m(P)$ is nonzero. The rational map $\phi$ is
   called a \emph{morphism} if it is defined at every point of
-  $\P^N(\bar{K})$, or equivalently, if the only solution to the
+  $\P^n(\bar{K})$, or equivalently, if the only solution to the
   simultaneous equations
   \[
-  f_0(X_0, \dots, X_N) = \cdots = f_M(X_0, \dots, X_N) = 0
+  f_0(X_0, \dots, X_n) = \cdots = f_m(X_0, \dots, X_n) = 0
   \]
-  is the trivial solution $X_0 = \cdots = X_N = 0$. If the polynomials
-  $f_0, \dots, f_N$ have coefficients in $K$, we say that $\phi$
+  is the trivial solution $X_0 = \cdots = X_n = 0$. If the polynomials
+  $f_0, \dots, f_n$ have coefficients in $K$, we say that $\phi$
   \emph{is defined over} $K$.
 \end{definition}
 
 \begin{example}[Morphism]
 \end{example}
 
-\begin{definition}[Preperiod points in $P^N(K)$]
+\begin{definition}[Preperiod points in $P^n(K)$]
 \end{definition}
 
 \begin{theorem}[Northcott, 1950]
-  Let $\phi: \P^N \to \P^N$ be a morphism of degree $d \ge 2$ defined
-  over a number field $K$. Then $\preper(\phi, \P^N(K))$ is finite.
+  Let $\phi: \P^n \to \P^n$ be a morphism of degree $d \ge 2$ defined
+  over a number field $K$. Then $\preper(\phi, \P^n(K))$ is finite.
 \end{theorem}
 
 \begin{remark}
-  So for each combination of $\phi$, $N$ and $K/\Q$, the number of
+  So for each combination of $\phi$, $n$ and $K/\Q$, the number of
   period points is finite. However, it is not clear if there is a
   uniform bound. Morton and Silverman conjectured in 1994 that there
   is a uniform bound depending only on the degree of the morphism, the
@@ -98,17 +101,17 @@
 \end{remark}
 
 \begin{conjecture}[Morton---Silverman, 1994]
-  Fix integers $d \ge 2$, $N \ge 1$, and $D \ge 1$. There is a
-  constant $C(d, N, D)$ such that for all number fields $K/\Q$ of
-  degree at most $D$ and all morphisms $\phi: \P^N \to \P^N$ of degree
+  Fix integers $d \ge 2$, $n \ge 1$, and $D \ge 1$. There is a
+  constant $C(d, n, D)$ such that for all number fields $K/\Q$ of
+  degree at most $D$ and all morphisms $\phi: \P^n \to \P^n$ of degree
   $d$ defined over $K$,
   \[
-  \#\preper(\phi, \P^N(K)) \le C(d, N, D).
+  \#\preper(\phi, \P^n(K)) \le C(d, n, D).
   \]
 \end{conjecture}
 
 \begin{remark}
-  The conjecture is not even proved in the simplest case $(d, N, D) =
+  The conjecture is not even proved in the simplest case $(d, n, D) =
   (2, 1, 1)$, i.e., rational preperiod points of degree-two morphisms
   over $\Q$. Specializing further, there are some partial results
   about degree-two polynomials over $\Q$.
@@ -131,41 +134,152 @@
 Over the past weeks we have been studying these papers, and we will
 summarize the basic ideas and techniques here.
 
+
+
 \section{Morton's Result on Rational 4-Cycles of Quadratic Maps}
 
 \begin{theorem} [Morton, 1998]
-	The quadratic map $f(z) = z^2 + c$ for $c \in \Q$ has no rational
-	points of exact period 4.
+  The quadratic map $f(z) = z^2 + c$ for $c \in \Q$ has no rational
+  points of exact period 4.
 \end{theorem}
 
+To demonstrate the ideas involved in the proof, first we give some
+definitions for a general exact period $N$.
+
 \begin{definition}
-	$C_1(N)$ is the algebraic curve consisting of pairs of quadratic
-	polynomials and points of period $N$.
-	\[
-	C_1(N) = \prod_{d|n}(f^d(x) - x)^{\mu(n/d)}
-	\]
+  Let $f(z) = z^2 + c$ be a quadratic polynomial. Let $\Phi_{N, c}(z)$
+  be
+  \[
+  \Phi_{N,c}(z) = \prod_{d|n}(f^{\circ d}(x) - x)^{\mu(n/d)}.
+  \]
 \end{definition}
 
 \begin{example}
-	$C_1(4) = \frac{f^4(x) - x}{f^2(x) - x}$ when considering a 
-	particular function $f$.
+  \[
+  \Phi_{4, c}(z) = \frac{f^4(x) - x}{f^2(x) - x}.
+  \]
 \end{example}
 
+You might have noticed that this is an analog to classical cyclotomic
+polynomials. In fact, using the M\"obius inversion formula, it is not
+hard to check that the roots of $\Phi_{N, c}(z)$ are the points of
+exact period $N$ for the map $f$.
+
+Now for a fixed $N$, we consider $\Phi_{N, c}(z)$ as a polynomial of
+both $c$ and $z$, i.e., we consider it as $\Phi_N(z, c)$. Then this
+polynomial defines an algebraic curve.
+
+\begin{definition}
+  Let $C_1(N)$ be the algebraic curve defined by $\Phi_N(z, c)$, i.e.,
+  \[
+  C_1(N) = \{(z, c) : \Phi_N(z, c) = 0\}.
+  \]
+\end{definition}
+
+Since we are looking for rational points of exact period $N$ for $f(z)
+= z^2 + c$ where $c \in \Q$, it boils down to finding rational points
+$(z, c)$ on the curve $C_1(N)$. In fact, to be more precise, we are
+looking for affine rational points on $C_1(N)$, since there could be
+rational points at infinity.
+
+\begin{example}[Rational points at infinity]
+  Consider the simple example of $\Phi_2(x, y)$, which defines the
+  curve $x^2 + x + y + 1 = 0$. (Here I've chosen $x$ and $y$ for
+  notational convenience.) Since we are working in $P^1$, we should
+  really homogenize the equation to
+  \[
+  X^2 + XZ + YZ + Z^2 = 0.
+  \]
+  Then $[X, Y, Z] = [0, 1, 0]$ is a rational solution, but since $Z$
+  (which can be thought of as the denominator) is 0, this is a
+  rational point at infinity.
+\end{example}
+
+Back to the special case $N = 4$. In this case $C_1(N)$ is given by
+$\Phi_4(z, c)$, which is too complicated to write down here. However,
+with some very clever change of coordinates, we can reduce it to a
+birationally equivalent curve given by a simple equation
+\[
+v^2 = u(u^2 + 1)(1 + 2u - u^2).
+\]
+This equation was already studied in the literature and was shown to
+be an equation for the modular curve $X_1(16)$. (Fancy jargon here,
+doesn't really matter --- the point is it was already extensively
+studied and all of its rational points are known.)
+
+It turns out that the new curve have six rational points in total:
+$(0,\, 0)$, $(\pm 1,\, \pm 2)$, and the point at infinity. However,
+when we trace back to our original equation $\Phi_4(z, c)$ by
+inverting the change of coordinates, it could happen that these
+rational points are at infinity. In fact, by studying the prime
+divisors of the function field of the curve above, it can be shown
+that all six rational points map back to points at infinity on
+$C_1(4)$. Therefore, there are no affine rational points on $C_1(4)$,
+so we are done.
+
 \begin{remark}
-	From the above example, we can see that the roots of $C_1(4)$ are 
-	precisely the points with exact period 4. Morton demonstrates 
-	that $C_1(4)$ is a model for the modular curve $X_1(16)$ for 
-	which its rational points were already known. $C_1(4)$ can then 
-	be shown to have no finite rational points.
-	
-	One of our current goals is to study the methods used in Morton's 
-	paper and see if it is reproducible over quadratic fields.
+  One of our current goals is to study the methods used in Morton's
+  paper and see if it can be applied to quadratic fields, that is, $D
+  = 2$ in the uniform boundedness conjecture.
 \end{remark}
 
 \begin{remark}
-	The strategy of comparing $C_1(N)$ to modular curves, however, 
-	does not work for case $N = 5$ as shown in the following paper 
-	and is unlikely to work for $N > 5$.
+  The strategy of comparing $C_1(N)$ to modular curves, however, does
+  not work for case $N = 5$ as shown in the following paper and is
+  unlikely to work for $N > 5$.
 \end{remark}
+
+
+
+\section{The case of 5-cycles}
+
+The case of 5-cycles is more involved, since $C_1(5)$ is a much more
+complicated than $C_1(4)$. In fact, $C_1(4)$ has genus 2, while
+$C_1(5)$ has genus 14.
+
+However, we notice that there is an obvious automorphism on
+$C_1(N)$. In fact, if $z$ is in an exact $N$-cycle of $f(z) = z^2 + c$,
+then $f(z)$ is also in the same $N$-cycle; so $\sigma: (z, c) \mapsto
+(z^2 + c, c)$ defines an automorphism on the curve $C_1(N)$. Moreover,
+$\sigma$ has order $N$, since $f^{\circ N}(z) = z$ for any $z$ in any
+$N$-cycle. So we can consider the quotient curve $C_0(N) =
+C_1(N)/\tup{\sigma}$. It turns out that $C_0(N)$ is also a nonsingular
+algebraic curve over $\Q$, whose rational points correspond to pairs
+of a quadratic polynomial $z^2 + c$ with $c \in \Q$, and a
+$\gal(\bar{\Q}/\Q)$-stable $N$-cycle.
+
+$C_0(N)$ is much more manageable than $C_1(N)$. For our case $N = 5$,
+$C_1(5)$ has genus 14, while $C_0(5)$ only has genus 2, so it is
+easier to study. However, here is a subtle point. A
+$\gal(\bar{\Q}/\Q)$-stable $N$-cycle might not be a rational cycle,
+that is, might not correspond to rational points on $C_1(N)$.
+
+\begin{example}[$\gal(\bar{\Q}/\Q)$-stable $N$-cycle not in $\Q$]
+  The paper gives an example on p.~3, but we might as well give a
+  conceptual example in the talk to demonstrate the point, e.g., a
+  2-cycle $\{a + b \sqrt{2},\ a - b \sqrt{2}\}$.
+\end{example}
+
+So our goal is basically to find all rational points on $C_0(5)$ (as
+in the $N=4$ case), and to prove that these rational points are either
+at infinity or do not correspond to rational points on $C_1(5)$.
+
+With some change of coordinates we can show that $C_0(5)$ is
+birationally equivalent to the hyperelliptic curve
+\[
+y^2 = x^6 + 8x^5 + 22x^4 + 22x^3 + 5x^2 + 6x + 1.
+\]
+
+It is easy to find six rational points on this curve: $(0,\, \pm 1)$,
+$(-3,\, \pm 1)$, and two points at infinity. After we recovery $c$
+from these points (by tracing back through the change of coordinates
+we did before), we can show that three such points correspond to $c =
+\infty$, and the remaining three correspond to $5$-cycles defined over
+degree-5 extensions of $\Q$.
+
+The difficult part of the proof is to show that we have found all the
+rational points on $C_0(5)$, i.e., there are only six rational
+points. This part requires machinery from algebraic geometry, and the
+techinques involved are not applicable to larger $N$.
 
 \end{document}
