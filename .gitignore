@@ -12,6 +12,7 @@
 *.prv
 auto
 _region_.tex
+*.fmt
 
 # SyncTeX junk
 *.synctex.gz
