@@ -127,8 +127,8 @@
 
 \begin{theorem}
   There are infinitely many quadratic polynomials with a rational
-  point of exact point 3, while there are no quadratic polynomials
-  with a rational point of exact period 4 or 5.
+  point of exact point 1, 2, or 3, while there are no quadratic
+  polynomials with a rational point of exact period 4 or 5.
 \end{theorem}
 
 Over the past weeks we have been studying these papers, and we will
@@ -143,27 +143,35 @@ summarize the basic ideas and techniques here.
   points of exact period 4.
 \end{theorem}
 
-To demonstrate the ideas involved in the proof, first we give some
-definitions for a general exact period $N$.
+From now on we denote the exact period we are studying by $N$. In this
+case, $N = 4$. To demonstrate the ideas involved in the proof, first
+we give some definitions for general $N$. Of course, the first natural
+thing to do is to characterize the points of exact period $N$,
+preferably with an equation. If we are only asking for points of
+period $N$, then they are obviously given by the polynomial equation
+$f^N(z) - z = 0$, where $f^N$ stands for the $N$-th iterate instead of
+the power. We need to exclude those points of smaller exact period,
+that is, points satisfying $f^d(z) - z = 0$, where $d | n$. You might
+have noticed that we are in a similar situation to classical
+cyclotomic polynomials. Indeed, we have the following analog.
 
 \begin{definition}
   Let $f(z) = z^2 + c$ be a quadratic polynomial. Let $\Phi_{N, c}(z)$
   be
   \[
-  \Phi_{N,c}(z) = \prod_{d|n}(f^{\circ d}(x) - x)^{\mu(n/d)}.
+  \Phi_{N,c}(z) = \prod_{d|n}(f^d(z) - z)^{\mu(n/d)}.
   \]
 \end{definition}
 
 \begin{example}
   \[
-  \Phi_{4, c}(z) = \frac{f^4(x) - x}{f^2(x) - x}.
+  \Phi_{4, c}(z) = \frac{f^4(z) - z}{f^2(z) - z}.
   \]
 \end{example}
 
-You might have noticed that this is an analog to classical cyclotomic
-polynomials. In fact, using the M\"obius inversion formula, it is not
-hard to check that the roots of $\Phi_{N, c}(z)$ are the points of
-exact period $N$ for the map $f$.
+Using the M\"obius inversion formula, it is not hard to check that the
+roots of $\Phi_{N, c}(z)$ give all the points of exact period $N$ for
+the map $f$ (in the splitting field).
 
 Now for a fixed $N$, we consider $\Phi_{N, c}(z)$ as a polynomial of
 both $c$ and $z$, i.e., we consider it as $\Phi_N(z, c)$. Then this
@@ -178,36 +186,45 @@ polynomial defines an algebraic curve.
 
 Since we are looking for rational points of exact period $N$ for $f(z)
 = z^2 + c$ where $c \in \Q$, it boils down to finding rational points
-$(z, c)$ on the curve $C_1(N)$. In fact, to be more precise, we are
-looking for affine rational points on $C_1(N)$, since there could be
-rational points at infinity.
+$(z, c)$ on the curve $C_1(N)$.
 
-\begin{example}[Rational points at infinity]
-  Consider the simple example of $\Phi_2(x, y)$, which defines the
-  curve $x^2 + x + y + 1 = 0$. (Here I've chosen $x$ and $y$ for
-  notational convenience.) Since we are working in $P^1$, we should
-  really homogenize the equation to
-  \[
-  X^2 + XZ + YZ + Z^2 = 0.
-  \]
-  Then $[X, Y, Z] = [0, 1, 0]$ is a rational solution, but since $Z$
-  (which can be thought of as the denominator) is 0, this is a
-  rational point at infinity.
-\end{example}
+Note that this is an affine curve, i.e., all points on this curve are
+finite. But it turns out that the tools we have to study these curves
+work for projective curves, so we extend this curve to include points
+at infinity. Later when we classify the rational points on this curve,
+we will need to carefully exclude the points at infinity.
 
-Back to the special case $N = 4$. In this case $C_1(N)$ is given by
+% This example is commented out due to time constraint.
+%
+% \begin{example}[Rational points at infinity]
+%   Consider the simple example of $\Phi_2(x, y)$, which defines the
+%   curve $x^2 + x + y + 1 = 0$. (Here I've chosen $x$ and $y$ for
+%   notational convenience.) Since we are working in $P^1$, we should
+%   really homogenize the equation to
+%   \[
+%   X^2 + XZ + YZ + Z^2 = 0.
+%   \]
+%   Then $[X, Y, Z] = [0, 1, 0]$ is a rational solution, but since $Z$
+%   (which can be thought of as the denominator) is 0, this is a
+%   rational point at infinity.
+% \end{example}
+
+Back to the special case $N = 4$. In this case $C_1(4)$ is given by
 $\Phi_4(z, c)$, which is too complicated to write down here. However,
 with some very clever change of coordinates, we can reduce it to a
 birationally equivalent curve given by a simple equation
 \[
 v^2 = u(u^2 + 1)(1 + 2u - u^2).
 \]
+(Birational equivalence here can be thought of as the rational points
+of the original curve correspond to rational points on this curve.)
+
 This equation was already studied in the literature and was shown to
 be an equation for the modular curve $X_1(16)$. (Fancy jargon here,
 doesn't really matter --- the point is it was already extensively
 studied and all of its rational points are known.)
 
-It turns out that the new curve have six rational points in total:
+It turns out that the new curve has six rational points in total:
 $(0,\, 0)$, $(\pm 1,\, \pm 2)$, and the point at infinity. However,
 when we trace back to our original equation $\Phi_4(z, c)$ by
 inverting the change of coordinates, it could happen that these
@@ -238,11 +255,11 @@ complicated than $C_1(4)$. In fact, $C_1(4)$ has genus 2, while
 $C_1(5)$ has genus 14.
 
 However, we notice that there is an obvious automorphism on
-$C_1(N)$. In fact, if $z$ is in an exact $N$-cycle of $f(z) = z^2 + c$,
-then $f(z)$ is also in the same $N$-cycle; so $\sigma: (z, c) \mapsto
-(z^2 + c, c)$ defines an automorphism on the curve $C_1(N)$. Moreover,
-$\sigma$ has order $N$, since $f^{\circ N}(z) = z$ for any $z$ in any
-$N$-cycle. So we can consider the quotient curve $C_0(N) =
+$C_1(N)$. In fact, if $z$ is in an exact $N$-cycle of $f(z) = z^2 +
+c$, then $f(z)$ is also in the same $N$-cycle; so $\sigma: (z, c)
+\mapsto (z^2 + c, c)$ defines an automorphism on the curve
+$C_1(N)$. Moreover, $\sigma$ has order $N$, since $f^N(z) = z$ for any
+$z$ in any $N$-cycle. So we can consider the quotient curve $C_0(N) =
 C_1(N)/\tup{\sigma}$. It turns out that $C_0(N)$ is also a nonsingular
 algebraic curve over $\Q$, whose rational points correspond to pairs
 of a quadratic polynomial $z^2 + c$ with $c \in \Q$, and a
