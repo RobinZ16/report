@@ -1,0 +1,152 @@
+\documentclass{amsart}
+
+\usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{case}{Case}
+
+
+
+% custom commands
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\del}{\nabla}
+\newcommand{\es}{\varnothing}
+\newcommand{\e}{\varepsilon}
+\newcommand{\g}{\gamma}
+\newcommand{\h}{\widehat}
+\newcommand{\lap}{\Delta}
+\newcommand{\m}{\mu}
+\newcommand{\norm}[1]{\|#1\|}
+\newcommand{\n}{\nu}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\ph}{\varphi}
+\newcommand{\p}{\partial}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\sub}{\subset}
+\newcommand{\s}{\sigma}
+\newcommand{\td}{\tilde}
+\newcommand{\tup}[1]{\left<#1\right>}
+\newcommand{\w}{\omega}
+\newcommand{\x}{\xi}
+\newcommand{\z}{\zeta}
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+\renewcommand{\d}{\delta}
+\renewcommand{\l}{\lambda}
+\renewcommand{\r}{\rho}
+\renewcommand{\th}{\theta}
+\renewcommand{\t}{\times}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\F}{\mathbb{F}}
+\renewcommand{\phi}{\varphi}
+
+
+
+\begin{document}
+
+
+
+What we are working on is \emph{arithmetic dynamics}, which is
+basically the study of iteration of polynomial or rational functions
+over various kinds of number rings or fields, say, the $p$-adic
+integers (you don't need to understand that). If this isn't clear
+enough, you can think of the famous Mandelbrot set, which is a
+dynamical system over the complex plane --- iterating $z^2 + c$. In
+arithmetic dynamics we are of course interested in arithmetic
+properties, so we need to consider fields or rings like $\Q$, $\Z$,
+$\Q_p$, $\Z_p$, etc.
+
+We currently have two families of problems at hand. The statement of
+one family is very simple, so I'll talk about it first. The second
+family is a little bit tricky, so I'll see if I can finish that.
+
+So the first family is dynamics over $\Z$.
+
+Consider a polynomial $\phi(x) \in \Z[x]$ with integer
+coefficients, and let $\b \in \Z$ be a non-periodic point, namely,
+the orbit of $\b$ under $\phi$ is infinite: $|O_\phi(\b)| =
+\infty$. (You all know what the orbit is, right? Basically all the
+points you can get from $\b$ through applying the map.)
+
+Here are the questions we can ask:
+
+\begin{enumerate}
+\item \textbf{Does this orbit contain infinitely many primes?}
+
+  You know, the distribution of primes are rather random, and
+  $\phi^j(\b)$ blows up very quickly, so this is not clear.
+
+\item \textbf{What is the density of primes that divides some element of the
+  orbit?}
+
+  \[
+  \set{p \in \mathrm{primes} : \exists j \in \N \text{ s.t. } p \mid
+    \phi^j(\b)}.
+  \]
+
+  You know, even if there are infinitely many prime factors, we might
+  skip a lot, so the density is not clear.
+\end{enumerate}
+
+Another family of questions are dynamics over finite fields, namely,
+$\F_{p^n}$. What's good about finite fields is that, according to the
+pigeon hole principle, every point is at least preperiodic under a
+map, namely, every point eventually fall into some loop. But whether
+a point is periodic or not, namely, if it's actually inside a loop, is
+unclear.
+
+Consider a rational function $\phi(x) \in F_p(x)$ whose numerator and
+denominator are of the same degree. We may ask, what is the
+proportion of periodic points in $\F_{p^n}$? Namely, what's this limit
+
+\[
+\lim_{n \to \infty} \frac{|\mathrm{Per}(\phi, \P^1(\F_{p^n}))|}{p^n}.
+\]
+
+This expression requires some explanation. First, the $\P^1$ means the
+projective line. You can think of it as the original field plus a
+point at the infinity. Why do we need $\P^1(\F_{p^n})$ instead of just
+$\F_{p^n}$? That's because $\phi$ is a rational function, so when we
+apply it we might get a zero on the denominator. Then we need
+$\infty$. For instance, say $\phi$ is $\dfrac{x+1}{x-1}$, then when we
+apply it to $1$ we get $\infty$, and when we apply it $\infty$, we get
+\[
+\frac{\infty + 1}{\infty - 1} = 1,
+\]
+just like when you take limits. And here's actually why I required $\phi$ to
+have numerator and denominator of same degree in the first
+place. Everything here can be made rigirous, but I'll just skip that.
+
+Another thing that requires explanation is we defined $\phi$ over
+$\F_p$ but we are considering periodic points in $\F_{p^n}$. So why is
+this legit?  Notice that $\F_p$ is a subfield of $\F_{p^n}$, so we can
+apply $\phi$ to an element of $\F_{p^n}$ (in fact, I mean
+$\P^1(\F_{p^n})$), and get an image in the same field. So there's no
+problem here.
+
+
+
+\end{document}
