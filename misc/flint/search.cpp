@@ -105,6 +105,10 @@ int main(int argc, const char *argv[]) {
         if (! n_is_squarefree(d)) {
             continue;
         }
+
+        std::cerr << "starting d = " << d << ", "                       \
+                  << "height <= " << MAX_HEIGHT << std::endl;
+
         fmpqxx d_rat(d, 1u); // convert d to fmpqxx
         for (slong p1 = -MAX_HEIGHT; p1 <= MAX_HEIGHT; ++p1) {
             for (ulong q1 = 1; q1 <= UMAX_HEIGHT; ++q1) {
@@ -127,6 +131,7 @@ int main(int argc, const char *argv[]) {
                 }
             }
         }
+
         std::cerr << "finished d = " << d << "  ("                      \
                   << difftime(time(NULL), start_time)                   \
                   << " seconds elapsed)" << std::endl;
