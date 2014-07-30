@@ -1,0 +1,12 @@
+#!/bin/bash
+MAX_HEIGHT=10
+MAX_D=100
+if ! make >make.out 2>&1; then
+    echo "make failed; see make.out for output of make"
+    echo "MAKE FAILED" >&2
+    exit 1
+fi
+if [[ -f result ]]; then
+    mv result result.bak
+fi
+./search ${MAX_HEIGHT} ${MAX_D} | ./test-square.sage | tee result
