@@ -61,7 +61,7 @@
 \end{conjecture}
 
 \begin{corollary}[Conditional Classification of 6-Cycles over Quadratic Fields]
-	The above conjecture implies that the only 6-cycle over quadratic fields is in $K = \Q(\sqrt{33})$ and is given by:
+	Conjecture \ref{conj:gc} and the weak BSD Conjecture, imply that the only 6-cycle over quadratic fields is in $K = \Q(\sqrt{33})$ and is given by:
 	\[
 		\phi(x) = x^2 - \frac{71}{48}, x_1 = -1 + \frac{\sqrt{33}}{12}
 	\]
@@ -70,8 +70,16 @@
 \begin{proof}
 	Let $\{x_1, x_2, x_3, x_4, x_5, x_6\}$ be a $6$-cycle over a 
 	quadratic field $K$ and define $t = x_1 + x_2 + x_3 + x_4 + x_5 + x_6$
-	to be the trace of the orbit. By \ref{conj:gc}, 
-	$x_4 = \overline{x_1}, x_5 = \overline{x_2}, x_6 = \overline{x_3}$. 
+	to be the trace of the orbit. By Conjecture \ref{conj:gc}, 
+	$x_4 = \overline{x_1}, x_5 = \overline{x_2}, x_6 = \overline{x_3}$. Thus, we have
+	\[
+		t = x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = x_1 + x_2 + x_3 + \overline{x_1} + \overline{x_2} + \overline{x_3} \in \Q
+	\]
+	Therefore, each 6-cycle can be represented as a $\Q$-point on $C_0(6)(\Q)$ via its trace. 
+	Using Stoll's characterization of the $\Q$-points of $C_1(6)$(cite), 
+	we know that the 6-cycle given by $K = \Q(\sqrt{33}), \phi(x) = x^2 - \frac{71}{48}, x_1 = -1 + \frac{\sqrt{33}}{12}$
+	is the only 6-cycle over a quadratic field and not over $\Q$.
+	Stoll finds, using a proof conditional on the weak BSD Conjecture, that there are no 6-cycles over $\Q$ either.
 \end{proof}
 
 \end{document}
