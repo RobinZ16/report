@@ -1,0 +1,39 @@
+\input{../preamble.tex}
+
+\title{Computational methods for degree 2 $K/\Q$ points on
+  $\Phi_{5,c}(z)$}
+\author{Zhiming Wang}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+Niccol\`o suggested that we make use of the hyperelliptic curve
+\[
+\mathcal{C}: y^2 = x^6 + 8x^5 + 22x^4 + 22x^3 + 5x^2 + 6x + 1,
+\]
+which is birationally equivalent to $C_0(5)$ (FPS p.5). $c$ is given
+in terms of $(x, y)$ on $\mathcal{C}$ by
+\[
+c = \frac{P_0(x) + P_1(x) y}{8x^2(3+x)^2},
+\]
+where
+\[
+\begin{gathered}
+  P_0(x) = -9 - 24x - 95x^2 - 104x^3 - 46x^4 - 10x^5 - x^6,\\
+  P_1(x) = -9 + 3x + 6x^2 + x^3.
+\end{gathered}
+\]
+
+Niccol\`o suggested that maybe it is possible to use software to find
+all $K$ points on $\mathcal{C}$, given a specific $K =
+\Q(\sqrt{d})$. Then we can compute $c$ from these points, and then by
+a miracle, we might find some rational $c$.
+
+Using this method, we will be enumerating over $d$, which are
+squarefree integers; and looking for $K$ points on a
+not-too-horrible curve $\mathcal{C}$. It might be faster than brute
+forcing all rational $c$.
+
+\end{document}

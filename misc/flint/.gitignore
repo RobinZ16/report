@@ -1,0 +1,9 @@
+# binaries
+search
+
+# sage generated py
+*.py
+
+# generated outputs
+make.out
+result*
