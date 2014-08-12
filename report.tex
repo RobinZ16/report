@@ -2,6 +2,312 @@
 
 \begin{document}
 
-% begin here
+\tableofcontents
+
+\section{Computational results for quadratic periodic points\\ with
+  rational $c$}
+
+We want to search, for rational $c$, quadratic periodic points with
+exact period $N$, where by quadratic points we mean elements of
+some quadratic number field $K/\Q$. This boils down to finding
+quadratic points on $C_1(N)$, which is the smooth projective model of
+$\Phi_N(z, c)$. There are several approaches.
+
+\subsection{Enumerating $c \in \Q$}
+
+The first possible approach is to enumerate $c \in \Q$. A natural
+order of enumeration is the increasing order of height, where the
+height of a rational number $p/q$, with $p,\, q \in \Z$ and $\gcd(p,
+q) = 1$, is defined as $\max\set{|p|,\, |q|}$.
+
+For each fixed $c$, we factorize the polynomial $\Phi_{N,c}(z)$ over
+$\Q$ and look at its irreducible factors. Let $D_{N,c}$ be the
+multiset of the degrees of $\Phi_{N,c}(z)$ irreducible
+factors. Clearly the elements of $D_{N,c}$ sum to $\deg \Phi_{N,c}(z)
+= \sum_{d|N}2^{d \mu(N/d)}$. Then $z^2 + c$ has quadratic periodic
+points of exact period $N$ if and only if $2 \in D_{N,c}$. Factorizing
+$\Phi_{N,c}(z)$ over $\Q$ to obtain $D_{N,c}$ is doable (polynomial
+time algorithm exists) for all $N$ with software, e.g., Mathematica,
+although the complexity grows exponentially with $N$ (note that $\deg
+\Phi_{N,c}$ grows roughly as $2^N$).
+
+We performed the search with $N = 4$ and 5, enumerating $c$ up to
+height 1000. (See the Mathematica notebook \texttt{misc/mma/factor}.)
+
+For $N = 4$, we found various $c$ with quadratic rational points:
+$-4/5$, $-31/48$, $-95/48$, $-155/72$, $-209/72$. From this result it
+is conjectured that there are infinitely many such $c$'s, and this is
+later confirmed by theory. It is also worth noting that for $c$'s that
+we observed, $D_{4,c}$ is always one of the following:
+\[
+\set{12},\, \set{4, 8},\, \set{2, 2, 8}.
+\]
+Note that the degrees of irreducible factors of $\Phi_{4,c}(z)$
+(elements of $D_{4,c}$) always have common factors with $N = 4$. It is
+further observed that $c$'s such that $\Phi_{4,c}(z)$ is reducible
+always has ``fairly divisible'' denominators, i.e., their prime
+factors are ``small'' compared to themselves. The implication of this
+is not clear.
+
+For $N=5$, no quadratic factors were observed, and it is conjectured
+that there are no quadratic periodic points of exact period 5 for any
+$c \in \Q$. Even the collection of $c$'s such that $\Phi_{5,c}(z)$ is
+reducible is very limited:
+\[
+\begin{gathered}
+  c = -2,\, D_{5,c} = \set{5,\, 10,\, 15},\\
+  c = -4/3,\, D_{5,c} = \set{10,\, 20},\\
+  c = -16/9,\, D_{5,c} = \set{5,\, 25},\\
+  c = -64/9,\, D_{5,c} = \set{5,\, 25}.
+\end{gathered}
+\]
+Note again that the degrees of irreducible factors of $\Phi_{5,c}(z)$ always have common
+factors with $N = 5$.
+
+We also performed the search for $N = 6$ up to height 500. Quadratic
+factor was found for one $c$:
+\[
+c = -71/48,\, D_{6,c} = \set{2,\, 2,\, 2,\, 48},
+\]
+and two more $c$ were observed such that $Phi_{6,c}(z)$ is reducible:
+\[
+\begin{gathered}
+  c = -2,\, D_{6,c} = \set{6,\, 6\, 18,\, 24},\\
+  c = -4,\, D_{4,c} = \set{6,\, 48}.
+\end{gathered}
+\]
+Note once again that (from the limited data we have) the degrees of
+irreducible factors of $\Phi_{6,c}(z)$ always have common factors with
+$N = 6$.
+
+% I will add bibliography and citations later
+Also recall from Morton1 that
+\begin{theorem}
+  For $N = 3$ and any $c \in \Q$, $D_{3, c}$ must be one of the
+  following:
+  \[
+  \set{6},\, \set{3,\, 3}, \set{3,\, 1,\, 1,\, 1}.
+  \]
+\end{theorem}
+
+Combining our knowledge of $D_{3,c}$, $D_{4,c}$, $D_{5,c}$, and
+$D_{6,c}$, we have the following conjecture.
+
+\begin{conjecture}[Weak factorization]
+  For $N \ge 3$ and any $c \in \Q$, one of the following holds:
+  \begin{enumerate}
+  \item $1 \in D_{N,c}$;
+  \item For all $d \in D_{N,c}$, $\gcd(d,\, N) > 1$.
+  \end{enumerate}
+\end{conjecture}
+
+$N = 3$ is still rather special, since there are inifinitely many $c$
+with rational periodic points of exact period 3, and we know the
+explicit parametrization of $c$ such that $\Phi_{3,c}(z)$ is
+reducible (Morton1). If we exclude $N = 3$, we have the following
+stronger conjecture.
+
+\begin{conjecture}[Strong factorization]
+  For $N \ge 4$ and any $c \in \Q$, we have $\gcd(d, N) > 1$ for all
+  $d \in D_{N,c}$.
+\end{conjecture}
+
+This conjecture implies FPS's conjecture.
+
+\begin{conjecture}[FPS]
+  For $N \ge 4$ and any $c \in \Q$, $1 \not\in D_{N,c}$.
+\end{conjecture}
+
+However, these conjectures seem to require radically new ideas not
+available at this moment, as most current results in this field relies
+on manipulating specific curves.
+
+\subsection{Enumerate quadratic $x$ on $C_0(5)$}
+
+Now we specialize to $N = 5$, which is the simplest case not yet
+resolved. For $N = 5$, FPS already worked out a hyperelliptic model
+for $C_0(5)$:
+\[
+y^2 = f(x) = x^6 + 8x^5 + 22x^4 + 22x^3 + 5x^2 + 6x + 1.
+\]
+$c$ is given by
+\[
+c = \frac{P_0(x) + P_(x) y}{h(x)} = \frac{g(x)}{2(P_0(x) - P_1(x) y)},
+\]
+where
+\[
+\begin{gathered}
+  P_0(x) = - 9 - 24x - 95x^2 - 104x^3 - 46x^4 - 10x^5 - x^6,\\
+  P_1(x) = - 9 + 3x + 6x^2 + x^3,\\
+  g(x) = 64 + 110x + 325x^2 + 452x^3 + 271x^4 + 74x^5 + 8x^6,\\
+  h(x) = 8x^2(3 + x)^2.
+\end{gathered}
+\]
+Note that quadratic periodic points of exact period 5 (more precisely,
+orbits of such quadratic points) map to quadratic points on $C_0(5)$,
+so we may enumerate quadratic points on $y^2 = f(x)$ and verify if $c
+\in \Q$ is satisfied and if the preimage of such a quadratic point on
+$C_0(5)$ is indeed a quadratic orbit on $C_1(5)$ (rather than a
+$\gal(\bar{\Q}/\Q)$-fixed orbit living in a degree-10 number field).
+
+To enumerate quadratic points on $C_0(5)$, we fix a squarefree $d \in
+\Z$, and enumerate $x \in K = \Q(\sqrt{d})$. We still enumerate in the
+increasing order of height, where the height of $\frac{p_1}{q_1} +
+\frac{p_2}{q_2} \sqrt{d} \in \Q(\sqrt{d})$, with $p_1$, $q_1$, $p_2$,
+$q_2 \in \Z$ and $\gcd(p_1,\, q_1) = \gcd(p_2,\, q_2) = 1$, is defined
+as $\max\set{|p_1|,\, |q_1|,\, |p_2|,\, |q_2|}$ as usual. For each
+$x$, we then compute $y^2$ from the relation $y^2 = f(x)$. Since we
+want to have $y \in K = \Q(\sqrt{d})$, we need to check if $f(x)$ is a
+square in $K$. This turned out to be a rather expensive task
+(equivalent to factorizing $T^2 - f(x)$ in $K[T]$), but $N(f(x))$ is a
+rational square is a great criterion to exclude ineligible $f(x)$,
+where $N$ is the conventional norm in $\Q(\sqrt{d})$. Therefore, the
+main workflow boils down to enumerating $d$, $p_1$, $q_1$, $p_2$,
+$q_2$, perform multiprecision rational arithmetic (calculating $f(x)$
+and $N(f(x))$), and test if the numerator and denominator of $N(f(x))$
+are integer squares.
+
+We implemented this same procedure in several languages --- Sage,
+Mathematica, and C++ (using FLINT 2). On darwin-x86\_64 with 2.9 GHz
+Intel Core i7 processor, FLINT 2.4.4, Mathematica 9.0.1 Student
+Edition, and Sage 6.3, it turned out that Mathematica was consistently
+about 20 times faster than Sage, and C++ with FLINT (using fmpzxx and
+fmpqxx) was consistently about 50 times faster than Mathematica (from
+which we conclude that FLINT is the winner performance-wise when it
+comes to multiprecision rational arithmetic).
+
+With the C++ program we were able to enumerate squarefree $d \in
+\set{-100, \dots, 100}$ and $x \in \Q(\sqrt{d})$ up to height 30, and
+for specific $d$ of interest, i.e., $d = -87$ and $d = 33$,
+% note that I recently discovered d = -87 and haven't get arount to
+% really do it up to height 100 just yet
+up to height 100. Only eight quadratic points (excluding all the
+rational points already known in FPS) on $C_0(5)$ were found, four of
+which give rational $c$:
+\[
+\begin{gathered}
+  d = -87,
+  x = -\frac{1}{6} \sqrt{-87} - \frac{1}{2},
+  y = -\frac{5}{9} \sqrt{-87} + \frac{22}{3},
+  c = \frac{13371}{86528} \sqrt{-87} + \frac{12767}{86528},
+  \\
+  d = -87,
+  x = -\frac{1}{6} \sqrt{-87} - \frac{1}{2},
+  y = \frac{5}{9} \sqrt{-87} - \frac{22}{3},
+  c = -\frac{4}{3},
+  \\
+  d = -87,
+  x = \frac{1}{6} \sqrt{-87} - \frac{1}{2},
+  y = \frac{5}{9} \sqrt{-87} + \frac{22}{3},
+  c = -\frac{13371}{86528} \sqrt{-87} + \frac{12767}{86528},
+  \\
+  d = -87,
+  x = \frac{1}{6} \sqrt{-87} - \frac{1}{2},
+  y = -\frac{5}{9} \sqrt{-87} - \frac{22}{3},
+  c = -\frac{4}{3},
+  \\
+  d = 33,\,
+  x = -\frac{1}{3} \sqrt{33} - 2,\,
+  y = \frac{10}{9} \sqrt{33} + \frac{17}{3},\,
+  c = -2,
+  \\
+  d = 33,\,
+  x = -\frac{1}{3} \sqrt{33} - 2,\,
+  y = -\frac{10}{9} \sqrt{33} - \frac{17}{3},\,
+  c = \frac{269}{128} \sqrt{33} - \frac{6415}{384},
+  \\
+  d = 33,\,
+  x = \frac{1}{3} \sqrt{33} - 2,\,
+  y = \frac{10}{9} \sqrt{33} - \frac{17}{3},\,
+  c = -\frac{269}{128} \sqrt{33} - \frac{6415}{384},
+  \\
+  d = 33,\,
+  x = \frac{1}{3} \sqrt{33} - 2,\,
+  y = -\frac{10}{9} \sqrt{33} + \frac{17}{3},
+  c = -2.
+\end{gathered}
+\]
+$c = -\frac{4}{3}$ and $-2$ can be shown to not yield any quadratic
+periodic points of period 5.
+
+
+\section{6-Cycles in Quadratic Fields}
+
+\begin{conjecture}[Galois Conjugacy]
+	\label{conj:gc}
+	Let $\{x_1, x_2, x_3, x_4, x_5, x_6\}$ be a $6$-cycle over a 
+	quadratic field $K$ for $\phi(x) = x^2 + c$ with $c \in \Q$. Then 
+	$x_4 = \overline{x_1}$.
+\end{conjecture}
+
+\begin{corollary}[Conditional Classification of 6-Cycles over Quadratic Fields]
+	\label {cor:6-cycles}
+	Conjecture \ref{conj:gc} and the weak BSD Conjecture, imply that 
+	the only 6-cycle over quadratic fields is in $K = \Q(\sqrt{33})$ 
+	and is given by:
+	\[
+		\phi(x) = x^2 - \frac{71}{48}, x_1 = -1 + \frac{\sqrt{33}}{12}
+	\]
+\end{corollary}
+
+\begin{proof}
+	Let $\{x_1, x_2, x_3, x_4, x_5, x_6\}$ be a $6$-cycle over a 
+	quadratic field $K$ and define $t = x_1 + x_2 + x_3 + x_4 + x_5 + 
+	x_6$ to be the trace of the orbit. By Conjecture \ref{conj:gc}, 
+	$x_4 = \overline{x_1}, x_5 = \overline{x_2}, x_6 = \overline{x_3}$
+. Thus, we have
+	\[
+		t = x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = x_1 + x_2 + x_3 + 
+		\overline{x_1} + \overline{x_2} + \overline{x_3} \in \Q
+	\]
+	Therefore, each 6-cycle can be represented as a $\Q$-point on $C_0
+	(6)(\Q)$ via its trace. Using Stoll's characterization of the 
+	$\Q$-points of $C_1(6)$(cite), 
+	we know that the 6-cycle given by $K = \Q(\sqrt{33}), \phi(x) = 
+	x^2 - \frac{71}{48}, x_1 = -1 + \frac{\sqrt{33}}{12}$
+	is the only 6-cycle over a quadratic field and not over $\Q$.
+	Stoll finds, using a proof conditional on the weak BSD 
+	Conjecture, that there are no 6-cycles over $\Q$ either.
+\end{proof}
+
+\begin{lemma}
+	Let $\{x_1, \ldots, x_{N}\}$ be a $N$-cycle with N even,
+	defined over quadratic field K as before. If 
+	$x_{\frac{N}{2}+1} \neq \overline{x_1}$ and if there are no 
+	rational points of exact period $N$, then $\{x_1, \ldots, x_{N}\}
+	\cap \{\overline{x_1}, \ldots, \overline{x_{N}}\} = \emptyset$.
+\end{lemma}
+
+\begin{proof}
+	Assume that $\{x_1, \ldots, x_{N}\} \cap 
+	\{\overline{x_1}, \ldots, \overline{x_{N}}\} \neq \emptyset$.
+	Then $\exists x_j \in \{x_1, \ldots, x_{N}\} \cap 
+	\{\overline{x_1}, \ldots, \overline{x_{N}}\}$. Applying $\phi$ 
+	an appropriate number of times allows us to renumerate the cycle 
+	such that $x_1$ is in the intersection. Thus, $x_k = \overline{x_1}$ 
+	for some $1 \leq k \leq N$. Since there are no rational points of 
+	period $N$ for $\phi$, we know that $x_1 \neq \overline{x_1}$ and 
+	therefore $k \neq 1$. By commutativity of $\gal(K/\Q)$ with $\phi$
+	and since $x_k = \overline{x_1}$ for some $k \neq 1$:
+	\[
+		x_{2k} = \phi^k(x_k) = \phi^k(\overline{x_1}) = \overline{\phi^k(x_1)}
+		= \overline{\phi(x_k)} = \phi(\overline{x_k}) = \phi(x_1) = x_2
+	\]
+	Notice that since $x_{2k} = x_2$, the application of $\phi^{N-1}$
+	yields	that $x_{2k-1} = x_1$. Let $l$ be the representative of $2k-1$
+	module $N$. This gives $x_l = x_1$ with $1 \leq l \leq N$. $2k-1 \neq 1$ 
+	since $1 < k < N$. Therefore, $\{x_1, \ldots, x_l\}$ gives an $l$-cycle.
+	However, $l < N$ since $l \leq N$ and $l$ is odd. This gives a 
+	contradiction because $x_1$ has exact period $N$.
+\end{proof}
+
+\begin{remark}[N = 6 case]
+	Stoll conditionally proved that there are no rational points with exact
+	period 6 assuming the weak form of the BSD Conjecture(cite). This allows
+	us to use this lemma to conditionally prove Conjecture \ref{conj:gc} and thus
+	Corollary \ref{cor:6-cycles}. All that remains to be shown is that 
+	$\{x_1, \ldots, x_{N}\} \cap \{\overline{x_1}, \ldots, \overline{x_{N}}\} = 
+	\emptyset$ is impossible.
+\end{remark}
 
 \end{document}
