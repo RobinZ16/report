@@ -310,4 +310,39 @@ periodic points of period 5.
 	\emptyset$ is impossible.
 \end{remark}
 
+\section{Key Results}
+
+%Entire section to be expanded upon and written more nicely%
+For N = 5, we took $P_{c,q}$ and did long division with general quadratic $q^2 + aq + b$
+and then took the resultant of the linear and constant remainders to get a
+polynomial equation in $a$ and $b$. SAGE computed that the genus of the resulting
+curve is 11. Thus there are finitely many rational triples $(a,b,c)$ that satisfy
+both equations. Thus there are finitely many quadratic points in $C_0(5)$ and thus
+finitely many quadratic points of exact period 5.
+\begin{theorem}
+There are finitely many points in quadratic fields with exact period 5 for
+$\phi(x) = x^2 + c$ with $c \in \Q$.
+\end{theorem}
+
+A result that follows directly from the parametrization of 4-cycles given by 
+Morton (cite):
+\begin{theorem}
+There are infinitely many points in quadratic fields with exact period 4 for
+$\phi(x) = x^2 + c$ with $c \in \Q$.
+\end{theorem}
+
+Plugging in the $c$ from Morton's parametrization and factoring $\Phi_4(x,c)$
+with respect to $x$ yields:
+\begin{lemma}
+For $c$ such that $\phi$ has 4-cycles over quadratic fields, the degree 12
+polynomial $\Phi_4(x,c)$ must factor as $\{2,2,8\}$ (list of degrees of
+factors, with the 8th degree factor not necessarily irreducible).
+\end{lemma}
+
+Using Panraksa's theorem that $\Phi_4(x,c)$ cannot factor as $\{2,2,2,2,4\}$,
+we obtain the following result: 
+\begin{theorem}
+For each $c \in \Q$, there is at most one 4-cycle over quadratic fields.
+\end{theorem}
+
 \end{document}
