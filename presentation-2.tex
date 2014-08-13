@@ -217,4 +217,62 @@ among them Chabauty and Coleman's method, which might be computational
 very hard, unfortunately seldom give sharp bounds. We are looking into
 the methods right now.
 
+\section{Other Results}
+
+\begin{theorem} [Erkama 2006]
+For $f(z) = z^2 + c$, $c$ and the points of period 4 can be parametrized
+over $\C$ by the following:
+\[
+\begin{gathered}
+	c = \frac{1-4t^3-t^6}{4t^2(t^2-1)}, \\
+	x_1 = \frac{t^4 - t^2 + \sqrt{(t^4-1)(t^2+2t-1)}}{2t(t^2-1)}, x_2 = \frac{1 - t^2 + t\sqrt{(t^4-1)(t^2+2t-1)}}{2t(t^2-1)}, \\
+	x_3 = \frac{t^4 - t^2 - \sqrt{(t^4-1)(t^2+2t-1)}}{2t(t^2-1)}, x_4 = \frac{1 - t^2 - t\sqrt{(t^4-1)(t^2+2t-1)}}{2t(t^2-1)}
+\end{gathered}
+\]
+where $t = x_1 + x_3$.
+\end{theorem}
+
+Panraksa showed that all the points of period 4 over a quadratic field
+for $c \in \Q$ are given by ranging $t \in \Q$ by showing that such
+cycles must have $x_1$ and $x_3$ as Galois conjugates.
+Thus, it directly follows that:
+\begin{theorem}
+There are infinitely many points in quadratic fields with exact period 4 for
+$f(z) = z^2 + c$ with $c \in \Q$.
+\end{theorem}
+
+Plugging in the $c$ from Morton's parametrization and factoring $\Phi_4(z,c)$
+with respect to $z$ yields:
+\begin{lemma}
+For $c$ such that $f$ has 4-cycles over quadratic fields, the degree 12
+polynomial $\Phi_4(z,c)$ must factor as $\{2,2,8\}$ (list of degrees of
+factors, with the 8th degree factor not necessarily irreducible).
+\end{lemma}
+
+Using Panraksa's theorem that $\Phi_4(z,c)$ cannot factor as $\{2,2,2,2,4\}$,
+we obtain the following result:
+\begin{theorem}
+For each $c \in \Q$, there is at most one 4-cycle over quadratic fields.
+\end{theorem}
+
+We tried to work out similar results for the $N = 6$ case and have the
+following general lemma which may be useful for showing Galois conjugacy of
+elements in even-parity cycles.
+\begin{lemma}
+	Let $\{x_1, \ldots, x_{N}\}$ be a $N$-cycle with N even,
+	defined over quadratic field K as before. If
+	$x_{\frac{N}{2}+1} \neq \overline{x_1}$ and if there are no
+	rational points of exact period $N$, then $\{x_1, \ldots, x_{N}\}
+	\cap \{\overline{x_1}, \ldots, \overline{x_{N}}\} = \emptyset$.
+\end{lemma}
+
+We think that there should be a more general situation:
+\begin{conjecture}
+	Let $\{x_1, \ldots, x_{N}\}$ be a $N$-cycle defined over number field K,
+	with N divisible by	$d = [K:\Q ]$. If $x_{\frac{N}{d}+1} \neq \sigma(x_1)$
+	for some $\sigma \in \gal(K/\Q)$ and if there are no rational points of
+	exact period $N$, then $\{x_1, \ldots, x_{N}\} \cap \{\tau(x_1),
+	\ldots, \tau(x_{N})\} = \emptyset$, $\forall \tau \in \gal(K/\Q)$.
+\end{conjecture}
+
 \end{document}
