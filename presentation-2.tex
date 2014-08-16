@@ -12,7 +12,7 @@
 \section{Recap}
 
 I'll assume that everyone has forgotten about what we've been doing,
-so quickly recap the specific problem we are working with.
+so I'll quickly recap the specific problem we are working with.
 
 Let $f(z) = z^2 + c$, where $c$ is a rational number. We want to study
 the finite orbits of size $N$ of the function $f$, i.e., exact
@@ -28,7 +28,7 @@ in this case, the $(z, c)$ polynomial is $\frac{f^5(z) - z}{f(z) -
 genus later). Little is known about a genus-14 curve, but by taking a
 quotient of this curve with respect to an automorphism we can reduce
 it to a more manageable genus-2 curve, that is, a hyperelliptic
-curve. The genus-2 curve has a smooth projective model given by
+curve. The genus-2 curve has a smooth model given by
 \[
 y^2 = f(x) = x^6 + 8x^5 + 22x^4 + 22x^3 + 5x^2 + 6x + 1.
 \]
@@ -67,15 +67,18 @@ Before we proceed, we need to introduce some concepts and machinery.
 
 \section{Preliminaries}
 
-\begin{definition}[Genus of a nonsingular algebraic curve]
-  To each nonsingular algebraic curve, we can associate to it a
-  nonnegative integer $g$.
+\begin{definition}[Genus of a smooth algebraic curve]
+  To each smooth algebraic curve, we can associate a nonnegative
+  integer $g$, which is basically the genus of the complex manifold
+  formed by the complex solutions. (The genus of a manifold is the
+  number of handles, or holes.)
 \end{definition}
 
 \begin{remark}
-  We won't define it here, and it is enough to know that given a curve
-  defined by a polynomial $P(x, y)$ in two variables, we can calculate
-  $g$ computationally.
+  I'm cheating a little bit here, but the exact definition is not
+  important.  \textbf{It is enough to know that given a curve defined
+    by a polynomial $P(x, y)$ in two variables, we can calculate $g$
+    computationally.}
 
   The reason that we are interested in the genus is because it gives
   us information about the number of rational points on a curve, due
@@ -83,25 +86,14 @@ Before we proceed, we need to introduce some concepts and machinery.
 \end{remark}
 
 \begin{theorem}[Faltings, 1983]
-Let $C$ be a non-singular algebraic curve of genus $g$ over $\Q$. Then
-the set of rational points $C(\Q)$ on $C$ satisfy:
-\begin{enumerate}
-\item If $g = 0$, then either $C(\Q) = \es$, or $|C(\Q)| = \infty$, in which
-  case $C$ is isomorphic over $\Q$to $\P^1$;
-
-\item If $g = 1$, then either $C(\Q) = \es$, or $C$ is an
-  \emph{elliptic curve}, in which case $C(\Q)$ is a finitely generated
-  abelian group;
-
-\item If $g \ge 2$, then $|C(\Q)| < \infty$. (Previously Mordell
-  conjecture (1922), proved by Faltings (1983)).
-\end{enumerate}
+Let $C$ be a non-singular algebraic curve of genus $g \ge 2$ over
+$\Q$. Then the number of rational points on $C$ is finite.
 \end{theorem}
 
 \begin{remark}
-  Faltings' theorem tells us that the number of rational points on a
-  high genus curve is finite, but does not give an explicit bound, or
-  a way to find the bound.
+  Faltings' theorem only gives an ineffective bound on the number of
+  rational points, as it doesn't offer an explicit bound, nor a way to
+  find an explicit bound.
 
   There are some methods to bound the number of rational points, and
   they are behind most of the currently available results in our
@@ -121,13 +113,18 @@ the set of rational points $C(\Q)$ on $C$ satisfy:
 \end{definition}
 
 \begin{remark}
-  Similar to the discriminant of a polynomial, the resultant of two
-  polynomials can be written as a polynomial in the coefficients of
-  $P$ and $Q$, and computed efficiently.
+  Similar to the discriminant of a polynomial, \textbf{the resultant
+    of two polynomials can be written as a polynomial in the
+    coefficients of $P$ and $Q$, and computed efficiently.}
 
   From its definition it is obvious that $P$ and $Q$ have a common
   factor if and only if $\res(P, Q) = 0$.
 \end{remark}
+
+For a quick recap, we defined genus and resultant, both of which
+are computable (actually by software). Genus gives information about
+the number of rational points, and resultant gives information about
+comman roots.
 
 \section{$x$, $y$, and $c$}
 
@@ -173,16 +170,16 @@ rational. And $x$ is quadratic. So unless $x$ is also rational, in
 which case we already completely understand the six rational points of
 $y^2 = f(x)$, we must have
 \[
-l_1(a, b, c) = l_0(a, b, c) = 0.
+\l_1(a, b, c) = \l_0(a, b, c) = 0.
 \]
 
 Now the resultant trick kicks in. Recall that two single-variate
 polynomials have a common root if and only if their resultant is
-zero. Here we can regard $l_1$ and $l_0$ as single-variate polynomials
-in any of $a$, $b$, and $c$, and calculate the resultant. For
-instance, if we regard them as polynomials in $a$, then the resultant
-is a polynomial in $b$ and $c$, and it must be zero in order for $l_1$
-and $l_0$ to have a common root $a$.
+zero. Here we can regard $\l_1$ and $\l_0$ as single-variate
+polynomials in any of $a$, $b$, and $c$, and calculate the
+resultant. For instance, if we regard them as polynomials in $a$, then
+the resultant is a polynomial in $b$ and $c$, and it must be zero in
+order for $\l_1$ and $\l_0$ to have a common root $a$.
 
 We calculated all three resultants (\textit{in fact, the calculation
   of resultant is somewhat more subtle, depending on the vanishing of
@@ -270,7 +267,7 @@ We think that there should be a more general situation:
 \begin{conjecture}
 	Let $\{x_1, \ldots, x_{N}\}$ be a $N$-cycle defined over number field K,
 	with N divisible by	$d = [K:\Q ]$. If $x_{\frac{N}{d}+1} \neq \sigma(x_1)$
-	for some $\sigma \in \gal(K/\Q)$ and if there are no rational points of
+	for all $\sigma \in \gal(K/\Q)$ and if there are no rational points of
 	exact period $N$, then $\{x_1, \ldots, x_{N}\} \cap \{\tau(x_1),
 	\ldots, \tau(x_{N})\} = \emptyset$, $\forall \tau \in \gal(K/\Q)$.
 \end{conjecture}
