@@ -1,0 +1,113 @@
+\section{Background}
+
+Our entire research project has its roots in the study of the dynamics
+of morphisms over projective spaces, specifically the periodic points
+(or more generally, preperiodic points) of such morphisms. One
+profound conjecture in this field is the Uniform Boundedness
+Conjecture, put forth by Morton and Silverman in
+1994~\cite{MR1264933}, which bounds the number of preperiodic points
+of a morphism in terms of the the degree of the base field (over the
+rational field $\Q$), the dimension of the projective space, and the
+degree of the morphism. We will define the necessary objects leading
+up to the Uniform Boundedness Conjecture, briefly describe the status
+of the conjecture, and discuss the specific cases that we will
+concentrate on.
+
+\begin{definition}
+  The \emph{projective space} $\P^N(K)$ of dimension $N$ over a number
+  field $K$ is the space of equivalence classes $K^{N+1}/\sim$ in
+  $K^{N+1}$, where the equivalence relation $\sim$ is given by
+  \[
+  (x_0, \dots, x_N) \sim (y_0, \dots, y_N)
+  \]
+  if and only if $x_i y_j = x_j y_i$ for all $0 \le i, j \le N$. We
+  denote such an equivalence class by $[x_0, \dots, x_N]$, where
+  $(x_0, \dots, x_N)$ is any element of the equivalence class.
+\end{definition}
+
+\begin{definition}
+  Given a number field $K$, a \emph{rational map} of degree $d$
+  between projective spaces $\P^N(\bar{K})$ and $\P^M(\bar{K})$ is a
+  map
+  \[
+  \begin{gathered}
+    \phi: \P^N(\bar{K}) \to \P^M(\bar{K})\\
+    P \mapsto [f_0(p), \dots, f_M(p)],
+  \end{gathered}
+  \]
+  where $p \in P$ is any element of the equivalence class $P$, and
+  $f_0, \dots, f_M \in \bar{K}[X_0, \dots, X_N]$ are homogeneous
+  polynomials of degree $d$ with no common factors. (Well-definedness
+  is guaranteed by homogeneity.)
+
+  If all the coefficients of $f_0, \dots, f_M$ lie in $K$, we say that $\phi$ is \emph{defined over} $K$.
+
+  The rational map $\phi$ is \emph{defined at} $P$ if at least one of
+  the values $f_0(p), \dots, f_M(p)$ is nonzero.
+
+  The rational map $\phi$ is called a \emph{morphism} if it is defined
+  everywhere in $\P^N(\bar{K})$, or equivalently, if the only solution
+  in $\bar{K}$ to the simultaneous equations
+  \[
+  f_0(X_0, \dots, X_N) = \cdots = f_M(X_0, \dots, X_N) = 0
+  \]
+  is the trivial solution $X_0 = \dots, X_N = 0$.
+\end{definition}
+
+\begin{definition}
+  Given any morphism $\phi: \P^N \to \P^N$, the \emph{preperiodic
+    points of $\phi$} in some space $\P^N(K)$ is the collection of
+  points in $\P^N(K)$ with finite forward orbits, or equivalently,
+  \[
+  \preper(\phi, \P^N(K)) = \set{P \in \P^N(K) : \text{exist $n_1, n_2
+      \in \N$ such that $\phi^{n_1}(P) = \phi^{n_2}(P)$}}.
+  \]
+\end{definition}
+
+Now we are ready to state the Uniform Boundedness Conjecture.
+
+\begin{conjecture}[Morton-Silverman, 1994 ~\cite{MR1264933}]
+  Fix integers $d \ge 2$, $N \ge 1$, and $D \ge 1$. There is a
+  constant $C(d, N, D)$ such that for all number fields $K/\Q$ of
+  degree at most $D$ and all morphisms $\P^N \to \P^N$ of degree $d$
+  defined over $K$,
+  \[
+  \#\preper(\phi, \P^N(K)) \ge C(d, N, D).
+  \]
+\end{conjecture}
+
+Very little is known about this conjecture. In fact, even the simplest
+case $(d, N, D) = (2, 1, 1)$ is not known, that is, the problem of
+bounding the number of rational preperiodic points of degree-2
+rational morphisms. If we specialize to degree-2 polynomials (i.e.,
+maps of the type $[X_0, X_1] \mapsto [a X_0^2 + b X_0 X_1 + c X_1^2,
+X_1^2]$, conveniently written as $a z^2 + b z + c$), note that $a z^2
++ b z + c$ can be reduced to the form $z^2 + c'$ by linear
+conjugation, which preserves the sizes of orbits, so it suffices to
+consider degree-2 polynomials of the type $\phi_c(z) = z^2 + c$. In
+this case of $\phi_c(z) = z^2 + c$, the uniform bound is again not
+known, but there are partial results when we further stipulate the
+period.
+
+One can easily show that there are one-parameter families of
+$c$-values for which $\phi_c(z)$ has rational periodic point(s) of
+exact period 1, 2, or 3. It was shown by Morton~\cite{MR1665198} that
+$\phi_c$ cannot have rational periodic points of exact period 4. The
+non-existence result was extended to exact period 5 by Flynn, Poonen,
+and Schaefer~\cite{MR1480542}, and to exact period 6 (conditional on
+the Birch and Swinnerton-Dyer conjecture for a specific abelian
+variety) by Stoll~\cite{MR2465796}.
+
+We are interested in generalizing the aforementioned results for
+degree-2 polynomials and specific small periods to quadratic number
+fields, i.e., the $D = 2$ case. For a more detailed discussion of
+other takes on the Uniform Boundedness Conjecture, along with a list
+of references, see Section 3.3 of \cite{MR2316407}.
+
+From now on, unless otherwise states, the dimension of the projective
+space will always be 1, and we reserve the letter $N$ for the exact
+period of periodic points.
+
+%%% Local Variables:
+%%% TeX-master: "report"
+%%% End:

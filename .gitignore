@@ -8,6 +8,10 @@
 *.out
 *.toc
 
+# bibtex auto generated junk
+*.bbl
+*.blg
+
 # AUCTeX and preview-latex junk
 *.prv
 auto
