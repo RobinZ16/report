@@ -234,124 +234,130 @@ periodic points of period 5.
 \section{6-Cycles in Quadratic Fields}
 
 \begin{conjecture}[Galois Conjugacy]
-	\label{conj:gc}
-	Let $\{x_1, x_2, x_3, x_4, x_5, x_6\}$ be a $6$-cycle over a
-	quadratic field $K$ for $\phi(x) = x^2 + c$ with $c \in \Q$. Then
-	$x_4 = \overline{x_1}$.
+  \label{conj:gc}
+  Let $\{x_1, x_2, x_3, x_4, x_5, x_6\}$ be a $6$-cycle over a
+  quadratic field $K$ for $\phi(x) = x^2 + c$ with $c \in \Q$. Then
+  $x_4 = \overline{x_1}$.
 \end{conjecture}
 
 \begin{corollary}[Conditional Classification of 6-Cycles over Quadratic Fields]
-	\label {cor:6-cycles}
-	Conjecture \ref{conj:gc} and the weak BSD Conjecture, imply that
-	the only 6-cycle over quadratic fields is in $K = \Q(\sqrt{33})$
-	and is given by:
-	\[
-		\phi(x) = x^2 - \frac{71}{48}, x_1 = -1 + \frac{\sqrt{33}}{12}
-	\]
+  \label {cor:6-cycles}
+  Conjecture \ref{conj:gc} and the weak BSD Conjecture, imply that the
+  only 6-cycle over quadratic fields is in $K = \Q(\sqrt{33})$ and is
+  given by:
+  \[
+  \phi(x) = x^2 - \frac{71}{48}, x_1 = -1 + \frac{\sqrt{33}}{12}
+  \]
 \end{corollary}
 
 \begin{proof}
-	Let $\{x_1, x_2, x_3, x_4, x_5, x_6\}$ be a $6$-cycle over a
-	quadratic field $K$ and define $t = x_1 + x_2 + x_3 + x_4 + x_5 +
-	x_6$ to be the trace of the orbit. By Conjecture \ref{conj:gc},
-	$x_4 = \overline{x_1}, x_5 = \overline{x_2}, x_6 = \overline{x_3}$
-. Thus, we have
-	\[
-		t = x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = x_1 + x_2 + x_3 +
-		\overline{x_1} + \overline{x_2} + \overline{x_3} \in \Q
-	\]
-	Therefore, each 6-cycle can be represented as a $\Q$-point on $C_0
-	(6)(\Q)$ via its trace. Using Stoll's characterization of the
-	$\Q$-points of $C_1(6)$(cite),
-	we know that the 6-cycle given by $K = \Q(\sqrt{33}), \phi(x) =
-	x^2 - \frac{71}{48}, x_1 = -1 + \frac{\sqrt{33}}{12}$
-	is the only 6-cycle over a quadratic field and not over $\Q$.
-	Stoll finds, using a proof conditional on the weak BSD
-	Conjecture, that there are no 6-cycles over $\Q$ either.
+  Let $\{x_1, x_2, x_3, x_4, x_5, x_6\}$ be a $6$-cycle over a
+  quadratic field $K$ and define $t = x_1 + x_2 + x_3 + x_4 + x_5 +
+  x_6$ to be the trace of the orbit. By Conjecture \ref{conj:gc}, $x_4
+  = \overline{x_1}, x_5 = \overline{x_2}, x_6 = \overline{x_3}$
+  . Thus, we have
+  \[
+  t = x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = x_1 + x_2 + x_3 +
+  \overline{x_1} + \overline{x_2} + \overline{x_3} \in \Q
+  \]
+  Therefore, each 6-cycle can be represented as a $\Q$-point on $C_0
+  (6)(\Q)$ via its trace. Using Stoll's characterization of the
+  $\Q$-points of $C_1(6)$(cite), we know that the 6-cycle given by $K
+  = \Q(\sqrt{33}), \phi(x) = x^2 - \frac{71}{48}, x_1 = -1 +
+  \frac{\sqrt{33}}{12}$ is the only 6-cycle over a quadratic field and
+  not over $\Q$.  Stoll finds, using a proof conditional on the weak
+  BSD Conjecture, that there are no 6-cycles over $\Q$ either.
 \end{proof}
 
 \begin{lemma}
-	Let $\{x_1, \ldots, x_{N}\}$ be a $N$-cycle with N even,
-	defined over quadratic field K as before. If
-	$x_{\frac{N}{2}+1} \neq \overline{x_1}$ and if there are no
-	rational points of exact period $N$, then $\{x_1, \ldots, x_{N}\}
-	\cap \{\overline{x_1}, \ldots, \overline{x_{N}}\} = \emptyset$.
+  Let $\{x_1, \ldots, x_{N}\}$ be a $N$-cycle with N even, defined
+  over quadratic field K as before. If $x_{\frac{N}{2}+1} \neq
+  \overline{x_1}$ and if there are no rational points of exact period
+  $N$, then $\{x_1, \ldots, x_{N}\} \cap \{\overline{x_1}, \ldots,
+  \overline{x_{N}}\} = \emptyset$.
 \end{lemma}
 
 \begin{proof}
-	Assume that $\{x_1, \ldots, x_{N}\} \cap
-	\{\overline{x_1}, \ldots, \overline{x_{N}}\} \neq \emptyset$.
-	Then $\exists x_j \in \{x_1, \ldots, x_{N}\} \cap
-	\{\overline{x_1}, \ldots, \overline{x_{N}}\}$. Applying $\phi$
-	an appropriate number of times allows us to renumerate the cycle
-	such that $x_1$ is in the intersection. Thus, $x_k = \overline{x_1}$
-	for some $1 \leq k \leq N$. Since there are no rational points of
-	period $N$ for $\phi$, we know that $x_1 \neq \overline{x_1}$ and
-	therefore $k \neq 1$. By commutativity of $\gal(K/\Q)$ with $\phi$
-	and since $x_k = \overline{x_1}$ for some $k \neq 1$:
-	\[
-		x_{2k} = \phi^k(x_k) = \phi^k(\overline{x_1}) = \overline{\phi^k(x_1)}
-		= \overline{\phi(x_k)} = \phi(\overline{x_k}) = \phi(x_1) = x_2
-	\]
-	Notice that since $x_{2k} = x_2$, the application of $\phi^{N-1}$
-	yields	that $x_{2k-1} = x_1$. Let $l$ be the representative of $2k-1$
-	module $N$. This gives $x_l = x_1$ with $1 \leq l \leq N$. $2k-1 \neq 1$
-	since $1 < k < N$. Therefore, $\{x_1, \ldots, x_l\}$ gives an $l$-cycle.
-	However, $l < N$ since $l \leq N$ and $l$ is odd. This gives a
-	contradiction because $x_1$ has exact period $N$.
+  Assume that $\{x_1, \ldots, x_{N}\} \cap \{\overline{x_1}, \ldots,
+  \overline{x_{N}}\} \neq \emptyset$.  Then $\exists x_j \in \{x_1,
+  \ldots, x_{N}\} \cap \{\overline{x_1}, \ldots,
+  \overline{x_{N}}\}$. Applying $\phi$ an appropriate number of times
+  allows us to renumerate the cycle such that $x_1$ is in the
+  intersection. Thus, $x_k = \overline{x_1}$ for some $1 \leq k \leq
+  N$. Since there are no rational points of period $N$ for $\phi$, we
+  know that $x_1 \neq \overline{x_1}$ and therefore $k \neq 1$. By
+  commutativity of $\gal(K/\Q)$ with $\phi$ and since $x_k =
+  \overline{x_1}$ for some $k \neq 1$:
+  \[
+  x_{2k} = \phi^k(x_k) = \phi^k(\overline{x_1}) =
+  \overline{\phi^k(x_1)} = \overline{\phi(x_k)} = \phi(\overline{x_k})
+  = \phi(x_1) = x_2
+  \]
+  Notice that since $x_{2k} = x_2$, the application of $\phi^{N-1}$
+  yields that $x_{2k-1} = x_1$. Let $l$ be the representative of
+  $2k-1$ module $N$. This gives $x_l = x_1$ with $1 \leq l \leq
+  N$. $2k-1 \neq 1$ since $1 < k < N$. Therefore, $\{x_1, \ldots,
+  x_l\}$ gives an $l$-cycle.  However, $l < N$ since $l \leq N$ and
+  $l$ is odd. This gives a contradiction because $x_1$ has exact
+  period $N$.
 \end{proof}
 
 \begin{remark}[N = 6 case]
-	Stoll conditionally proved that there are no rational points with exact
-	period 6 assuming the weak form of the BSD Conjecture(cite). This allows
-	us to use this lemma to conditionally prove Conjecture \ref{conj:gc} and thus
-	Corollary \ref{cor:6-cycles}. All that remains to be shown is that
-	$\{x_1, \ldots, x_{N}\} \cap \{\overline{x_1}, \ldots, \overline{x_{N}}\} =
-	\emptyset$ is impossible.
+  Stoll conditionally proved that there are no rational points with
+  exact period 6 assuming the weak form of the BSD
+  Conjecture(cite). This allows us to use this lemma to conditionally
+  prove Conjecture \ref{conj:gc} and thus Corollary
+  \ref{cor:6-cycles}. All that remains to be shown is that $\{x_1,
+  \ldots, x_{N}\} \cap \{\overline{x_1}, \ldots, \overline{x_{N}}\} =
+  \emptyset$ is impossible.
 \end{remark}
 
 We think that there should be a more general situation:
 \begin{conjecture}
-	Let $\{x_1, \ldots, x_{N}\}$ be a $N$-cycle defined over number field K,
-	with N divisible by	$d = [K:\Q ]$. If $x_{\frac{N}{d}+1} \neq \sigma(x_1)$
-	for some $\sigma \in \gal(K/\Q)$ and if there are no rational points of
-	exact period $N$, then $\{x_1, \ldots, x_{N}\} \cap \{\tau(x_1),
-	\ldots, \tau(x_{N})\} = \emptyset$, $\forall \tau \in \gal(K/\Q)$.
+  Let $\{x_1, \ldots, x_{N}\}$ be a $N$-cycle defined over number
+  field K, with N divisible by $d = [K:\Q ]$. If $x_{\frac{N}{d}+1}
+  \neq \sigma(x_1)$ for some $\sigma \in \gal(K/\Q)$ and if there are
+  no rational points of exact period $N$, then $\{x_1, \ldots, x_{N}\}
+  \cap \{\tau(x_1), \ldots, \tau(x_{N})\} = \emptyset$, $\forall \tau
+  \in \gal(K/\Q)$.
 \end{conjecture}
 
 \section{Key Results}
 
 %Entire section to be expanded upon and written more nicely%
-For N = 5, we took $P_{c,q}$ and did long division with general quadratic $q^2 + aq + b$
-and then took the resultant of the linear and constant remainders to get a
-polynomial equation in $a$ and $b$. SAGE computed that the genus of the resulting
-curve is 11. Thus there are finitely many rational triples $(a,b,c)$ that satisfy
-both equations. Thus there are finitely many quadratic points in $C_0(5)$ and thus
-finitely many quadratic points of exact period 5.
+For N = 5, we took $P_{c,q}$ and did long division with general
+quadratic $q^2 + aq + b$ and then took the resultant of the linear and
+constant remainders to get a polynomial equation in $a$ and $b$. SAGE
+computed that the genus of the resulting curve is 11. Thus there are
+finitely many rational triples $(a,b,c)$ that satisfy both
+equations. Thus there are finitely many quadratic points in $C_0(5)$
+and thus finitely many quadratic points of exact period 5.
 \begin{theorem}
-There are finitely many points in quadratic fields with exact period 5 for
-$\phi(x) = x^2 + c$ with $c \in \Q$.
+  There are finitely many points in quadratic fields with exact period
+  5 for $\phi(x) = x^2 + c$ with $c \in \Q$.
 \end{theorem}
 
-A result that follows directly from the parametrization of 4-cycles given by 
-Morton (cite):
+A result that follows directly from the parametrization of 4-cycles
+given by Morton (cite):
 \begin{theorem}
-There are infinitely many points in quadratic fields with exact period 4 for
-$\phi(x) = x^2 + c$ with $c \in \Q$.
+  There are infinitely many points in quadratic fields with exact
+  period 4 for $\phi(x) = x^2 + c$ with $c \in \Q$.
 \end{theorem}
 
-Plugging in the $c$ from Morton's parametrization and factoring $\Phi_4(x,c)$
-with respect to $x$ yields:
+Plugging in the $c$ from Morton's parametrization and factoring
+$\Phi_4(x,c)$ with respect to $x$ yields:
 \begin{lemma}
-For $c$ such that $\phi$ has 4-cycles over quadratic fields, the degree 12
-polynomial $\Phi_4(x,c)$ must factor as $\{2,2,8\}$ (list of degrees of
-factors, with the 8th degree factor not necessarily irreducible).
+  For $c$ such that $\phi$ has 4-cycles over quadratic fields, the
+  degree 12 polynomial $\Phi_4(x,c)$ must factor as $\{2,2,8\}$ (list
+  of degrees of factors, with the 8th degree factor not necessarily
+  irreducible).
 \end{lemma}
 
-Using Panraksa's theorem that $\Phi_4(x,c)$ cannot factor as $\{2,2,2,2,4\}$,
-we obtain the following result: 
+Using Panraksa's theorem that $\Phi_4(x,c)$ cannot factor as
+$\{2,2,2,2,4\}$, we obtain the following result:
 \begin{theorem}
-For each $c \in \Q$, there is at most one 4-cycle over quadratic fields.
+  For each $c \in \Q$, there is at most one 4-cycle over quadratic
+  fields.
 \end{theorem}
 
 \end{document}
