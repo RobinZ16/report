@@ -1,0 +1,156 @@
+\section{Preliminary notions and tools}
+
+\subsection{Genus of curves}
+
+First we introduce the normalization and genus of a projective curve.
+
+\begin{definition}[normalization of a singular curve]
+  %%% TODO
+\end{definition}
+
+\begin{remark}
+  \label{rem:ratpoint-normalization}
+  The number of rational points on the normalization of $C$ is greater
+  than or equal to the number of rational points on $C$.
+\end{remark}
+
+There are two different notions of genus, the \emph{arithmetic genus}
+and the \emph{geometric genus}.
+
+\begin{definition}
+  Let $X$ be a projective curve over a field $K$. The \emph{arithmetic
+    genus} of $X$ is defined to be the integer
+  \[
+  p_a(X) = 1 - \chi_K(\O_X),
+  \]
+  where $\chi$ denotes the Euler-Poincar\'e characteristic.
+\end{definition}
+
+\begin{definition}
+  Let $Y$ be a smooth projective curve over a field $K$. The
+  \emph{geometric genus} of $Y$ is defined to be
+  \[
+  p_g(Y) = \dim_K H^0(Y, \omega_{Y/K}),
+  \]
+  where $H^0$ denotes the zeroth cohomology group.
+\end{definition}
+
+It turns out that for $X$ smooth and geometrically connected, we have
+$p_a(X) = p_g(X)$ (see Subsection 7.3.2 of \cite{MR1917232}). In
+particular, for the normalization of a curve $C$, the arithmetic genus
+and the geometric genus coincide. From now on we will simply use
+$g(C)$ to denote the genus of the normalization of the curve $C$.
+
+\begin{remark}
+  It is worth noting that $g(C)$ can be computed reasonably
+  efficiently, provided that we have an explicit equation for $C$. For
+  instance, if the polynomial equation $p(x, y) = 0$ defines an affine
+  model of $C$, then we may feed the polynomial $p(x, y)$ into some
+  computer algebra system to obtain $g(C)$. Computer algebra systems
+  capable of computing the genus of an algebraic curve include, but
+  are not limited to, Magma and Sage (using its interface to
+  Singular).
+\end{remark}
+
+The reason that we are interested in the genus of a curve is due to
+the following theorem.
+
+\begin{theorem}[Faltings, 1983 \cite{MR718935}]
+  Let $C$ be a non-singular algebraic curve of genus $g$ over
+  $\Q$. Then the set of rational points $C(\Q)$ on $C$ satisfy:
+  \begin{enumerate}
+  \item If $g = 0$, then either $C(\Q) = \es$, or $|C(\Q)| = \infty$,
+    in which case $C$ is isomorphic over $\Q$ to the projective line
+    $\P^1$;
+
+  \item If $g = 1$, then either $C(\Q) = \es$, or $C$ is an
+    \emph{elliptic curve}, in which case $C(\Q)$ is a finitely
+    generated abelian group;
+
+  \item If $g \ge 2$, then $|C(\Q)| < \infty$.
+  \end{enumerate}
+\end{theorem}
+
+Faltings' theorem shows that the genus of a curve gives us information
+about the number of rational points on it. In particular, there are
+only finitely many rational points on a high genus curve (from now on
+we refer to a curve with genus $\ge 2$ as a \emph{high genus
+  curve}). Note that this works for any high genus curve (singular or
+not) by Remark~\ref{rem:ratpoint-normalization}.
+
+\begin{remark}
+  Faltings' theorem is ineffective, since it does not provide an
+  explicit bound on the number of rational points; nor does it present
+  a method to find such a bound.
+
+  Under certain circumstances, there are methods to find an explicit
+  bound (usually not sharp), most notably Chabauty-Coleman's method
+  \cite{MR808103}. Chabauty-Coleman underlies most triumphs in this
+  field.
+\end{remark}
+
+\subsection{Resultant of polynomials}
+
+Another tool that we need is the resultant of two polynomials.
+
+\begin{proposition}
+  Let
+  \[
+  \begin{gathered}
+    A(X) = a_0 X^n + a_1 X^{n-1} + \cdots + a_n,\\
+    B(X) = b_0 X^m + b_1 X^{m-1} + \cdots + b_m
+  \end{gathered}
+  \]
+  be polynomials of degrees $n$ and $m$ with coefficients
+  in a field $K$. There exists a polynomial
+  \[
+  \res(a_0, \dots, a_n, b_0, \dots, b_m) \in \Z[a_0, \dots, a_n, b_0,
+  \dots, b_m],
+  \]
+  in the coefficients of $A$ and $B$, called the \emph{resultant of
+    $A$ and $B$}, with the following properties:
+  \begin{enumerate}
+  \item $\res(A, B) = 0$ if and only if $A$ and $B$ have a comman root
+    in $\bar{K}$;
+
+  \item If $a_0 b_0 \ne 0$ and if we factor $A$ and $B$ as
+    \[
+    A = a_0 \prod_{i=1}^n (X - \alpha_i),\,
+    B = b_0 \prod_{i=1}^m (X - \beta_j),
+    \]
+  \end{enumerate}
+  then
+  \[
+  \res(A, B) = a_0^m b_0^n \prod_{i=1}^n \prod_{j=1}^m (\alpha_i -
+  \beta_j).
+  \]
+\end{proposition}
+
+For a proof of this proposition, see Section~2.4 of \cite{MR2316407}.
+
+\begin{remark}
+  Since $\res(A, B)$ is a polynomial in the coefficients of $A$ and
+  $B$, when the dimensions $n$ and $m$ are reasonably small, $\res(A,
+  B)$ can be computed efficiently by computer algebra
+  systems. Computer algebra systems capable of computing the resultant
+  of two polynomials include, but are not limited to, Magma,
+  Mathematica, and Sage.
+
+  As the resultant can be computed efficiently, it is a good way to
+  reduce the number of variables in a set of simultaneous polynomial
+  equations. For instance, if we have two polynomial equations $A(X,
+  Y) = 0$ and $B(X, Y) = 0$, then we may take the resultant with
+  respect to $X$ (viewing $X$ as the variable in the above
+  definition). Denote it by $\res_X(A, B)$ (we will continue to use
+  the $\res_X$ notation when there are more than one variables). Then
+  by Property~(1) of the resultant, there is an $X$ solving both $A$
+  and $B$ if and only if $Y$ solves $\res_X(A, B)$, which is a
+  polynomial in $Y$, since $A$ and $B$ both have coefficients in
+  $K[Y]$ when viewed as polynomials in $X$. Therefore, we reduced two
+  equations in two unknowns to one equation in one unknown. Similar
+  argument applies when there are more variables.
+\end{remark}
+
+%%% Local Variables:
+%%% TeX-master: "report"
+%%% End:
