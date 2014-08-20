@@ -1,0 +1,76 @@
+\section{Theoretical results}
+
+We want to extend the results from the previous section by lifting the
+base field from the rational field $\Q$ to quadratic number fields,
+i.e., raising the degree $D$ in the Uniform Boundedness Conjecture
+statement from 1 to 2.
+
+% I use \mathcal{U} to denote our "universe".
+Let $\U$ be the collection of all rational or quadratic elements in
+$\bar{\Q}$,%
+\footnote{This is a bad set with very little structure. We only refer
+  to it to simplify our statements.}  i.e.,
+\[
+\U = \set{\alpha \in \bar{\Q}: \text{$a \alpha^2 + b \alpha + c = 0$
+    for some $a, b, c \in \Q$}},
+\]
+or equivalently,
+\[
+\U = \bigcup_{[K : \Q] = 2}K,
+\]
+where the union is the union of sets, taken over all quadratic number
+fields.
+
+We pose the following questions:
+\begin{enumerate}[(i)]
+\item For a given $N$, how many $c \in \U$ are there such that
+  $\phi_c(z) = z^2 + c$ has a periodic point in $\U$ of exact period
+  $N$?
+
+\item For a given $N$, if the answer to (i) is infinite, then what if
+  we restrict $c$ to being rational? That is, how many $c \in \Q$ are
+  there such that $\phi_c(z) = z^2 + c$ has a periodic point in $\U$
+  of exact period $N$?
+\end{enumerate}
+
+\begin{remark}
+  In the questions above, we only asked for the number of
+  $c$. However, once $c$ is known, we can immediately determine all
+  the periodic points of exact period $N$ from the equation $\Phi_N(z,
+  c) = 0$; and the number of such points is bound above by
+  \[
+  \deg_z \Phi_N(z, c) = \sum_{d|N}2^d \mu(N/d),
+  \]
+  which is a constant only depending on $N$. Moreover,
+  in some cases we can obtain a much sharper bound.
+\end{remark}
+
+It turns out that we can fully answer Questions~(i) and (ii) for $N =
+4$, and partially answer them for $N = 5$. For $N = 4$, the answer to
+both questions are infinite, and we have an explicit parametrization
+of $c$ for Question~(ii). For $N = 5$, the answer to Question~(i) is
+finite, but at the time of writing we do not have a concrete bound. We
+conjecture that the answer is in fact zero.
+
+The results highlighted above are presented below in detail with
+proof.
+
+\subsection{The $N = 4$ case}
+
+%%% TODO
+
+\textbf{This is Robin's land!}
+
+Do remember to mention quadratic points on $X_1(16)$, which
+immediately answers Question~(i) without any further computation.
+
+Also, it is worth pointing to the distribution of $d$ (as in
+$\Q(\sqrt{d})$), briefly presented in the comp section.
+
+\subsection{The $N = 5$ case}
+
+
+
+%%% Local Variables:
+%%% TeX-master: "report"
+%%% End:
