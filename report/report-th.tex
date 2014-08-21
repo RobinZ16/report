@@ -85,7 +85,7 @@ If we allow $t$ to vary over $\Z$ or $\Q$, then it follows that:
 
 Furthermore, we can specify how many such points exist for each $c
 \in \Q$ by considering the possible degrees of factors of $\Phi_4(
-x,c)$. Substitution of $c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}$
+x,c)$. The substitution of $c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}$
 into $\Phi_4(x,c)$ and polynomial factorization yields:
 
 \begin{lemma}
@@ -110,7 +110,80 @@ $\Q(\sqrt{d})$), briefly presented in the comp section.
 
 \subsection{The $N = 5$ case}
 
+\subsection{General results}
 
+While studying the N = 4 case, we found a generalization of Lemma~2.3.1
+in Panraksa's paper \cite{MR2982105}.
+
+\begin{theorem}
+	Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{x_1, \ldots, x_{N}\}$ be
+	an exact $N$-cycle defined over a Galois number field K, with N 
+	divisible by	$d = [K:\Q ]$. Then either: \\
+	\begin{itemize}
+	\item $x_{\frac{iN}{d}+1} = \sigma(x_1)$ for some nontrivial $\sigma \in
+	\gal(K/\Q)$, $i \in \Z$
+	\item $\{x_1, \ldots, x_{N}\} \cap \{\tau(x_1), \ldots, \tau(x_{N})\} =
+	\emptyset$, $\forall \tau \in \gal(K/\Q)$ nontrivial.
+	\end{itemize}
+\end{theorem}
+
+\begin{proof}
+	Note that $\{\tau(x_1), \ldots, \tau(x_{N})\}$ for any $\tau \in 
+	\gal(K/\Q)$ is a cycle of $\phi_c$ because $c \in \Q$. Assume 
+	that neither case is true. Then $x_{\frac{N}{d}+1} \neq \sigma(
+	x_1)$ $\forall \sigma \in \gal(K/\Q)$ and $\{x_1, \ldots, x_{N}\} 
+	\cap \{\tau(x_1), \ldots, \tau(x_{N})\} \neq \emptyset$ $\forall 
+	\tau \in \gal(K/\Q)$. Then $\exists x_j \in \{x_1, \ldots, x_{N}\}
+	\cap \{\tau(x_1), \ldots, \tau(x_{N})\}$ for some $\tau \in \gal(K/
+	\Q)$. Applying $\phi$ an appropriate number of times allows us to 
+	renumerate the cycle	such that $x_1$ is in the intersection. 
+	Thus, $x_k = \tau(x_1)$ for some $1 \leq k \leq N$ and therefore $
+	\tau \equiv \phi^{k-1}$ on the N-cycle (because Galois conjugation 
+	commutes with $\phi$). Since $K$ is Galois, $\tau^d = Id$ and so:
+	\[
+		x_d = \tau^d(x_d) = \phi^{dk-d}(x_d) = x_{dk}
+	\]
+	Notice that the application of $\phi^{N-(d-1)}$ yields $x_1 =
+	x_{dk-(d-1)} = x_{d(k-1) + 1}$. Notice that this produces a
+	contradiction if $d(k-1) + 1 \not\equiv 1$ (modulo $N$): if $l$
+	is the representative of $d(k-1) + 1$ modulo N, then $\{x_1, \ldots
+	, x_l\}$ gives an $l$-cycle with $l < N$. Thus, it must be that
+	$d(k-1) + 1 \equiv 1$ (modulo $N$). The only such $k$ are given
+	by $k = \frac{lN}{d} + 1$ for some $l \in \Z$, so $x_{\frac{lN}{d}
+	+ 1} = x_k = \tau(x_1)$.	However, we already have that
+	$x_{\frac{iN}{d}+1} \neq \sigma(x_1)$ $\forall \sigma \in \gal(K/\Q)$,
+	$i \in \Z$. This gives a contradiction.
+\end{proof}
+
+In fact, we strongly believe that the second case never occurs (e.g.
+all 4-cycles, the 5-cycles described by Flynn-Poonen-Schaefer
+\cite{MR1480542}, and the 6-cycles described by Stoll \cite{MR2465796}).
+If this is the case, then it follows that all periodic points
+for $\phi_c$ (with $c$ rational) in Galois number fields with degree
+divisible by their period produce rational points in $C_0(N)$ since the
+first case produces rational trace $t = \sum\limits_{i=1}^N x_i$. So in
+general, we conjecture that:
+
+\begin{conjecture}
+	Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{x_1, \ldots, x_{N}\}$ be
+	an exact $N$-cycle defined over a Galois number field K, with N 
+	divisible by	$d = [K:\Q ]$. Then $x_{\frac{iN}{d}+1} = \sigma(x_1)$
+	for some nontrivial $\sigma \in \gal(K/\Q)$, $i \in \Z$ and therefore the
+	$x_i$'s produce rational points on $C_0(N)$.
+\end{conjecture}
+
+\begin{remark}
+	If this conjecture were true, one tangible consequence is that the
+	6-cycle over $\Q(\sqrt{33})$ with $c = -\frac{71}{48}$ and $x_1 = -1 +
+	\frac{\sqrt{33}}{12}$ found by Stoll \cite{MR2465796} is the only 6-cycle
+	defined over a quadratic number field (conditionally on the weak form of
+	BSD). Since the only results on rational points of $C_0(N)$ currently are
+	those of Morton \cite{MR1665198} for $N = 4$, Flynn-Poonen-Schaefer
+	\cite{MR1480542} for $N = 5$, and Stoll \cite{MR2465796} for $N = 6$
+	(conditionally on the weak form of BSD), we have to wait for other results
+	on $C_0(N)$ for other $N$ to see if this conjecture might imply results for
+	other numerical cases.
+\end{remark}
 
 %%% Local Variables:
 %%% TeX-master: "report"
