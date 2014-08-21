@@ -58,13 +58,53 @@ proof.
 
 \subsection{The $N = 4$ case}
 
-%%% TODO
+In 1998, Morton proved a useful parametrization of all 4-cycles for
+$\phi_c(z) = z^2 + c$.
 
-\textbf{This is Robin's land!}
+\begin{theorem} [Morton, Proposition~2 in \cite{MR1665198}]
+	For $\phi_c(z) = z^2 + c$, $c$ and the points of exact period 4
+	can be parametrized over $\Q$ by the following:
+	\[
+	\begin{gathered}
+		c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}, \\
+		x_1 = \frac{t^4 - t^2 + \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{2t(t^2 - 1)},
+		x_2	= \frac{1 - t^2 + t \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{4t^2(t^2 - 1)}, \\
+		x_3 = \frac{t^4 - t^2 - \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{2t(t^2 - 1)},
+		x_4 = \frac{1 - t^2 - t \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{4t^2(t^2 - 1)}, \\
+	\end{gathered}
+	\]
+	where $t = x_1 + x_3$.
+\end{theorem}
 
-Do remember to mention quadratic points on $X_1(16)$, which
-immediately answers Question~(i) without any further computation.
+If we allow $t$ to vary over $\Z$ or $\Q$, then it follows that:
 
+\begin{corollary}
+	There are infinitely many $c$ in $\Q$ with points in quadratic
+	fields of exact period 4 for $\phi_c(z)$.
+\end{corollary}
+
+Furthermore, we can specify how many such points exist for each $c
+\in \Q$ by considering the possible degrees of factors of $\Phi_4(
+x,c)$. Substitution of $c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}$
+into $\Phi_4(x,c)$ and polynomial factorization yields:
+
+\begin{lemma}
+	For $c$ such that $\phi$ has 4-cycles over quadratic fields,
+	the degree 12 polynomial $\Phi_4(x,c)$ must factor as $\{2,2,8\}$
+	(list of degrees of factors, with the 8th degree factor not
+	necessarily irreducible).
+\end{lemma}
+
+We already know that $\Phi_4(x_c)$ cannot factor as $\{2,2,2,2,4\}$
+by Panraksa (Theorem~2.3.5 in \cite{MR2982105}). Therefore, we
+obtain the following result:
+
+\begin{theorem}
+  For each $c \in \Q$, there is at most one 4-cycle with points
+	defined over quadratic fields.
+\end{theorem}
+
+%%%TO DO
 Also, it is worth pointing to the distribution of $d$ (as in
 $\Q(\sqrt{d})$), briefly presented in the comp section.
 
