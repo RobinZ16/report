@@ -110,13 +110,28 @@ From now on, unless otherwise stated, the dimension of the projective
 space will always be 1, and we reserve the letter $N$ for the exact
 period of periodic points.
 
-Below are our major results. \\ %Does the line break look better?
+\subsection{Main results}
+\label{subsec:results}
 
-For $N = 4$, our main result is that 
+Below are our main results.
+
+For $N = 4$, by putting together and re-interpreting others' results,
+we have
 
 \begin{theorem}
-  For each $c \in \Q$, there is at most one 4-cycle with points
-	defined over quadratic fields.
+  \label{th:n=4-infinite}
+  There are infinitely many rational values $c$ such that $\phi_c(z) =
+  z^2 + c$ has periodic points of exact period $4$ defined in some
+  quadratic extension to $\Q$. All such $c$ are given by
+  \[
+  c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}
+  \]
+  with $t \in \Q$.
+
+  Moreover, for each such $c \in \Q$, $\phi_c(z)$ has exactly four
+  such periodic points (whereas for any $c \in \Q$, $\phi_c(z)$ has
+  at most four periodic points of period $4$ defined in some quadratic
+  extension to $\Q$).
 \end{theorem}
 
 For $N = 5$, we have
@@ -124,8 +139,8 @@ For $N = 5$, we have
 \begin{theorem}
   \label{th:n=5-finite}
   There are finitely many rational values $c$ such that $\phi_c(z) =
-  z^2 + c$ has a periodic point of exact period $N$ in some quadratic
-  extension to $\Q$.
+  z^2 + c$ has periodic points of exact period $5$ defined in some
+  quadratic extension to $\Q$.
 \end{theorem}
 
 In fact, all empirical evidence points to the following stronger
@@ -134,15 +149,15 @@ conjecture:
 \begin{conjecture}
   \label{cj:n=5-zero}
   There are no rational values $c$ such that $\phi_c(z) = z^2 + c$ has
-  a periodic point of exact period $N$ in some quadratic extension to
-  $\Q$.
+  periodic points of exact period $5$ defined in some quadratic
+  extension to $\Q$.
 \end{conjecture}
 
-A general result we produced is that
+One general result we produced is that
 
 \begin{theorem}
 	Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{x_1, \ldots, x_{N}\}$ be
-	an exact $N$-cycle defined over a Galois number field K, with N 
+	an exact $N$-cycle defined over a Galois number field K, with N
 	divisible by	$d = [K:\Q ]$. Then either: \\
 	\begin{itemize}
 	\item $x_{\frac{iN}{d}+1} = \sigma(x_1)$ for some nontrivial $\sigma \in
