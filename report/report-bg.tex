@@ -1,4 +1,5 @@
-\section{Background}
+\section{Introduction}
+\label{sec:bg}
 
 Our entire research project has its roots in the study of the dynamics
 of morphisms over projective spaces, specifically the periodic points
@@ -11,7 +12,8 @@ rational field $\Q$), the dimension of the projective space, and the
 degree of the morphism. We will define the necessary objects leading
 up to the Uniform Boundedness Conjecture, briefly describe the status
 of the conjecture, and discuss the specific cases that we will
-concentrate on.
+concentrate on. At the end of this section, our major results will be
+presented, along with a few open conjectures.
 
 \begin{definition}
   The \emph{projective space} $\P^N(K)$ of dimension $N$ over a number
@@ -99,7 +101,7 @@ the Birch and Swinnerton-Dyer conjecture for a specific abelian
 variety) by Stoll~\cite{MR2465796}.
 
 We are interested in generalizing the aforementioned results for
-degree-2 polynomials and specific small periods to quadratic number
+quadratic polynomials and specific small periods to quadratic number
 fields, i.e., the $D = 2$ case. For a more detailed discussion of
 other takes on the Uniform Boundedness Conjecture, along with a list
 of references, see Section 3.3 of \cite{MR2316407}.
@@ -107,6 +109,35 @@ of references, see Section 3.3 of \cite{MR2316407}.
 From now on, unless otherwise stated, the dimension of the projective
 space will always be 1, and we reserve the letter $N$ for the exact
 period of periodic points.
+
+Below are our major results.
+
+For $N = 4$.
+
+%%% TODO.
+
+For $N = 5$, we have
+
+\begin{theorem}
+  \label{th:n=5-finite}
+  There are finitely many rational values $c$ such that $\phi_c(z) =
+  z^2 + c$ has a periodic point of exact period $N$ in some quadratic
+  extension to $\Q$.
+\end{theorem}
+
+In fact, all empirical evidence points to the following stronger
+conjecture:
+
+\begin{conjecture}
+  \label{cj:n=5-zero}
+  There are no rational values $c$ such that $\phi_c(z) = z^2 + c$ has
+  a periodic point of exact period $N$ in some quadratic extension to
+  $\Q$.
+\end{conjecture}
+
+Other conjectures can be found in Section~\ref{sec:comp},
+``Computational efforts, confirmations, and observations'', and
+Section~\ref{sec:map}, ``Directions from here''.
 
 %%% Local Variables:
 %%% TeX-master: "report"
