@@ -112,9 +112,12 @@ period of periodic points.
 
 Below are our major results.
 
-For $N = 4$.
+For $N = 4$, our main result is that 
 
-%%% TODO.
+\begin{theorem}
+  For each $c \in \Q$, there is at most one 4-cycle with points
+	defined over quadratic fields.
+\end{theorem}
 
 For $N = 5$, we have
 
@@ -134,6 +137,28 @@ conjecture:
   a periodic point of exact period $N$ in some quadratic extension to
   $\Q$.
 \end{conjecture}
+
+A general result we produced is that
+
+\begin{theorem}
+	Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{x_1, \ldots, x_{N}\}$ be
+	an exact $N$-cycle defined over a Galois number field K, with N 
+	divisible by	$d = [K:\Q ]$. Then either: \\
+	\begin{itemize}
+	\item $x_{\frac{iN}{d}+1} = \sigma(x_1)$ for some nontrivial $\sigma \in
+	\gal(K/\Q)$, $i \in \Z$
+	\item $\{x_1, \ldots, x_{N}\} \cap \{\tau(x_1), \ldots, \tau(x_{N})\} =
+	\emptyset$, $\forall \tau \in \gal(K/\Q)$ nontrivial.
+	\end{itemize}
+\end{theorem}
+
+The above theorem has some interesting consequences if the our conjecture
+that the second case is never true (although we do not have many examples,
+all of our numerical evidence falls under the first category). If the first
+case always holds, then the $x_i$'s produce rational points on $C_0(N)$
+because the trace $t = \sum\limits_{i=1}^N x_i$ is always rational. Thus,
+the search for these periodic points is reduced to finding rational points
+on $C_0(N)$.
 
 Other conjectures can be found in Section~\ref{sec:comp},
 ``Computational efforts, confirmations, and observations'', and
