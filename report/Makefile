@@ -1,4 +1,4 @@
-TeX_sources := $(wildcard *.tex)
+TeX_sources := $(wildcard *.tex) bibliography.bib
 
 .PHONY: all clean distclean
 
