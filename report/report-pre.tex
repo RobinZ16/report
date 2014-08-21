@@ -1,17 +1,32 @@
-\section{Preliminary notions and tools}
+\section{Background}
+
+In this section, we introduce some preliminary notions and tools
+necessary for further development of the subject. Readers who are
+already familiar with the concepts introduced could safely skip this
+section.
 
 \subsection{Genus of curves}
 
 First we introduce the normalization and genus of a projective curve.
 
-\begin{definition}[normalization of a singular curve]
-  %%% TODO
-\end{definition}
+Normalization is a widely used technique in algebraic geometry to
+desingularize algebraic curves (and more generally, schemes). For each
+curve $C$ with finitely many singularities, there is a canonical way
+to construct a nonsingular curve $\tilde{C}$, called the
+\emph{normalization of $C$}, along with a surjection $\varphi:
+\tilde{C} \to C$, called the \emph{normalization morphism}, such that
+$\varphi$ is an isomorphism outside the finitely many singularities of
+$C$. For a rigorous treatment of normalization, see Subsection 4.1.2
+of \cite{MR1917232}.
 
 \begin{remark}
   \label{rem:ratpoint-normalization}
-  The number of rational points on the normalization of $C$ is greater
-  than or equal to the number of rational points on $C$.
+  The number of rational points on the $\tilde{C}$ is greater
+  than or equal to the number of rational points on $C$, since for
+  each nonsingular rational point on $C$ there is exactly one
+  corresponding rational point on $\tilde{C}$, and for each singular
+  rational point on $C$ there is one or more corresponding rational
+  points ``upstairs''.
 \end{remark}
 
 There are two different notions of genus, the \emph{arithmetic genus}
@@ -89,15 +104,12 @@ not) by Remark~\ref{rem:ratpoint-normalization}.
   in this field.
 \end{remark}
 
-\subsection{Jacobian of curves}
-
-%%% TODO
-
 \subsection{Resultant of polynomials}
 
 Another tool that we need is the resultant of two polynomials.
 
 \begin{proposition}
+  \label{res}
   Let
   \[
   \begin{gathered}
