@@ -71,8 +71,11 @@ concrete bound. We conjecture that the answer is in fact zero.
 The results highlighted above are presented below in detail with
 proof.
 
-\subsection{The $N = 4$ case, and effort to generalize}
+\subsection{The quadratic $N = 4$ case}
 
+Points with exact period 4 for $\phi_c(z) = z^2 + c$ are quite 
+well-known thanks to a parametrization of all 4-cycles given by
+Morton:
 
 \begin{theorem} [Morton, Proposition~2 in \cite{MR1665198}]
   For $\phi_c(z) = z^2 + c$,
@@ -97,39 +100,53 @@ proof.
   \end{enumerate}
 \end{theorem}
 
-If we allow $t$ to vary over $\Z$ or $\Q$, then it follows that:
+Furthermore, Panraksa demonstrated that all 4-cycles with points
+defined in quadratic number fields are given with $t$ ranging over
+$\Q$.
+
+\begin{theorem} [Panraksa, Theorem~1.5.2 in \cite{MR2982105}
+	Let $c \in \Q$ and $x_1, x_2, x_3, x_4 \in K$, $K$ a quadratic 
+	number field. Then $t \in \Q$, so all 4-cycles over quadratic
+	fields are obtained by ranging $t$ over $\Q$.
+\end{theorem}
+
+So we have an explicit expression for all points of exact period 4 over
+$\C$ for any $c$ and over quadratic fields for $c \in \Q$. Additionally,
+if we allow $t$ to vary over $\Z$ or $\Q$, then it follows that:
 
 \begin{corollary}
-        There are infinitely many $c$ in $\Q$ with points in quadratic
-        fields of exact period 4 for $\phi_c(z)$.
+	There are infinitely many $c$ in $\Q$ with points in quadratic
+	fields of exact period 4 for $\phi_c(z)$.
 \end{corollary}
 
 Furthermore, we can specify how many such points exist for each $c
 \in \Q$ by considering the possible degrees of factors of $\Phi_4(
-x,c)$. The substitution of $c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}$
+z,c)$. The substitution of $c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}$
 into $\Phi_4(x,c)$ and polynomial factorization yields:
 
 \begin{lemma}
-        For $c$ such that $\phi$ has 4-cycles over quadratic fields,
-        the degree 12 polynomial $\Phi_4(x,c)$ must factor as $\{2,2,8\}$
-        (list of degrees of factors, with the 8th degree factor not
-        necessarily irreducible).
+	For $c$ such that $\phi$ has 4-cycles over quadratic fields,
+	the degree 12 polynomial $\Phi_4(z,c)$ must factor as $\{2,2,8\}$
+	(list of degrees of factors, with the 8th degree factor not
+	necessarily irreducible).
 \end{lemma}
 
-We already know that $\Phi_4(x_c)$ cannot factor as $\{2,2,2,2,4\}$
+We already know that $\Phi_4(z_c)$ cannot factor as $\{2,2,2,2,4\}$
 by Panraksa (Theorem~2.3.5 in \cite{MR2982105}). Therefore, we
 obtain the following result:
 
 \begin{theorem}
-  For each $c \in \Q$, there is at most one 4-cycle with points
-        defined over quadratic fields.
+	For each $c \in \Q$, there is at most one 4-cycle with points
+	defined over quadratic fields.
 \end{theorem}
 
-%%% TO DO
-Also, it is worth pointing to the distribution of $d$ (as in
-$\Q(\sqrt{d})$), briefly presented in the comp section.
+Subsequently, we sought to understand precisely which quadratic
+fields could contain points of period 4. Due to the parametrization
+given by Morton, this problem reduces to finding integers of the form
+$d = (t^4 - 1)(t^2 + 2t - 1)$. Further discussion of this problem is
+made in Section 5. %Zhiming to add actual \ref 
 
-\subsection{The $N = 5$ case}
+\subsection{The quadratic $N = 5$ case}
 
 Let us recall from (\ref{eq:c0(5)}) and (\ref{eq:c-in-xy}) that $y^2 =
 f(x)$ and $c = (P_0(x) + P_1(x) y)/h(x)$, so eliminating $y$ we have
@@ -260,8 +277,24 @@ Now we have three cases.
 
 \subsection{General results}
 
-While studying the N = 4 case, we found a generalization of Lemma~2.3.1
-in Panraksa's paper \cite{MR2982105}.
+While studying the quadratic N = 4 case, we tried to mimic results
+to the quadratic N = 6 case. In particular, the following result by
+Panraksa is quite important in demonstrating that, for points of exact
+period 4 in quadratic number fields $x_i$, the trace $t = \sum\limits_
+{i=1}^4 x_i$ is rational.
+
+\begin{theorem} [Panraksa, Lemma~2.3.1 in \cite{MR2982105}]
+	Let $\{x_1, x_2, x_3, x_4\}$ be an exact 4-cycle defined in some
+	quadratic number field $K$ for $\phi_c(z) = z^2 + c$ with $c \in \Q$.
+	If $x_3 \neq \overline{x_1}$, then $\{x_1, x_2, x_3, x_4\} \cap 
+	\{\overline{x_1}, \overline{x_2}, \overline{x_3}, \overline{x_4}\}
+	= \emptyset$.
+\end{theorem}
+
+Panraksa then proves that $\{x_1, x_2, x_3, x_4\} \cap 
+\{\overline{x_1}, \overline{x_2}, \overline{x_3}, \overline{x_4}\}
+= \emptyset$ is impossible to get his final result. We managed to prove
+a much more general version of his lemma:
 
 \begin{theorem}
 	Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{x_1, \ldots, x_{N}\}$ be
@@ -303,14 +336,15 @@ in Panraksa's paper \cite{MR2982105}.
 	$i \in \Z$. This gives a contradiction.
 \end{proof}
 
-In fact, we strongly believe that the second case never occurs (e.g.
-all 4-cycles, the 5-cycles described by Flynn-Poonen-Schaefer
-\cite{MR1480542}, and the 6-cycles described by Stoll \cite{MR2465796}).
-If this is the case, then it follows that all periodic points
-for $\phi_c$ (with $c$ rational) in Galois number fields with degree
-divisible by their period produce rational points in $C_0(N)$ since the
-first case produces rational trace $t = \sum\limits_{i=1}^N x_i$. So in
-general, we conjecture that:
+In fact, we strongly believe that the second case never occurs in general.
+Although we do not have much data, all of the examples that we have found
+satisfy the first case (e.g. all 4-cycles, the 5-cycles described by
+Flynn-Poonen-Schaefer \cite{MR1480542}, and the 6-cycles described by
+Stoll \cite{MR2465796}). If this is true in general, then it follows that
+all periodic points for $\phi_c$ (with $c$ rational) in Galois number fields
+with degree divisible by their period produce rational points in $C_0(N)$
+since the first case produces rational trace $t = \sum\limits_{i=1}^N x_i$.
+So in general, we conjecture that:
 
 \begin{conjecture}
 	Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{x_1, \ldots, x_{N}\}$ be
