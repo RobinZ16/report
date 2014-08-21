@@ -6,20 +6,10 @@ base field from the rational field $\Q$ to quadratic number fields,
 i.e., raising the degree $D$ in the Uniform Boundedness Conjecture
 statement from 1 to 2.
 
-%%% TODO
-\begin{remark}
-  \textbf{We are not strictly increasing $D$ to 2, but rather, we are
-    still restricting ourselves to $c \in \Q$. Why?}
-  % e.g., allowing c to be quadratic makes the N=4 case trivial, by
-  % appealing to the result about quadratic points on X_1(16).
-\end{remark}
-
-% I use \mathcal{U} to denote our "universe".
 Let $\U$ be the collection of all rational or quadratic elements in
 $\ol{\Q}$,\footnote{%
-  This is a bad set with very little structure. We only refer
-  to it to simplify our statements.}
-i.e.,
+  $\U$ is a bad set with very little structure. We only refer to it to
+  simplify our statements.}  i.e.,
 \[
 \U = \set{\alpha \in \ol{\Q}: \text{$a \alpha^2 + b \alpha + c = 0$
     for some $a, b, c \in \Q$}},
@@ -33,25 +23,14 @@ fields.
 
 We pose the following question:
 
-% The question below is dead, since when I checked the proof, it turns
-% out that we cannot answer this question for N = 5, whereas it's
-% trivial for N = 4. (Didn't we find that it is finite for N = 5?)
-% --------------------------------------------------------------------
-% For a given $N$, how many $c \in \U$ are there such that $\phi_c(z)
-% = z^2 + c$ has a periodic point of exact period $N$ in the same
-% quadratic extension of $\Q$ as $c$?%
-% \footnote{If $c$ is rational, then $c$ lies in any quadratic number
-% field, so we allow the periodic point to be any element of $\U$. See
-% Question~(ii).}
-
 \begin{question}
   \label{question}
-  How many $c \in \Q$ are there such that $\phi_c(z) = z^2 + c$ has a
-  periodic point in $\U$ of exact period $N$?
+  How many $c \in \Q$ are there such that $\phi_c(z) = z^2 + c$ has
+  periodic points in $\U$ of exact period $N$?
 \end{question}
 
 \begin{remark}
-  In the question above, we only asked for the number of $c$. However,
+  In the above question, we only asked for the number of $c$. However,
   once $c$ is known, we can immediately determine all the periodic
   points of exact period $N$ from the equation $\Phi_N(z, c) = 0$; and
   the number of such points is bound above by
@@ -59,94 +38,144 @@ We pose the following question:
   \deg_z \Phi_N(z, c) = \sum_{d|N}2^d \mu(N/d),
   \]
   which is a constant only depending on $N$. Moreover,
-  in some cases we can obtain a much sharper bound.
+  in some cases we can obtain a much sharper bound; see, for instance,
+  Subsection~\ref{subsec:quadratic-4}.
 \end{remark}
 
-It turns out that we can fully answer Questions~(\ref{question}) for
-$N = 4$, and partially answer it for $N = 5$. For $N = 4$, the answer
-is infinite, since an explicit parametrization of $c$. For $N =
-5$, the answer is finite, but at the time of writing we do not have a
-concrete bound. We conjecture that the answer is in fact zero.
+\begin{remark}
+  We are not strictly increasing $D$ to 2, since we are still
+  requiring $c \in \Q$.
 
-The results highlighted above are presented below in detail with
-proof.
+  The rationale is that, for $N = 4$, the problem becomes easy once
+  we also allow $c$ to be quadratic; in fact, Corollary~5.11 in
+  \cite{2013arXiv1308.3267B} tells us that the number of quadratic
+  points on $X_1(16)$ is infinite (recall that $C_1(4)$ is
+  birationally equivalent to $X_1(16)$; see
+  Subsection~\ref{subsec:model-4}).
+
+  For $N = 5$, the problem might be harder if we allow $c$ to be
+  quadratic, since the curve at hand given by (\ref{eq:c0(5)}) is not
+  so special as the $N = 4$ case, and it is generally much harder to
+  find quadratic points on curves than to find rational ones (which is
+  already highly nontrivial). We did not put much thought into this
+  case, so we have little to report on this front.
+\end{remark}
+
+It turns out that we can fully answer Questions~\ref{question} for
+$N = 4$, and partially answer it for $N = 5$.
+
+For $N = 4$, the answer is infinite, since an explicit parametrization
+of $c$ is available to us. The details can be found in
+Subsection~\ref{subsec:quadratic-4}.
+
+For $N = 5$, the answer is finite, but at the time of writing we
+do not have a concrete bound. We conjecture that the answer is in fact
+zero. The details can be found in Subsection~\ref{subsec:quadratic-5}.
+
+Furthermore, when we were studying the proofs that led up to the
+conclusion of the $N = 4$ case, we found an interesting lemma that can
+be made to work, under certain limitations, for any $N$. This result
+is potentially useful for investigating Question~\ref{question} in the
+general case, so we document it with proof in
+Subsection~\ref{subsec:general}.
 
 \subsection{The quadratic $N = 4$ case}
+\label{subsec:quadratic-4}
 
-Points with exact period 4 for $\phi_c(z) = z^2 + c$ are quite 
-well-known thanks to a parametrization of all 4-cycles given by
-Morton:
+The study of points with exact period 4 for $\phi_c(z) = z^2 + c$ is
+made easy by a parametrization of all 4-cycles that immediately
+follows from Morton's work in \cite{MR1665198}.
 
-\begin{theorem} [Morton, Proposition~2 in \cite{MR1665198}]
-  For $\phi_c(z) = z^2 + c$,
-  \begin{enumerate}[(i)]
-  \item $c$ and the points of exact period 4 can be parametrized over
-    $\Q$ by the following:
-    \[
+\begin{proposition}
+  For $\phi_c(z) = z^2 + c$, all combinations of $c$ and a
+  corresponding 4-cycle $\set{z_1, z_2, z_3, z_4}$ of $\phi_c(z)$ can
+  be parametrized over $\C$ by
+  \begin{equation}
+    \label{eq:4-param}
     \begin{gathered}
       c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}, \\
-      x_1 = \frac{t^4 - t^2 + \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{2t(t^2 -
+      z_1 = \frac{t^4 - t^2 + \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{2t(t^2 -
         1)},\,
-      x_2 = \frac{1 - t^2 + t \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{4t^2(t^2
+      z_2 = \frac{1 - t^2 + t \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{4t^2(t^2
         - 1)}, \\
-      x_3 = \frac{t^4 - t^2 - \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{2t(t^2 -
+      z_3 = \frac{t^4 - t^2 - \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{2t(t^2 -
         1)},\,
-      x_4 = \frac{1 - t^2 - t \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{4t^2(t^2
+      z_4 = \frac{1 - t^2 - t \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{4t^2(t^2
         - 1)},
-  \end{gathered}
-  \]
-  where $t = x_1 + x_3$.
+    \end{gathered}
+  \end{equation}
+  where $t = z_1 + z_3$.
+\end{proposition}
 
-  \end{enumerate}
-\end{theorem}
+\begin{remark}
+  Notice the ``parametrized over $\C$'' in the statement. This is just
+  an algebraic result that works universally.
+\end{remark}
 
-Furthermore, Panraksa demonstrated that all 4-cycles with points
-defined in quadratic number fields are given with $t$ ranging over
-$\Q$.
+Furthermore, assuming that $c \in \Q$ and $\set{z_1, z_2, z_3, z_4}
+\subset K$ for some quadratic number field $K$, Panraksa demonstrated
+that $t = z_1 + z_3$ must be rational (Theorem~1.5.1 in
+\cite{MR2982105}), so in fact
 
 \begin{theorem} [Panraksa, Theorem~1.5.2 in \cite{MR2982105}]
-	Let $c \in \Q$ and $x_1, x_2, x_3, x_4 \in K$, $K$ a quadratic 
-	number field. Then $t \in \Q$, so all 4-cycles over quadratic
-	fields are obtained by ranging $t$ over $\Q$.
+  All combinations of $c \in \Q$ and a corresponding 4-cycle
+  $\set{z_1, z_2, z_3, z_4} \subset K$ for some quadratic number field
+  $K$ are given by ranging $t$ over $\Q$ in the parametrization
+  (\ref{eq:4-param}).
 \end{theorem}
 
-So we have an explicit expression for all points of exact period 4 over
-$\C$ for any $c$ and over quadratic fields for $c \in \Q$. Additionally,
-if we allow $t$ to vary over $\Z$ or $\Q$, then it follows that:
+Notice that for any $c \in \Q$ and $z \in \U$ a periodic point of
+$\phi_c$ with exact period 4, the orbit to which $z$ belongs, $\set{z,
+  \phi_c(z), \phi_c^2(z), \phi_c^3(z)}$, lies in the same quadratic
+number field as $z$. Therefore, the theorem above gives us complete
+information for what we asked about in Question~\ref{question}. In
+particular, allowing $t$ to range over $\Q$, Question~\ref{question}
+is immediately answered by
 
 \begin{corollary}
-	There are infinitely many $c$ in $\Q$ with points in quadratic
-	fields of exact period 4 for $\phi_c(z)$.
+  There are infinitely many $c$ in $\Q$ such that $\phi_c(z) = z^2 +
+  c$ has periodic points in $\U$ of exact period 4. Moreover, all such
+  $c$ are given by
+  \[
+  c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)},
+  \]
+  where $t$ is any rational number other than $0$ and $\pm 1$.
 \end{corollary}
 
-Furthermore, we can specify how many such points exist for each $c
-\in \Q$ by considering the possible degrees of factors of $\Phi_4(
-z,c)$. The substitution of $c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}$
-into $\Phi_4(x,c)$ and polynomial factorization yields:
-
-\begin{lemma}
-	For $c$ such that $\phi$ has 4-cycles over quadratic fields,
-	the degree 12 polynomial $\Phi_4(z,c)$ must factor as $\{2,2,8\}$
-	(list of degrees of factors, with the 8th degree factor not
-	necessarily irreducible).
-\end{lemma}
-
-We already know that $\Phi_4(z_c)$ cannot factor as $\{2,2,2,2,4\}$
-by Panraksa (Theorem~2.3.5 in \cite{MR2982105}). Therefore, we
-obtain the following result:
+Furthermore, we can specify how many quadratic periodic points of
+exact period 4 exist for each such $c \in \Q$. Recall that Panraksa
+showed that for a 4-cycle $\set{z_1, z_2, z_3, z_4} \subset \U$, $z_1
++ z_3$ must be rational (i.e., $z_1$ and $z_3$ must be of the form $a
+\pm b \sqrt{d}$ for some $a, b, d \in \Q$), and similarly for $z_2$
+and $z_4$. Therefore, $(z - z_1)(z - z_3) \in \Q[z]$ and $(z - z_2)(z
+- z_4) \in \Q[Z]$, and hence each 4-cycle in $\U$ shows up as two
+quadratic factors (not necessarily irreducible) in the factorization
+of $\Phi_4(z, c)$ in $\Q[z]$. We can get a hold on the number of
+4-cycles (and consequently the number of 4-periodic points) by
+studying the number of quadratic factors in the factorization of
+$\Phi_4(z, c)$ in $\Q[z]$. This was also partially done by Panraksa,
+who showed that (Theorem~2.3.5 in \cite{MR2982105}) for any $c \in
+\Q$, $\Phi_4(z, c)$ cannot factor as $\set{2, 2, 2, 2, 4}$ over $\Q$
+(list of degrees of factors, not necessarily irreducible). Therefore,
+we obtain the following result:
 
 \begin{theorem}
-	For each $c \in \Q$, there is at most one 4-cycle with points
-	defined over quadratic fields.
+  For each $c \in \Q$, $\phi_c(z) = z^2 + c$ has at most one 4-cycle
+  with points in $\U$, i.e., with points defined over a quadratic
+  number field. Consequently, for each $c \in \Q$, $\phi_c(z) = z^2 +
+  c$ has at most four periodic points in $\U$ of exact period 4.
 \end{theorem}
 
-Subsequently, we sought to understand precisely which quadratic
-fields could contain points of period 4. Due to the parametrization
-given by Morton, this problem reduces to finding integers of the form
-$d = (t^4 - 1)(t^2 + 2t - 1)$. Further discussion of this problem is
-made in Section 5. %Zhiming to add actual \ref 
+Subsequently, we sought to understand precisely which quadratic fields
+could contain the 4-cycles. Due to the precise parametrization
+(\ref{eq:4-param}), this problem reduces to finding rational numbers
+of the form $d = (t^4 - 1)(t^2 + 2t - 1)$, with $t \in \Q$, up to
+rational squares. Further discussion of this problem can be found in
+Subsection.
+%% TODO add subsection reference
 
 \subsection{The quadratic $N = 5$ case}
+\label{subsec:quadratic-5}
 
 Let us recall from (\ref{eq:c0(5)}) and (\ref{eq:c-in-xy}) that $y^2 =
 f(x)$ and $c = (P_0(x) + P_1(x) y)/h(x)$, so eliminating $y$ we have
@@ -276,6 +305,7 @@ Now we have three cases.
 \end{case}
 
 \subsection{General results}
+\label{subsec:general}
 
 While studying the quadratic N = 4 case, we tried to mimic results
 to the quadratic N = 6 case. In particular, the following result by
@@ -286,19 +316,19 @@ period 4 in quadratic number fields $x_i$, the trace $t = \sum\limits_
 \begin{theorem} [Panraksa, Lemma~2.3.1 in \cite{MR2982105}]
 	Let $\{x_1, x_2, x_3, x_4\}$ be an exact 4-cycle defined in some
 	quadratic number field $K$ for $\phi_c(z) = z^2 + c$ with $c \in \Q$.
-	If $x_3 \neq \overline{x_1}$, then $\{x_1, x_2, x_3, x_4\} \cap 
+	If $x_3 \neq \overline{x_1}$, then $\{x_1, x_2, x_3, x_4\} \cap
 	\{\overline{x_1}, \overline{x_2}, \overline{x_3}, \overline{x_4}\}
 	= \emptyset$.
 \end{theorem}
 
-Panraksa then proves that $\{x_1, x_2, x_3, x_4\} \cap 
+Panraksa then proves that $\{x_1, x_2, x_3, x_4\} \cap
 \{\overline{x_1}, \overline{x_2}, \overline{x_3}, \overline{x_4}\}
 = \emptyset$ is impossible to get his final result. We managed to prove
 a much more general version of his lemma:
 
 \begin{theorem}
 	Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{x_1, \ldots, x_{N}\}$ be
-	an exact $N$-cycle defined over a Galois number field K, with N 
+	an exact $N$-cycle defined over a Galois number field K, with N
 	divisible by	$d = [K:\Q ]$. Then either: \\
 	\begin{itemize}
 	\item $x_{\frac{iN}{d}+1} = \sigma(x_1)$ for some nontrivial $\sigma \in
@@ -309,17 +339,17 @@ a much more general version of his lemma:
 \end{theorem}
 
 \begin{proof}
-	Note that $\{\tau(x_1), \ldots, \tau(x_{N})\}$ for any $\tau \in 
-	\gal(K/\Q)$ is a cycle of $\phi_c$ because $c \in \Q$. Assume 
+	Note that $\{\tau(x_1), \ldots, \tau(x_{N})\}$ for any $\tau \in
+	\gal(K/\Q)$ is a cycle of $\phi_c$ because $c \in \Q$. Assume
 	that neither case is true. Then $x_{\frac{N}{d}+1} \neq \sigma(
-	x_1)$ $\forall \sigma \in \gal(K/\Q)$ and $\{x_1, \ldots, x_{N}\} 
-	\cap \{\tau(x_1), \ldots, \tau(x_{N})\} \neq \emptyset$ $\forall 
+	x_1)$ $\forall \sigma \in \gal(K/\Q)$ and $\{x_1, \ldots, x_{N}\}
+	\cap \{\tau(x_1), \ldots, \tau(x_{N})\} \neq \emptyset$ $\forall
 	\tau \in \gal(K/\Q)$. Then $\exists x_j \in \{x_1, \ldots, x_{N}\}
 	\cap \{\tau(x_1), \ldots, \tau(x_{N})\}$ for some $\tau \in \gal(K/
-	\Q)$. Applying $\phi$ an appropriate number of times allows us to 
-	renumerate the cycle	such that $x_1$ is in the intersection. 
+	\Q)$. Applying $\phi$ an appropriate number of times allows us to
+	renumerate the cycle	such that $x_1$ is in the intersection.
 	Thus, $x_k = \tau(x_1)$ for some $1 \leq k \leq N$ and therefore $
-	\tau \equiv \phi^{k-1}$ on the N-cycle (because Galois conjugation 
+	\tau \equiv \phi^{k-1}$ on the N-cycle (because Galois conjugation
 	commutes with $\phi$). Since $K$ is Galois, $\tau^d = Id$ and so:
 	\[
 		x_d = \tau^d(x_d) = \phi^{dk-d}(x_d) = x_{dk}
@@ -348,7 +378,7 @@ So in general, we conjecture that:
 
 \begin{conjecture}
 	Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{x_1, \ldots, x_{N}\}$ be
-	an exact $N$-cycle defined over a Galois number field K, with N 
+	an exact $N$-cycle defined over a Galois number field K, with N
 	divisible by	$d = [K:\Q ]$. Then $x_{\frac{iN}{d}+1} = \sigma(x_1)$
 	for some nontrivial $\sigma \in \gal(K/\Q)$, $i \in \Z$ and therefore the
 	$x_i$'s produce rational points on $C_0(N)$.
