@@ -112,12 +112,19 @@ follows from Morton's work in \cite{MR1665198}.
   an algebraic result that works universally.
 \end{remark}
 
-Furthermore, assuming that $c \in \Q$ and $\set{z_1, z_2, z_3, z_4}
-\subset K$ for some quadratic number field $K$, Panraksa demonstrated
-that $t = z_1 + z_3$ must be rational (Theorem~1.5.1 in
-\cite{MR2982105}), so in fact
+Furthermore, Panraksa proved the following lemma:
+
+\begin{lemma}[Panraksa, Theorem~1.5.1 in \cite{MR2982105}]
+  \label{lem:z1+z3}
+  Let $c \in \Q$, and let $\set{z_1, z_2, z_3, z_4} \subset K$ be a
+  4-cycle of $\phi_c(z) = z^2 + c$, where $K$ is a quadratic number
+  field. Then $t = z_1 + z_3$ is rational.
+\end{lemma}
+
+So in fact,
 
 \begin{theorem} [Panraksa, Theorem~1.5.2 in \cite{MR2982105}]
+  \label{th:all}
   All combinations of $c \in \Q$ and a corresponding 4-cycle
   $\set{z_1, z_2, z_3, z_4} \subset K$ for some quadratic number field
   $K$ are given by ranging $t$ over $\Q$ in the parametrization
@@ -214,10 +221,6 @@ quadratic in $x$, the remainder is linear, in the form
 \l_1(a, b, c) x + \l_0(a, b, c),
 \]
 where $\l_1$ and $\l_0$ are polynomials in $a$, $b$, and $c$ given by
-%%% TODO
-%%% Rewrite lambda_1 and lambda_2 by collecting in terms of c
-%%% This will be much more reader friendly since we are dealing with
-%%% the vanishing of leading terms later.
 \[
 \begin{aligned}
   \l_1&(a, b, c) = 16 (a - 3) (2b - a(a-3)) c^2 -
@@ -351,92 +354,124 @@ three cases.
 
 While studying the quadratic N = 4 case, we tried to mimic results
 to the quadratic N = 6 case. In particular, the following result by
-Panraksa is quite important in demonstrating that, for points of exact
-period 4 in quadratic number fields $x_i$, the trace $t = \sum\limits_
-{i=1}^4 x_i$ is rational.
+Panraksa was crucial in proving Lemma~\ref{lem:z1+z3}, which was later
+used to establish a complete understanding of the $N = 4$ case:
 
 \begin{theorem} [Panraksa, Lemma~2.3.1 in \cite{MR2982105}]
-	Let $\{x_1, x_2, x_3, x_4\}$ be an exact 4-cycle defined in some
-	quadratic number field $K$ for $\phi_c(z) = z^2 + c$ with $c \in \Q$.
-	If $x_3 \neq \overline{x_1}$, then $\{x_1, x_2, x_3, x_4\} \cap
-	\{\overline{x_1}, \overline{x_2}, \overline{x_3}, \overline{x_4}\}
-	= \emptyset$.
+  Let $c \in \Q$, and let $\set{z_1, z_2, z_3, z_4} \subset K$ be a
+  4-cycle of $\phi_c(z) = z^2 + c$, where $K$ is a quadratic number
+  field. Then exactly one of the following holds:
+  \begin{enumerate}[(i)]
+  \item $z_3 = \ol{z_1}$;\footnote{%
+      $\ol{z_1}$ denotes the Galois conjugate of $z_1$ in $K$, which
+      is unambiguous since $K$ is quadratic.}
+
+  \item $\{z_1, z_2, z_3, z_4\} \cap \{\ol{z_1}, \ol{z_2}, \ol{z_3},
+    \ol{z_4}\} =\es.$
+  \end{enumerate}
 \end{theorem}
 
-Panraksa then proves that $\{x_1, x_2, x_3, x_4\} \cap
-\{\overline{x_1}, \overline{x_2}, \overline{x_3}, \overline{x_4}\}
-= \emptyset$ is impossible to get his final result. We managed to prove
-a much more general version of his lemma:
+Panraksa then proves that the second case $\{z_1, z_2, z_3, z_4\} \cap
+\{\ol{z_1}, \ol{z_2}, \ol{z_3}, \ol{z_4}\} = \es$ is impossible, from
+which Lemma~\ref{lem:z1+z3} immediately follows. We managed to prove a
+much more general version of his lemma:
+
+\newcommand{\nd}{\frac{N}{d}}
 
 \begin{theorem}
-	Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{x_1, \ldots, x_{N}\}$ be
-	an exact $N$-cycle defined over a Galois number field K, with N
-	divisible by	$d = [K:\Q ]$. Then either: \\
-	\begin{itemize}
-	\item $x_{\frac{iN}{d}+1} = \sigma(x_1)$ for some nontrivial $\sigma \in
-	\gal(K/\Q)$, $i \in \Z$
-	\item $\{x_1, \ldots, x_{N}\} \cap \{\tau(x_1), \ldots, \tau(x_{N})\} =
-	\emptyset$, $\forall \tau \in \gal(K/\Q)$ nontrivial.
-	\end{itemize}
+  Let $c \in \Q$. Let $K$ be a Galois extension of $\Q$ with degree $d
+  = [K : \Q]$. Let $N$ be a multiple of $d$, and $\set{z_0, \dots,
+    z_{N-1}} \subset K$ be an exact $N$-cycle of $\phi_c(z) = z^2 +
+  c$. Then exactly one of the following holds:
+  \begin{enumerate}[(i)]
+  \item $z_{i\nd} = \t(z_0)$ for some $0 \le i \le d-1$ and some
+    nontrivial $\t \in \gal(K/\Q)$;
+
+  \item $\set{z_0, \dots, z_{N-1}} \cap \set{\t(z_0), \dots, \t(z_{N-1})} =
+    \es$ for all nontrivial $\t \in \gal(K/\Q)$.
+  \end{enumerate}
 \end{theorem}
 
+%%% TODO
+%
+% Looking at the proof, K being Galois and d dividing N can be relaxed
+% to give something more general. For instance, if we do not assume $d
+% | N$, then we only need to replace $N/d$ by $N/gcd(N,d)$.
+%
+% (Note that those two conditions are arbitrary to begin with. They
+% were introduced as makeshift fixes for holes in the original
+% "proof", and were never carefully considered later.)
+%
+% I will address this when I have time.
 \begin{proof}
-	Note that $\{\tau(x_1), \ldots, \tau(x_{N})\}$ for any $\tau \in
-	\gal(K/\Q)$ is a cycle of $\phi_c$ because $c \in \Q$. Assume
-	that neither case is true. Then $x_{\frac{N}{d}+1} \neq \sigma(
-	x_1)$ $\forall \sigma \in \gal(K/\Q)$ and $\{x_1, \ldots, x_{N}\}
-	\cap \{\tau(x_1), \ldots, \tau(x_{N})\} \neq \emptyset$ $\forall
-	\tau \in \gal(K/\Q)$. Then $\exists x_j \in \{x_1, \ldots, x_{N}\}
-	\cap \{\tau(x_1), \ldots, \tau(x_{N})\}$ for some $\tau \in \gal(K/
-	\Q)$. Applying $\phi$ an appropriate number of times allows us to
-	renumerate the cycle	such that $x_1$ is in the intersection.
-	Thus, $x_k = \tau(x_1)$ for some $1 \leq k \leq N$ and therefore $
-	\tau \equiv \phi^{k-1}$ on the N-cycle (because Galois conjugation
-	commutes with $\phi$). Since $K$ is Galois, $\tau^d = Id$ and so:
-	\[
-		x_d = \tau^d(x_d) = \phi^{dk-d}(x_d) = x_{dk}
-	\]
-	Notice that the application of $\phi^{N-(d-1)}$ yields $x_1 =
-	x_{dk-(d-1)} = x_{d(k-1) + 1}$. Notice that this produces a
-	contradiction if $d(k-1) + 1 \not\equiv 1$ (modulo $N$): if $l$
-	is the representative of $d(k-1) + 1$ modulo N, then $\{x_1, \ldots
-	, x_l\}$ gives an $l$-cycle with $l < N$. Thus, it must be that
-	$d(k-1) + 1 \equiv 1$ (modulo $N$). The only such $k$ are given
-	by $k = \frac{lN}{d} + 1$ for some $l \in \Z$, so $x_{\frac{lN}{d}
-	+ 1} = x_k = \tau(x_1)$.	However, we already have that
-	$x_{\frac{iN}{d}+1} \neq \sigma(x_1)$ $\forall \sigma \in \gal(K/\Q)$,
-	$i \in \Z$. This gives a contradiction.
+  For notational convenience, we let $z_{j+N} = z_j$ for all $j \in
+  \Z$, i.e., if $j = q \cdot N + r$ with $0 \le r \le N-1$, then $z_j
+  = z_r = \phi_c^r(z_0)$.
+
+  First note that (i) and (ii) cannot be simultaneously true. In fact,
+  if (i) is true, i.e., $z_{i\nd} = \t(z_0)$ for some $i$ and
+  nontrivial $\t \in \gal(K/\Q)$, then $z_{i\nd} \in \set{z_0, \dots,
+    z_{N-1}} \cap \set{\t(z_0), \dots, \t(z_{N-1})}$, so (ii) is
+  false.
+
+  If (ii) is true, then we are done. Otherwise, (ii) is false, so we
+  have some nontrivial $\t \in \gal(K/\Q)$ such that $z_k = \t(z_j)$
+  for some $j$ and $k$ satisfying $0 \le j, k \le N-1$. Note that $\t$
+  commutes with $\phi_c$ (as $\phi_c$ is defined over $\Q$ and $\t$ is
+  a field automorphism fixing the base field $\Q$), so we may assume
+  $j = 0$; otherwise, note that $\t(z_0) = \t(z_N) =
+  \t(\phi_c^{N-j}(z_j)) = \phi_c^{N-j}(\t(z_j)) = \phi_c^{N-j}(z_k) =
+  z_{N+k-j}$, so we may set $j$ to 0 and $k$ to the remainder of
+  $N+k-j$ modulo $N$. Assuming $j = 0$, we have $\t(z_0) = z_k$; this,
+  together with the fact that $\t$ commutes with $\phi_c$, implies
+  that $\t = \phi_c^k$ on the whole cycle $\set{z_0, \dots, z_{N-1}}$.
+
+  Now recall that $K$ is Galois, so the order of the Galois group
+  $\gal(K/\Q)$ is exactly $[K : \Q] = d$. Therefore, by Lagrange's
+  theorem, $\t^d = Id$, and hence
+  \[
+  z_0 = \t^d(z_0) = (\phi_c^k)^d(z_0) = z_{kd}.
+  \]
+  Let $r$ be the remainder of $kd$ modulo $N$. If $r$ is nonzero, then
+  $\set{z_0, \dots, z_{r-1}}$ forms a cycle of $\phi_c$ with length $r
+  < N$, violating the requirement that $\set{z_0, \dots, z_{N-1}}$ is
+  an exact $N$-cycle. Therefore, $r = 0$, i.e., $N$ divides
+  $kd$. Since $d$ divides $N$, we have $k = i \cdot \nd$ for some $i$,
+  so $\t(z_0) = z_k = z_{i\nd}$. Then (i) is true, and we are done.
 \end{proof}
 
-In fact, we strongly believe that the second case never occurs in general.
-Although we do not have much data, all of the examples that we have found
-satisfy the first case (e.g. all 4-cycles, the 5-cycles described by
-Flynn-Poonen-Schaefer \cite{MR1480542}, and the 6-cycles described by
-Stoll \cite{MR2465796}). If this is true in general, then it follows that
-all periodic points for $\phi_c$ (with $c$ rational) in Galois number fields
-with degree divisible by their period produce rational points in $C_0(N)$
-since the first case produces rational trace $t = \sum\limits_{i=1}^N x_i$.
-So in general, we conjecture that:
+In fact, we strongly believe that the second case never occurs in
+general. Although the supply of examples is limited, all of the
+examples that we currently know satisfy the first case (all 4-cycles,
+the 5-cycles described by Flynn, Poonen, and Schaefer
+\cite{MR1480542}, and the 6-cycles described by Stoll
+\cite{MR2465796}). If this is true in general, then it follows that
+all periodic points for $\phi_c$ (with $c$ rational) in Galois
+extensions to $\Q$ fields with degree dividing their period
+correspond to rational points in $C_0(N)$ since the first case
+produces rational trace $t = \sum_{i=1}^N z_i$.  So in general,
+we conjecture that:
 
 \begin{conjecture}
-	Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{x_1, \ldots, x_{N}\}$ be
-	an exact $N$-cycle defined over a Galois number field K, with N
-	divisible by	$d = [K:\Q ]$. Then $x_{\frac{iN}{d}+1} = \sigma(x_1)$
-	for some nontrivial $\sigma \in \gal(K/\Q)$, $i \in \Z$ and therefore the
-	$x_i$'s produce rational points on $C_0(N)$.
+  Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{z_1, \dots, z_N\}$
+  be an exact $N$-cycle defined over a Galois number field K, with N
+  divisible by $d = [K:\Q ]$. Then $z_{\frac{iN}{d}+1} = \s(z_1)$ for
+  some nontrivial $\s \in \gal(K/\Q)$, $i \in \Z$ and therefore the
+  $z_i$'s produce rational points on $C_0(N)$.
 \end{conjecture}
 
 \begin{remark}
-	If this conjecture were true, one tangible consequence is that the
-	6-cycle over $\Q(\sqrt{33})$ with $c = -\frac{71}{48}$ and $x_1 = -1 +
-	\frac{\sqrt{33}}{12}$ found by Stoll \cite{MR2465796} is the only 6-cycle
-	defined over a quadratic number field (conditionally on the weak form of
-	BSD). Since the only results on rational points of $C_0(N)$ currently are
-	those of Morton \cite{MR1665198} for $N = 4$, Flynn-Poonen-Schaefer
-	\cite{MR1480542} for $N = 5$, and Stoll \cite{MR2465796} for $N = 6$
-	(conditionally on the weak form of BSD), we have to wait for other results
-	on $C_0(N)$ for other $N$ to see if this conjecture might imply results for
-	other numerical cases.
+  If this conjecture were true, one tangible consequence is that the
+  6-cycle over $\Q(\sqrt{33})$ with $c = -\frac{71}{48}$ and $z_1 = -1
+  + \frac{\sqrt{33}}{12}$ found by Stoll \cite{MR2465796} is the only
+  6-cycle defined over a quadratic number field (conditionally on the
+  weak form of BSD). Since the only results on rational points of
+  $C_0(N)$ currently are those of Morton \cite{MR1665198} for $N = 4$,
+  Flynn-Poonen-Schaefer \cite{MR1480542} for $N = 5$, and Stoll
+  \cite{MR2465796} for $N = 6$ (conditionally on the weak form of
+  BSD), we have to wait for other results on $C_0(N)$ for other $N$ to
+  see if this conjecture might imply results for other numerical
+  cases.
 \end{remark}
 
 %%% Local Variables:
