@@ -1,122 +1,186 @@
 \section{Computational efforts, confirmations, and observations}
 \label{sec:comp}
 
-\subsection{Quadratic periodic points with rational $c$}
+\subsection{Desperately seeking quadratic periodic points}
 
-We want to search, for rational $c$, quadratic periodic points with
-exact period $N$, where by quadratic points we mean elements of
-some quadratic number field $K/\Q$. This boils down to finding
-quadratic points on $C_1(N)$, which is the smooth projective model of
-$\Phi_N(z, c)$. There are several approaches.
+Recall that the main question we propose in our paper,
+Question~\ref{question}, concerns the quadratic periodic points of
+$\phi_c(z) = z^2 + c$ of exact period $N$. It would be nice to
+enumerate these points computionally, even if the problem cannot be
+fully resolved theoretically. Sometimes we also pick us a few nice
+observations and conjectures not directly related to the original
+problem along the way.
+
+\subsubsection{Basic enumeration strategy}
+
+Enumerating integers is the easiest, but does not seem to help our
+problem.
+
+Enumerating rationals is relatively easy, which essentially boils down
+to enumerating two coprime integers (with the denominator being
+positive). Enumeration requires an ordering (or at least some kind of
+bound so that the enumeration terminates at some point --- we cannot
+enumerate all rationals in practice), and to obtain an ordering on the
+rationals, we typically use a height function $h$, conventionally
+defined as $h(p/q) = \max\set{|p|, |q|}$ for $(p, q) = 1$. Then we
+enumerate in the increasing order of height, or use some other
+ordering but terminate at a certain height (enuemrate every rational
+up to some height).
+
+Enumerating elements of $\U$ is by far the hardest. Elements of $\U$
+can be represented as $\frac{p_1}{q_1} + \frac{p_2}{q_2}\sqrt{d}$,
+where $p_1, q_1, p_2, q_2, d$ are integers with the further
+restrictions that $q_1, q_2 > 0$, $(p_1, q_1) = (p_2, q_2) = 1$, and
+$d$ is squarefree. To enumerate elements of $\U$, the most logical
+ordering as we see it is to first enumerate $d$, then for each $d$,
+define the height function $h$ as $h(\frac{p_1}{q_1} +
+\frac{p_2}{q_2}\sqrt{d}) = \max\set{|p_1|, |q_1|, |p_2|, |q_2|}$, and
+enumerate up to some height.
+
+There are two approaches to finding the quadratic periodic points,
+which are explained below.
 
 \subsubsection{Enumerating $c \in \Q$}
 
-The first possible approach is to enumerate $c \in \Q$. A natural
-order of enumeration is the increasing order of height, where the
-height of a rational number $p/q$, with $p,\, q \in \Z$ and $\gcd(p,
-q) = 1$, is defined as $\max\set{|p|,\, |q|}$.
+The first possible approach is to enumerate $c \in \Q$. This is a
+naive approach, and works for any $N$. For a specific $c$, to see if
+there are quadratic periodic points of $\phi_c$ with exact period $N$,
+we simply factorize $\Phi_N(z, c)$ in $\Q[z]$, and see if there are
+quadratic factors.
 
-For each fixed $c$, we factorize the polynomial $\Phi_{N,c}(z)$ over
-$\Q$ and look at its irreducible factors. Let $D_{N,c}$ be the
-multiset of the degrees of $\Phi_{N,c}(z)$ irreducible
-factors. Clearly the elements of $D_{N,c}$ sum to $\deg \Phi_{N,c}(z)
-= \sum_{d|N}2^{d \mu(N/d)}$. Then $z^2 + c$ has quadratic periodic
-points of exact period $N$ if and only if $2 \in D_{N,c}$. Factorizing
-$\Phi_{N,c}(z)$ over $\Q$ to obtain $D_{N,c}$ is doable (polynomial
-time algorithm exists) for all $N$ with software, e.g., Mathematica,
-although the complexity grows exponentially with $N$ (note that $\deg
-\Phi_{N,c}$ grows roughly as $2^N$).
+%%% TRIMMED
+%
+% With regret, I realized that the observations and conjectures might
+% not be as interesting as what I previously thought. When you are
+% factorization a polynomial that describe N-cycles, it makes a lot of
+% sense that every irreducible factor is related to N --- that's
+% because if z is a periodic point, then phi_c(z), ..., phi_c^{N-1}(z)
+% are all periodic points, with phi_c^N(z) back to z, so typically
+% they are the solutions to the same irreducible factor; only in rare
+% cases do they further reduce to smaller factors, but even then they
+% still appear in clusters. (This is roughly what our "general result"
+% is saying; and it might not be very interesting for similar
+% reasons.
+%
+% In any case, I'm trimming this once-cherished conjecture out. It
+% will be preserved in a branch called `trimmed`, in case it is
+% somehow resurrected.
+%
+% --------------------------------------------------------------------
+%
+% For future reference, we make the following
+% definition:
+%
+% \begin{definition}
+%   For given $c \in \Q$ and $N$, we denote by $D_{N,c}$ the multiset
+%   formed by the degrees of irreducible factors of $\Phi_N(z, c)$ in
+%   $\Q[z]$.
+% \end{definition}
+%
+% For instance, $\Phi_2(z, c) = z^2+z+(c+1)$ is irreducible for most
+% $c \in \Q$, but factors as $(z + (1/2 + r))(z + (1/2 - r))$ when $c =
+% -\frac{r^2 + 3}{4}$ for some rational $r \in \Q$. Therefore, $D_{2,c}
+% = \set{2}$ for most $c$, but becomes $\set{1, 1}$ when $c$ is
+% parametrized as above.
+%
+% With $D_{N,c}$, the question of whether there are quadratic periodic
+% points reduces to whether 2 is in $D_{N,c}$ or not.
 
-We performed the search with $N = 4$ and 5, enumerating $c$ up to
-height 1000. (See the Mathematica notebook \texttt{misc/mma/factor}.)
+On a technical note, the complexity of factorizing $\Phi_N(z, c)$
+blows up quickly since $\deg_z \Phi_N(z, c)$ grows roughly as $2^N$,
+but it is still doable for small $N$.
 
-For $N = 4$, we found various $c$ with quadratic rational points:
-$-4/5$, $-31/48$, $-95/48$, $-155/72$, $-209/72$. From this result it
-is conjectured that there are infinitely many such $c$'s, and this is
-later confirmed by theory. It is also worth noting that for $c$'s that
-we observed, $D_{4,c}$ is always one of the following:
-\[
-\set{12},\, \set{4, 8},\, \set{2, 2, 8}.
-\]
-Note that the degrees of irreducible factors of $\Phi_{4,c}(z)$
-(elements of $D_{4,c}$) always have common factors with $N = 4$. It is
-further observed that $c$'s such that $\Phi_{4,c}(z)$ is reducible
-always has ``fairly divisible'' denominators, i.e., their prime
-factors are ``small'' compared to themselves. The implication of this
-is not clear.
+We performed the search for $N =$ 4 and 5, enumerating $c$ up to
+height 1000. (See the Mathematica notebook \texttt{mma/factor}.)
 
-For $N=5$, no quadratic factors were observed, and it is conjectured
-that there are no quadratic periodic points of exact period 5 for any
-$c \in \Q$. Even the collection of $c$'s such that $\Phi_{5,c}(z)$ is
-reducible is very limited:
-\[
-\begin{gathered}
-  c = -2,\, D_{5,c} = \set{5,\, 10,\, 15},\\
-  c = -4/3,\, D_{5,c} = \set{10,\, 20},\\
-  c = -16/9,\, D_{5,c} = \set{5,\, 25},\\
-  c = -64/9,\, D_{5,c} = \set{5,\, 25}.
-\end{gathered}
-\]
-Note again that the degrees of irreducible factors of $\Phi_{5,c}(z)$ always have common
-factors with $N = 5$.
+For $N = 4$, we found many $c$ with quadratic points, and it was later
+confirmed by theory that the number is indeed infinite (see
+Subsection~\ref{subsec:quadratic-4}).
+
+%%% TRIMMED
+% However, one interesting observation is that $D_{4,c}$ is always one
+% of the following:
+% \[
+% \set{12},\, \set{4, 8},\, \set{2, 2, 8}.
+% \]
+
+For $N=5$, no quadratic factors were observed, and this provides
+evidence for our conjecture that there are no quadratic periodic
+points of exact period 5 for any $c \in \Q$ (see
+Subsection~\ref{subsec:quadratic-5}).
+
+%%% TRIMMED
+% Even the collection of $c$'s such that $\Phi_{5,c}(z)$ is reducible is
+% very limited:
+% \[
+% \begin{gathered}
+%   c = -2,\, D_{5,c} = \set{5,\, 10,\, 15},\\
+%   c = -4/3,\, D_{5,c} = \set{10,\, 20},\\
+%   c = -16/9,\, D_{5,c} = \set{5,\, 25},\\
+%   c = -64/9,\, D_{5,c} = \set{5,\, 25}.
+% \end{gathered}
+% \]
+% Note again that the degrees of irreducible factors of $\Phi_{5,c}(z)$
+% always have common factors with $N = 5$.
 
 We also performed the search for $N = 6$ up to height 500. Quadratic
-factor was found for one $c$:
-\[
-c = -71/48,\, D_{6,c} = \set{2,\, 2,\, 2,\, 48},
-\]
-and two more $c$ were observed such that $\Phi_{6,c}(z)$ is reducible:
-\[
-\begin{gathered}
-  c = -2,\, D_{6,c} = \set{6,\, 6\, 18,\, 24},\\
-  c = -4,\, D_{4,c} = \set{6,\, 48}.
-\end{gathered}
-\]
-Note once again that (from the limited data we have) the degrees of
-irreducible factors of $\Phi_{6,c}(z)$ always have common factors with
-$N = 6$.
+factor was found only for $c = -71/48$.
 
-% I will add bibliography and citations later
-Also recall from Morton1 that
-\begin{theorem}
-  For $N = 3$ and any $c \in \Q$, $D_{3, c}$ must be one of the
-  following:
-  \[
-  \set{6},\, \set{3,\, 3}, \set{3,\, 1,\, 1,\, 1}.
-  \]
-\end{theorem}
-
-Combining our knowledge of $D_{3,c}$, $D_{4,c}$, $D_{5,c}$, and
-$D_{6,c}$, we have the following conjecture.
-
-\begin{conjecture}[Weak factorization]
-  For $N \ge 3$ and any $c \in \Q$, one of the following holds:
-  \begin{enumerate}
-  \item $1 \in D_{N,c}$;
-  \item For all $d \in D_{N,c}$, $\gcd(d,\, N) > 1$.
-  \end{enumerate}
-\end{conjecture}
-
-$N = 3$ is still rather special, since there are inifinitely many $c$
-with rational periodic points of exact period 3, and we know the
-explicit parametrization of $c$ such that $\Phi_{3,c}(z)$ is
-reducible (Morton1). If we exclude $N = 3$, we have the following
-stronger conjecture.
-
-\begin{conjecture}[Strong factorization]
-  For $N \ge 4$ and any $c \in \Q$, we have $\gcd(d, N) > 1$ for all
-  $d \in D_{N,c}$.
-\end{conjecture}
-
-This conjecture implies FPS's conjecture.
-
-\begin{conjecture}[FPS]
-  For $N \ge 4$ and any $c \in \Q$, $1 \not\in D_{N,c}$.
-\end{conjecture}
-
-However, these conjectures seem to require radically new ideas not
-available at this moment, as most current results in this field relies
-on manipulating specific curves.
+%%% TRIMMED
+% \[
+% c = -71/48,\, D_{6,c} = \set{2,\, 2,\, 2,\, 48},
+% \]
+% and two more $c$ were observed such that $\Phi_{6,c}(z)$ is reducible:
+% \[
+% \begin{gathered}
+%   c = -2,\, D_{6,c} = \set{6,\, 6\, 18,\, 24},\\
+%   c = -4,\, D_{4,c} = \set{6,\, 48}.
+% \end{gathered}
+% \]
+% Note once again that (from the limited data we have) the degrees of
+% irreducible factors of $\Phi_{6,c}(z)$ always have common factors with
+% $N = 6$.
+%
+% Also recall from Morton1 that
+% \begin{theorem}
+%   For $N = 3$ and any $c \in \Q$, $D_{3, c}$ must be one of the
+%   following:
+%   \[
+%   \set{6},\, \set{3,\, 3}, \set{3,\, 1,\, 1,\, 1}.
+%   \]
+% \end{theorem}
+%
+% Combining our knowledge of $D_{3,c}$, $D_{4,c}$, $D_{5,c}$, and
+% $D_{6,c}$, we have the following conjecture.
+%
+% \begin{conjecture}[Weak factorization]
+%   For $N \ge 3$ and any $c \in \Q$, one of the following holds:
+%   \begin{enumerate}
+%   \item $1 \in D_{N,c}$;
+%   \item For all $d \in D_{N,c}$, $\gcd(d,\, N) > 1$.
+%   \end{enumerate}
+% \end{conjecture}
+%
+% $N = 3$ is still rather special, since there are inifinitely many $c$
+% with rational periodic points of exact period 3, and we know the
+% explicit parametrization of $c$ such that $\Phi_{3,c}(z)$ is
+% reducible (Morton1). If we exclude $N = 3$, we have the following
+% stronger conjecture.
+%
+% \begin{conjecture}[Strong factorization]
+%   For $N \ge 4$ and any $c \in \Q$, we have $\gcd(d, N) > 1$ for all
+%   $d \in D_{N,c}$.
+% \end{conjecture}
+%
+% This conjecture implies FPS's conjecture.
+%
+% \begin{conjecture}[FPS]
+%   For $N \ge 4$ and any $c \in \Q$, $1 \not\in D_{N,c}$.
+% \end{conjecture}
+%
+% However, these conjectures seem to require radically new ideas not
+% available at this moment, as most current results in this field relies
+% on manipulating specific curves.
 
 \subsubsection{Enumerating quadratic $x$ on $C_0(5)$}
 
