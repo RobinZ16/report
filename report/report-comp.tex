@@ -199,9 +199,9 @@ range $R_{H'}$ (limited by the values of $(p, q)$ that we enumerate),
 compared to the total number of squarefree integers in this range.
 
 We coded this up (see \texttt{mma/squarefree.nb}) and obtained the
-following results:
+results in Table~\ref{tab:squarefree}.
 
-\begin{table}[h]
+\begin{table}[hbtp]
   \centering
   \begin{tabular}{| c | c | c | c |}
     \hline
@@ -215,7 +215,9 @@ following results:
     1000 & 10000 & 55 & 12167 \\ \hline
     1000 & 100000 & 140 & 121589 \\ \hline
   \end{tabular}
-  \caption{Distribution of $d = (p^4 - q^4)(p^2 + 2pq - q^2)$ up to squares.}
+  \caption{Distribution of $d = (p^4 - q^4)(p^2 + 2pq - q^2)$ up to
+    squares.}
+  \label{tab:squarefree}
 \end{table}
 
 These results clearly suggests that the squarefree integers obtainable
