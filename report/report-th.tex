@@ -37,8 +37,8 @@ We pose the following question:
   \[
   \deg_z \Phi_N(z, c) = \sum_{d|N}2^d \mu(N/d),
   \]
-  which is a constant only depending on $N$. Moreover,
-  in some cases we can obtain a much sharper bound; see, for instance,
+  which is a constant only depending on $N$. Moreover, in some cases
+  we can obtain a much sharper bound; see, for instance,
   Subsection~\ref{subsec:quadratic-4}.
 \end{remark}
 
@@ -46,8 +46,8 @@ We pose the following question:
   We are not strictly increasing $D$ to 2, since we are still
   requiring $c \in \Q$.
 
-  The rationale is that, for $N = 4$, the problem becomes easy once
-  we also allow $c$ to be quadratic; in fact, Corollary~5.11 in
+  The rationale is that, for $N = 4$, the problem becomes easy once we
+  also allow $c$ to be quadratic; in fact, Corollary~5.11 in
   \cite{2013arXiv1308.3267B} tells us that the number of quadratic
   points on $X_1(16)$ is infinite (recall that $C_1(4)$ is
   birationally equivalent to $X_1(16)$; see
@@ -68,8 +68,8 @@ For $N = 4$, the answer is infinite, since an explicit parametrization
 of $c$ is available to us. The details can be found in
 Subsection~\ref{subsec:quadratic-4}.
 
-For $N = 5$, the answer is finite, but at the time of writing we
-do not have a concrete bound. We conjecture that the answer is in fact
+For $N = 5$, the answer is finite, but at the time of writing we do
+not have a concrete bound. We conjecture that the answer is in fact
 zero. The details can be found in Subsection~\ref{subsec:quadratic-5}.
 
 Furthermore, when we were studying the proofs that led up to the
@@ -137,6 +137,7 @@ is immediately answered by
   c$ has periodic points in $\U$ of exact period 4. Moreover, all such
   $c$ are given by
   \[
+  \label{eq:c-param}
   c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)},
   \]
   where $t \in \Q$.
@@ -177,6 +178,10 @@ Subsection.
 \subsection{The quadratic $N = 5$ case}
 \label{subsec:quadratic-5}
 
+We aim to prove Theorem~\ref{th:n=5-finite}, i.e., there are finitely
+many $c \in \Q$ such that $\phi_c(z) = z^2 + c$ has periodic points in
+$\U$ of exact period 5.
+
 Let us recall from (\ref{eq:c0(5)}) and (\ref{eq:c-in-xy}) that $y^2 =
 f(x)$ and $c = (P_0(x) + P_1(x) y)/h(x)$, so eliminating $y$ we have
 \[
@@ -215,23 +220,23 @@ where $\l_1$ and $\l_0$ are polynomials in $a$, $b$, and $c$ given by
 %%% the vanishing of leading terms later.
 \[
 \begin{aligned}
-  \l_1&(a, b, c) = - 4a^5c - 8a^5 + 40a^4c + 74a^4 + 16a^3bc + 32a^3b
-  - 16a^3c^2 - \\
-  & 184a^3c - 271a^3 - 120a^2bc - 222a^2b + 96a^2c^2 + 416a^2c + 452a^2 -
-  12ab^2c - \\
-  & 24ab^2 + 32abc^2 + 368abc + 542ab - 144ac^2 - 380ac - 325a + 40b^2c + \\
-  & 74b^2 - 96bc^2 - 416bc - 452b + 96c + 110,
+  \l_1&(a, b, c) = 16 (a - 3) (2b - a(a-3)) c^2 -
+  4(a^{5} - 10 a^{4} - 4 a^{3} b + 46 a^{3} + 30 a^{2} b + \\
+  & 3 a b^{2} - 104 a^{2} - 92 a b - 10 b^{2} + 95 a + 104 b - 24) c -
+  (8 a^{5} - 74 a^{4} - 32 a^{3} b + \\
+  & 271 a^{3} + 222 a^{2} b + 24 a b^{2} - 452 a^{2} - 542 a b - 74
+  b^{2} + 325 a + 452 b - 110),
 \end{aligned}
 \]
 and
 \[
 \begin{aligned}
-  \l_0&(a, b, c) = - 4a^4bc - 8a^4b + 40a^3bc + 74a^3b + 12a^2b^2c +
-  24a^2b^2 - 16a^2bc^2 - \\
-  & 184a^2bc - 271a^2b - 80ab^2c - 148ab^2 + 96abc^2 +
-  416abc + 452ab - 4b^3c - \\
-  & 8b^3 + 16b^2c^2 + 184b^2c + 271b^2 - 144bc^2 - 380bc -
-  325b + 36c + 64.
+  \l_0&(a, b, c) = 16 b (b - (a-3)^2) c^2 -
+  4(a^{4} b - 10 a^{3} b - 3 a^{2} b^{2} + 46 a^{2} b + \\
+  & 20 a b^{2} + b^{3} - 104 a b - 46 b^{2} + 95 b - 9) c -
+  (8 a^{4} b - 74 a^{3} b - 24 a^{2} b^{2} + \\
+  & 271 a^{2} b + 148 a b^{2} + 8 b^{3} - 452 a b - 271 b^{2} + 325 b
+  - 64)
 \end{aligned}
 \]
 Note that $a$, $b$, and $c$ are all rational, so $\l_1(a, b, c)$ and
@@ -240,41 +245,57 @@ $\l_0(a, b, c)$ are rational, and hence from
 \l_1(a, b, c) x + \l_0(a, b, c) = 0
 \]
 we conclude that either $x$ is rational, or both $\l_1$ and $\l_0$ are
-zero. Thanks to \cite{MR1480542}, we already fully understand the case
+zero.\footnote{%
+  The same argument follows through if $c$ is allowed to take value
+  in $\U$ but we further stipulate that $c$ and $x$ are not in the
+  same quadratic extension, i.e., $\Q(c, x)$ has degree 4 over
+  $\Q$. This is because $\l_1$ and $\l_0$ are in $\Q(c)$, so if $\l_1$
+  and $\l_0$ are nonzero, then from $x = -\l_0/\l_1$ we conclude that
+  $x \in \Q(c) \cap \Q(x) = \Q$, which contradicts the assumption that
+  $x \in \U \setminus \Q$.
+
+  However, this method fails when $c$ is allowed to be in the same
+  quardratic extension as $x$, in which case any combination of $a, b
+  \in Q$ and $c \in \U$ trivially produces an $x \in \U$ unless $\l_1
+  = 0$ and $\l_0 \ne 0$. This is one complication of allowing $c$ to
+  be quadratic.
+}
+Thanks to \cite{MR1480542}, we already fully understand the case
 where $x$ is rational (in which case there are no corresponding
 periodic points even in $\U$ --- they are either at infinity or
-defined only in a quintic extension of $\Q$). Therefore, here we
+defined only in a quintic extension of $\Q$). Therefore, we only
 consider $x \in \U \setminus \Q$, and hence
 \[
 \l_1(a, b, c) = \l_0(a, b, c) = 0.
 \]
 
 Notice that $c$ is a common root to $\l_1$ and $\l_0$, so by
-Proposition~\ref{res}, we have
+Proposition~\ref{prop:res}, we have
 \[
 \res_c(\l_1(a, b, c), \l_2(a, b, c)) = 0.
 \]
 
-Now we have three cases.
+Now, depending on the degrees of $\l_1$ and $\l_2$ in $c$, we have
+three cases.
 
 \begin{case}
   The leading coefficient of $\l_1(a, b, c)$, considered as a
   polynomial in $c$, vanishes. This happens when
   \[
-  -16(a - 3)(a(a-3) - 2b) = 0,
+  16(a - 3)(2b - a(a-3)) = 0,
   \]
   i.e., either $a = 3$, or $b = a(a-3)/2$, or both.
 
-  If $a = 3$, plugging into $\l_1 = \l_2 = 0$ we get two polynomial
-  equations in $b$ and $c$. Taking the resultant of the two with
-  respect to $c$, we get $- 96b^7 - 1264b^5 - 4256b^5 + 32b^4 +
+  If $a = 3$, plugging $a = 3$ into $\l_1 = \l_2 = 0$ we get two
+  polynomial equations in $b$ and $c$. Taking the resultant of the two
+  with respect to $c$, we get $- 96b^7 - 1264b^5 - 4256b^5 + 32b^4 +
   13248b^3 + 37632b^2 + 92160b = 0$, which has only one rational root
   $b = 0$. However, $\l_1(3, 0, c) \equiv -64 \ne 0$, so there is no
   rational solution in this case.
 
-  If $b = a(a-3)/2$, plugging into $\l_1 = \l_2 = 0$ we get two
-  polynomials equations in $a$ and $c$. Again using the resultant we
-  can show that there is no rational solution in this case. See the
+  If $b = a(a-3)/2$, plugging this into $\l_1 = \l_2 = 0$ we get two
+  polynomials equations in $a$ and $c$. Again by taking the resultant
+  we can show that there is no rational solution in this case. See the
   attached Mathematica notebook \texttt{mma/abc.nb} for details.
 \end{case}
 
@@ -282,7 +303,7 @@ Now we have three cases.
   The leading coefficient of $\l_0(a, b, c)$, considered as a
   polynomial in $c$, vanishes. This happens when
   \[
-  -16b(b - (a-3)^2) = 0,
+  16b(b - (a-3)^2) = 0,
   \]
   i.e., either $b = 0$ or $b = (a - 3)^2$. Similar to Case~1, we can
   easily show that there is no rational solution in this case. See
@@ -291,17 +312,38 @@ Now we have three cases.
 
 \begin{case}
   Both of the leading coefficients of $\l_1(a, b, c)$ and $\l_0(a, b,
-  c)$, considered as a polynomial in $c$, are non-vanishing, i.e.,
-  both $\l_1(a, b, c)$ and $\l_0(a, b, c)$ are quadratic in
-  $c$. Therefore, by Proposition~\ref{res}, $\res_c(\l_1(a, b, c),
+  c)$ (considered as polynomials in $c$), are non-vanishing, i.e.,
+  both $\l_1(a, b, c)$ and $\l_0(a, b, c)$ are quadratic in $c$.
+
+  In this case, by Proposition~\ref{prop:res}, $\res_c(\l_1(a, b, c),
   \l_0(a, b, c))$ is given by a polynomial in the six coefficients
-  (three in $\l_1$ and three in $\l_0$). Mathematica is capable of
-  computing this polynomial, and when we plug in the six coefficients,
-  we have
+  (three of $\l_1$ and three of $\l_0$). Mathematica is capable of
+  computing this polynomial (see \texttt{mma/abc.nb}), and when we
+  plug in the six coefficients, we get
   \[
   \res_c(\l_1(a, b, c), \l_0(a, b, c)) = P(a, b)
   \]
-  for some polynomial $P(a, b) \in \Z[a, b]$.
+  for some polynomial $P(a, b) \in \Z[a, b]$. This polynomial is far
+  too complicated to write down.\footnote{%
+    Expanding $P(a, b)$ here would likely take half a page. Anyway,
+    as always the full details can be found in \texttt{mma/abc.nb}.}
+  It has degree $8$ in $a$ and degree $9$ in $b$. So the problem now
+  reduces to finding rational points on the curve $C_P$ defined by
+  $P(a, b) = 0$ --- for each rational point $(a, b)$ on $C_P$, there
+  are at most two rational $c$ solving $\l_1(a, b, c) = 0$ and
+  $\l_0(a, b, c) = 0$.
+
+  Using Sage (see \texttt{sage/pab-genus.sage}), we were able to
+  calculate the genus of $C_P$ (more precisely, the genus of its
+  normalization). It turns out that the genus
+  \[
+  g(C_P) = 11 > 2,
+  \]
+  so $C_P$ is a high genus curve; hence by Faltings' theorem
+  (Theorem~\ref{th:faltings}), the number of rational points on $C_P$
+  is finite. Consequently, the number of $c$ that satisfy our
+  conditions is finite. This completes the proof of
+  Theorem~\ref{th:n=5-finite}.
 \end{case}
 
 \subsection{General results}
