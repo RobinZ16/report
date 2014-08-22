@@ -179,8 +179,7 @@ could contain the 4-cycles. Due to the precise parametrization
 (\ref{eq:4-param}), this problem reduces to finding rational numbers
 of the form $d = (t^4 - 1)(t^2 + 2t - 1)$, with $t \in \Q$, up to
 rational squares. Further discussion of this problem can be found in
-Subsection.
-%% TODO add subsection reference
+Subsection~\ref{subsec:d-distribution}.
 
 \subsection{The quadratic $N = 5$ case}
 \label{subsec:quadratic-5}
@@ -380,7 +379,7 @@ much more general version of his lemma:
 \newcommand{\nd}{\frac{N}{d}}
 
 \begin{theorem}
-  Let $c \in \Q$. Let $K$ be a Galois extension of $\Q$ with degree $d
+  Let $c \in \Q$, and $K$ be a Galois extension of $\Q$ with degree $d
   = [K : \Q]$. Let $N$ be a multiple of $d$, and $\set{z_0, \dots,
     z_{N-1}} \subset K$ be an exact $N$-cycle of $\phi_c(z) = z^2 +
   c$. Then exactly one of the following holds:
@@ -446,34 +445,38 @@ general. Although the supply of examples is limited, all of the
 examples that we currently know satisfy the first case (all 4-cycles,
 the 5-cycles described by Flynn, Poonen, and Schaefer
 \cite{MR1480542}, and the 6-cycles described by Stoll
-\cite{MR2465796}). If this is true in general, then it follows that
-all periodic points for $\phi_c$ (with $c$ rational) in Galois
-extensions to $\Q$ fields with degree dividing their period
-correspond to rational points in $C_0(N)$ since the first case
-produces rational trace $t = \sum_{i=1}^N z_i$.  So in general,
-we conjecture that:
+\cite{MR2465796}). We state our conjecture as follows.
 
 \begin{conjecture}
-  Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{z_1, \dots, z_N\}$
-  be an exact $N$-cycle defined over a Galois number field K, with N
-  divisible by $d = [K:\Q ]$. Then $z_{\frac{iN}{d}+1} = \s(z_1)$ for
-  some nontrivial $\s \in \gal(K/\Q)$, $i \in \Z$ and therefore the
-  $z_i$'s produce rational points on $C_0(N)$.
+  Let $c \in \Q$, and $K$ be a Galois extension of $\Q$ with degree $d
+  = [K : \Q]$. Let $N$ be a multiple of $d$, and $\set{z_0, \dots,
+    z_{N-1}} \subset K$ be an exact $N$-cycle of $\phi_c(z) = z^2 +
+  c$. Then $z_{i\nd} = \t(z_0)$ for some $0 \le i \le d-1$ and some
+  nontrivial $\t \in \gal(K/\Q)$.
 \end{conjecture}
 
-\begin{remark}
-  If this conjecture were true, one tangible consequence is that the
-  6-cycle over $\Q(\sqrt{33})$ with $c = -\frac{71}{48}$ and $z_1 = -1
-  + \frac{\sqrt{33}}{12}$ found by Stoll \cite{MR2465796} is the only
-  6-cycle defined over a quadratic number field (conditionally on the
-  weak form of BSD). Since the only results on rational points of
-  $C_0(N)$ currently are those of Morton \cite{MR1665198} for $N = 4$,
-  Flynn-Poonen-Schaefer \cite{MR1480542} for $N = 5$, and Stoll
-  \cite{MR2465796} for $N = 6$ (conditionally on the weak form of
-  BSD), we have to wait for other results on $C_0(N)$ for other $N$ to
-  see if this conjecture might imply results for other numerical
-  cases.
-\end{remark}
+If the conjecture is true, then one consequence is that, for $N$ even
+and $d = 2$ (i.e., $K$ is quadratic, which is the case we are most
+interested in; moreover, $K$ is automatically Galois), we have either
+$z_0 = \ol{z_0}$, in which case the cycle is defined over $\Q$; or
+$z_0 = \ol{z_{\frac{N}{2}}}$, in which case $z_0 + z_{\frac{N}{2}}$
+is rational, and consequently the trace $z_0 + \phi_c(z_0) + \cdots +
+\phi_c^{N-1}(z_0)$ is rational. In either case, the point on $C_0(N)$
+that corresponds to $c$ and the cycle is a rational point, so finding
+quadratic periodic points of exact period $N$ is reduced to studying
+rational points on $C_0(N)$.
+
+In particular, for $N = 6$, since the rational points on $C_0(6)$ are
+already understood due to Stoll's work \cite{MR2465796} (conditional
+on the weak Birch and Swinnerton-Dyer conjecture on the Jocabian of
+$C_0(6)$), then we can easily show by exhaustion that the only
+quadratic 6-cycle is defined over $\Q(\sqrt{33})$, with $c =
+-\frac{71}{48}$ and $z_0 = -1 + \frac{\sqrt{33}}{12}$.
+
+At the time of writing it is unclear to us how to approach this
+conjecture. The known proof in the $N = 4$ case relies on a special
+structure of $\Phi_4(z, c)$, and cannot be generalized even to $N =
+6$. Also, more testing examples are welcome.
 
 %%% Local Variables:
 %%% TeX-master: "report"

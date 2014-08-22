@@ -156,28 +156,31 @@ conjecture:
 One general result we produced is that
 
 \begin{theorem}
-	Let $\phi_c(z) = z^2 + c$ with $c \in \Q$. Let $\{x_1, \ldots, x_{N}\}$ be
-	an exact $N$-cycle defined over a Galois number field K, with N
-	divisible by	$d = [K:\Q ]$. Then either: \\
-	\begin{itemize}
-	\item $x_{\frac{iN}{d}+1} = \sigma(x_1)$ for some nontrivial $\sigma \in
-	\gal(K/\Q)$, $i \in \Z$
-	\item $\{x_1, \ldots, x_{N}\} \cap \{\tau(x_1), \ldots, \tau(x_{N})\} =
-	\emptyset$, $\forall \tau \in \gal(K/\Q)$ nontrivial.
-	\end{itemize}
+  Let $c \in \Q$, and $K$ be a Galois extension of $\Q$ with degree $d
+  = [K : \Q]$. Let $N$ be a multiple of $d$, and $\set{z_0, \dots,
+    z_{N-1}} \subset K$ be an exact $N$-cycle of $\phi_c(z) = z^2 +
+  c$. Then exactly one of the following holds:
+  \begin{enumerate}[(i)]
+  \item $z_{i\frac{N}{d}} = \t(z_0)$ for some $0 \le i \le d-1$ and
+    some nontrivial $\t \in \gal(K/\Q)$;
+
+  \item $\set{z_0, \dots, z_{N-1}} \cap \set{\t(z_0), \dots, \t(z_{N-1})} =
+    \es$ for all nontrivial $\t \in \gal(K/\Q)$.
+  \end{enumerate}
 \end{theorem}
 
-The above theorem has some interesting consequences if the our conjecture
-that the second case is never true (although we do not have many examples,
-all of our numerical evidence falls under the first category). If the first
-case always holds, then the $x_i$'s produce rational points on $C_0(N)$
-because the trace $t = \sum\limits_{i=1}^N x_i$ is always rational. Thus,
-the search for these periodic points is reduced to finding rational points
-on $C_0(N)$.
+In fact, we have good reasons to believe that the second case never
+occurs, and assuming this conjecture, some problems of finding
+quadratic points (or even higher) may be reduced to finding rational
+points.
 
-Other conjectures can be found in Section~\ref{sec:comp},
-``Computational efforts, confirmations, and observations'', and
-Section~\ref{sec:map}, ``Directions from here''.
+Before we close the introduction section, note that we have a handful
+of programs, written in C++, Mathematica, or Sage, that accompany this
+report. These programs are available as a repository on GitHub; see
+\cite{src} in the reference list. Whenever we need to refer to such a
+program, we print its path in the repository in monospaced font; for
+instance, \texttt{mma/abc.nb} refers to the Mathematica notebook
+\texttt{abc.nb} in the \texttt{mma} directory of the repository.
 
 %%% Local Variables:
 %%% TeX-master: "report"
