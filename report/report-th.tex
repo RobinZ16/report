@@ -351,10 +351,10 @@ three cases.
 
 Having established Theorem~\ref{th:n=5-finite}, which is a finiteness
 theorem, the next natural thing to do is to find the actual finite
-number. We first to find such $c$ computationally; the efforts are
-documented in Subsection~\ref{subsec:seek-quadratic}, ``Desperately
-seeking quadratic periodic points''. The computational results
-strengthened our belief that $c \in \Q$ such that $\phi_c$ has
+number. We first tried to find such $c$ computationally; the efforts
+are documented in Subsection~\ref{subsec:seek-quadratic},
+``Desperately seeking quadratic periodic points''. The computational
+results strengthened our belief that $c \in \Q$ such that $\phi_c$ has
 periodic points in $\U$ of exact period 5 simply does not exist, hence
 Conjecture~\ref{cj:n=5-zero}.
 
@@ -381,11 +381,16 @@ to apply Chabauty and Coleman's method to get a rough bound on the
 number of rational points. The computational complexity seems out of
 reach at this point even if we assume the Birch and Swinnerton-Dyer
 conjecture. Even if the method does work, the bound is estimated to be
-at least about 50, which is too far from 8, which is what we believe
-to be the number of rational points on the normalization of $C_P$,
-after accounting for points at infinity and the node at $(3,
-0)$. There will be no way to sharpen the bound even if we manage to
-get it, so it is to some extent useless.
+at least about 50. This is too far from 8,
+%% TODO: need to check this carefully (I pulled the number out of my
+%% memory when I first wrote this --- in particular, I believe there
+%% are only two rational points at infinity, but this needs to be
+%% checked.)
+which is what we believe to be the number of rational points on the
+normalization of $C_P$, after accounting for points at infinity and
+the node at $(3, 0)$. It seems that radical new ideas are needed to
+solve this problem. At any rate, the conjecture itself looks very
+solid.
 
 \subsection{General results}
 \label{subsec:general}
@@ -486,6 +491,7 @@ the 5-cycles described by Flynn, Poonen, and Schaefer
 \cite{MR2465796}). We state our conjecture as follows.
 
 \begin{conjecture}
+  \label{cj:galois-conjugate}
   Let $c \in \Q$, and $K$ be a Galois extension of $\Q$ with degree $d
   = [K : \Q]$. Let $N$ be a multiple of $d$, and $\set{z_0, \dots,
     z_{N-1}} \subset K$ be an exact $N$-cycle of $\phi_c(z) = z^2 +
@@ -509,7 +515,30 @@ already understood due to Stoll's work \cite{MR2465796} (conditional
 on the weak Birch and Swinnerton-Dyer conjecture on the Jocabian of
 $C_0(6)$), then we can easily show by exhaustion that the only
 quadratic 6-cycle is defined over $\Q(\sqrt{33})$, with $c =
--\frac{71}{48}$ and $z_0 = -1 + \frac{\sqrt{33}}{12}$.
+-\frac{71}{48}$ and
+\begin{equation}
+  \label{eq:6-cycle}
+  z_0 = -1 + \frac{\sqrt{33}}{12},\,
+  z_1 = -\frac{1}{4} - \frac{\sqrt{33}}{6},\,
+  z_2 = -\frac{1}{2} + \frac{\sqrt{33}}{12},\,
+  z_3 = \ol{z_0},\,
+  z_4 = \ol{z_1},\,
+  z_5 = \ol{z_2}.
+\end{equation}
+
+This establishes the following corollary to
+Conjecture~\ref{cj:galois-conjugate}:
+
+\begin{corollary}
+  \label{cor:6-cycle}
+  Let $J$ be the Jacobian of $C_0(6)$. If the $L$-series $L(J, s)$
+  extends to an entire function and satisfies the standard functional
+  equation; the weak Birch and Swinnerton-Dyer conjecture is valid for
+  $J$; and Conjecture~\ref{cj:galois-conjugate} is true, then only $c
+  \in \Q$ such that $\phi_c(z) = z^2 + c$ has periodic points of exact
+  period 6 in $\U$ is $-\frac{71}{48}$, and the corresponding periodic
+  points are $z_0, \dots, z_5$ defined in (\ref{eq:6-cycle}).
+\end{corollary}
 
 At the time of writing it is unclear to us how to approach this
 conjecture. The known proof in the $N = 4$ case relies on a special

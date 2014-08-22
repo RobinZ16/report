@@ -40,18 +40,18 @@ $K$, the $K$-points on $C_0(N)$ do not necessarily correspond to
 $K$-points on $C_1(N)$; rather, they correspond to
 $\gal(\ol{K}/K)$-stable orbits on $C_1(N)$.
 
-Now that we defined $C_1(N)$ and $C_0(N)$, the study of periodic points
-of exact period $N$ in a number field $K$ (where we also require that
-$c \in K$) boils down to the study of $K$-points on these two
-curves. $K$-points on $C_1(N)$ correspond directly, with finitely many
-exceptions due to removal of singularities, to pairs $(z, \phi_c)$ of
-a periodic point $z \in K$ of periodic $N$ and a map $\phi_c(z) = z^2
-+ c$ with $c \in K$. $K$-points on $C_0(N)$ correspond, with finitely
-many exceptions, to pairs $(\O, \phi_c)$ of a $\gal(\ol{K}/K)$-stable
-orbit $\O$ of size $N$ and a map $\phi_c(z) = z^2 + c$ with $c \in K$;
-obviously these include all such $(\O, \phi_c)$ pairs where elements
-of $\O$ are strictly contained in $K$, and hence contain full
-information about periodic points in $K$.
+Now that we defined $C_1(N)$ and $C_0(N)$, the study of periodic
+points of exact period $N$ in a number field $K$ (where we also
+require that $c \in K$) boils down to the study of $K$-points on these
+two curves. $K$-points on $C_1(N)$ correspond directly, with finitely
+many exceptions due to removal of singularities, to pairs $(z,
+\phi_c)$ of a periodic point $z \in K$ of period $N$ and a map
+$\phi_c(z) = z^2 + c$ with $c \in K$. $K$-points on $C_0(N)$
+correspond, with finitely many exceptions, to pairs $(\O, \phi_c)$ of
+a $\gal(\ol{K}/K)$-stable orbit $\O$ of size $N$ and a map $\phi_c(z)
+= z^2 + c$ with $c \in K$; obviously these include all such $(\O,
+\phi_c)$ pairs where elements of $\O$ are strictly contained in $K$,
+and hence contain full information about periodic points in $K$.
 
 Next we provide models of $C_1(N)$ or $C_0(N)$ for $N = 4$, $5$, or
 $6$, and briefly discuss what is already known about these models.
@@ -111,8 +111,8 @@ where $g, h, P_0, P_1 \in \Z[x]$ are given by
 \end{subequations}
 
 Using a refined version of Chabauty and Coleman's method (refinement
-only applicable to this specific curve), the authors were able to
-prove that there are only six rational points on $y^2 = f(x)$: $(0,
+appropriately cooked for this specific curve), the authors were able
+to prove that there are only six rational points on $y^2 = f(x)$: $(0,
 \pm 1)$, $(-3, \pm 1)$, and two points at infinity. From there they
 were able to prove that none of these corresponds to affine rational
 points on the original $(z, c)$-curve (the corresponding points are
@@ -147,9 +147,14 @@ where
     12}{4u^2(uw+u-3)}.
 \end{equation}
 Again using Chabauty and Coleman's method, and assuming the weak Birch
-and Swinnerton-Dyer conjecture for the Jacobian of $C_0(6)$, Stoll was
-able to show that there are only ten rational points on the curve
-given by (\ref{eq:c0(6)}): $(0, \infty)$, $(0, -1)$, $(0, 3)$,
+and Swinnerton-Dyer conjecture\footnote{%
+  For a description of the Birch and Swinnerton-Dyer conjecture, see
+  \cite{MR2238272}.}
+for the Jacobian of $C_0(6)$,\footnote{%
+  See p.~299 of \cite{MR1917232} for the definition of Jacobian.
+}
+Stoll was able to show that there are only ten rational points on the
+curve given by (\ref{eq:c0(6)}): $(0, \infty)$, $(0, -1)$, $(0, 3)$,
 $(\infty, 0)$, $(1, 2)$, $(2, 1)$, $(1, \infty)$, $(\infty, -1)$,
 $(-1, \infty)$, and $(-4/5, -1)$. None of them corresponds to affine
 rational points on the original $(z, c)$-curve, so

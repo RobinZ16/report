@@ -8,7 +8,8 @@ section.
 
 \subsection{Genus of curves}
 
-First we introduce the normalization and genus of a projective curve.
+First we sketch the notions of the normalization and genus of a
+projective curve.
 
 Normalization is a widely used technique in algebraic geometry to
 desingularize algebraic curves (and more generally, schemes). For each
@@ -20,16 +21,6 @@ $\varphi$ is an isomorphism outside the finitely many singularities of
 $C$. For a rigorous treatment of normalization, see Subsection 4.1.2
 of \cite{MR1917232}.
 
-\begin{remark}
-  \label{rem:ratpoint-normalization}
-  The number of rational points on the $\tilde{C}$ is greater
-  than or equal to the number of rational points on $C$, since for
-  each nonsingular rational point on $C$ there is exactly one
-  corresponding rational point on $\tilde{C}$, and for each singular
-  rational point on $C$ there is one or more corresponding rational
-  points ``upstairs''.
-\end{remark}
-
 There are two different notions of genus, the \emph{arithmetic genus}
 and the \emph{geometric genus}.
 
@@ -39,7 +30,9 @@ and the \emph{geometric genus}.
   \[
   p_a(X) = 1 - \chi_K(\O_X),
   \]
-  where $\chi$ denotes the Euler-Poincar\'e characteristic.
+  where $\chi_K$ denotes the Euler-Poincar\'e characteristic of the
+  coherent sheaf (see p.~205 of \cite{MR1917232}), and $\O_X$ denotes
+  the structure sheaf (see p.~37 of \cite{MR1917232}).
 \end{definition}
 
 \begin{definition}
@@ -48,28 +41,51 @@ and the \emph{geometric genus}.
   \[
   p_g(Y) = \dim_K H^0(Y, \omega_{Y/K}),
   \]
-  where $H^0$ denotes the zeroth cohomology group.
+  where $H^0$ denotes the zeroth cohomology group (see p.~182 of
+  \cite{MR1917232}), and $\omega_{Y/K}$ denotes the canonical sheaf
+  (see p.~239 of \cite{MR1917232}).
 \end{definition}
+
+\begin{remark}
+  \label{rem:abuse}
+  While the arithmetic genus is defined for all projective curves, in
+  the above definition the geometric genus is only defined for smooth
+  curves. Anyway, by common abuse of concept, we define the
+  \emph{geometric genus of any curve $X$} to be the geometric genus of
+  its normalization (which is smooth).
+\end{remark}
 
 It turns out that for $X$ smooth and geometrically connected, we have
 $p_a(X) = p_g(X)$ (see Subsection 7.3.2 of \cite{MR1917232}). In
 particular, for the normalization of a curve $C$, the arithmetic genus
-and the geometric genus coincide. From now on we will simply use
-$g(C)$ to denote the genus of the normalization of the curve $C$.
+and the geometric genus coincide. Therefore, from now on we use the
+following notation:
+
+\begin{definition}
+  Let $C$ be a projective curve over a field $K$ (not necessarily
+  smooth). Then we define $g(C)$ to be the \emph{geometric genus} of a
+  curve $C$ (which, recall from Remark~\ref{rem:abuse}, is actually
+  the geometric genus of the normalization of $C$.)
+\end{definition}
 
 \begin{remark}
   It is worth noting that $g(C)$ can be computed reasonably
   efficiently, provided that we have an explicit equation for $C$. For
   instance, if the polynomial equation $p(x, y) = 0$ defines an affine
-  model of $C$, then we may feed the polynomial $p(x, y)$ into some
-  computer algebra system to obtain $g(C)$. Computer algebra systems
-  capable of computing the genus of an algebraic curve include, but
-  are not limited to, Magma and Sage (using its interface to
-  Singular).
+  model of $C$ (not necessarily smooth), then we may feed the
+  polynomial $p(x, y)$ into some computer algebra system to obtain
+  $g(C)$. Computer algebra systems capable of computing the geometric
+  genus of an algebraic curve include, but are not limited to, Magma
+  and Sage (using its interface to Singular).\footnote{%
+    These computer algebra systems are also capable of computing the
+    arthimetic genus of algebraic curves, but that is not very
+    relevant to our usage cases, as we are mostly interested in the
+    normalization (see Theorem~\ref{th:faltings} and related
+    discussions).}
 \end{remark}
 
-The reason that we are interested in the genus of a curve is due to
-the following theorem.
+The reason that we are interested in the geometric genus of a curve is
+due to the following theorem.
 
 \begin{theorem}[Faltings, 1983 \cite{MR718935}]
   \label{th:faltings}
@@ -91,9 +107,11 @@ the following theorem.
 Faltings' theorem shows that the genus of a curve gives us information
 about the number of rational points on it. In particular, there are
 only finitely many rational points on a high genus curve (from now on
-we refer to a curve with genus $\ge 2$ as a \emph{high genus
-  curve}). Note that this works for any high genus curve (singular or
-not) by Remark~\ref{rem:ratpoint-normalization}.
+we refer to a curve with geometric genus $g \ge 2$ as a \emph{high
+  genus curve}). Note that this works for any high genus curve
+(singular or not), since once we have the finitely many rational
+points on the normalization, it is fairly easy to investigate what
+happens at each of the finitely many singularities.
 
 \begin{remark}
   Faltings' theorem is ineffective, since it does not provide an
@@ -102,8 +120,7 @@ not) by Remark~\ref{rem:ratpoint-normalization}.
 
   Under certain circumstances, there are methods to find an explicit
   bound (usually not sharp), most notably Chabauty and Coleman's
-  method \cite{MR808103}. Chabauty and Coleman underlies most triumphs
-  in this field.
+  method \cite{MR808103}.
 \end{remark}
 
 \subsection{Resultant of polynomials}
@@ -120,7 +137,7 @@ Another tool that we need is the resultant of two polynomials.
   \end{gathered}
   \]
   be polynomials of degrees $n$ and $m$ with coefficients
-  in a field $K$. There exists a polynomial
+  in a field $k$. There exists a polynomial
   \[
   \res(a_0, \dots, a_n, b_0, \dots, b_m) \in \Z[a_0, \dots, a_n, b_0,
   \dots, b_m],
@@ -129,7 +146,7 @@ Another tool that we need is the resultant of two polynomials.
     $A$ and $B$}, with the following properties:
   \begin{enumerate}
   \item $\res(A, B) = 0$ if and only if $A$ and $B$ have a comman root
-    in $\ol{K}$;
+    in $\ol{k}$;
 
   \item If $a_0 b_0 \ne 0$ and if we factor $A$ and $B$ as
     \[
@@ -164,7 +181,7 @@ For a proof of this proposition, see Section~2.4 of \cite{MR2316407}.
   by Property~(1) of the resultant, there is an $X$ solving both $A$
   and $B$ if and only if $Y$ solves $\res_X(A, B)$, which is a
   polynomial in $Y$, since $A$ and $B$ both have coefficients in
-  $K[Y]$ when viewed as polynomials in $X$. Therefore, we reduced two
+  $k[Y]$ when viewed as polynomials in $X$. Therefore, we reduced two
   equations in two unknowns to one equation in one unknown. Similar
   argument applies when there are more variables.
 \end{remark}

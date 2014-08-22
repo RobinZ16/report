@@ -9,16 +9,21 @@ Conjecture, put forth by Morton and Silverman in
 1994~\cite{MR1264933}, which bounds the number of preperiodic points
 of a morphism in terms of the the degree of the base field (over the
 rational field $\Q$), the dimension of the projective space, and the
-degree of the morphism. We will define the necessary objects leading
-up to the Uniform Boundedness Conjecture, briefly describe the status
-of the conjecture, and discuss the specific cases that we will
-concentrate on. At the end of this section, our major results will be
-presented, along with a few open conjectures.
+degree of the morphism. The conjecture is strong in the sense that the
+dependence on the morphism is the bare minimum --- the coefficients of
+the morphism are not referenced at all.
+
+We will define the necessary objects leading up to the Uniform
+Boundedness Conjecture, briefly describe the status of the conjecture,
+and discuss the specific cases that we will concentrate on. At the end
+of this section, our major results will be presented, along with a few
+open conjectures.
 
 \begin{definition}
   The \emph{projective space} $\P^N(K)$ of dimension $N$ over a number
-  field $K$ is the space of equivalence classes $K^{N+1}/\sim$ in
-  $K^{N+1}$, where the equivalence relation $\sim$ is given by
+  field $K$ is the space of equivalence classes $(K^{N+1} \setminus
+  \set{0})/\sim$ in $K^{N+1} \setminus \set{0}$, where the equivalence
+  relation $\sim$ is given by
   \[
   (x_0, \dots, x_N) \sim (y_0, \dots, y_N)
   \]
@@ -58,7 +63,7 @@ presented, along with a few open conjectures.
 
 \begin{definition}
   Given any morphism $\phi: \P^N \to \P^N$, the \emph{preperiodic
-    points of $\phi$} in some space $\P^N(K)$ is the collection of
+    points of $\phi$} in over some field $K$ is the collection of
   points in $\P^N(K)$ with finite forward orbits, or equivalently,
   \[
   \preper(\phi, \P^N(K)) = \set{P \in \P^N(K) : \text{exist $n_1, n_2
@@ -74,7 +79,7 @@ Now we are ready to state the Uniform Boundedness Conjecture.
   degree at most $D$ and all morphisms $\P^N \to \P^N$ of degree $d$
   defined over $K$,
   \[
-  \#\preper(\phi, \P^N(K)) \ge C(d, N, D).
+  \#\preper(\phi, \P^N(K)) \le C(d, N, D).
   \]
 \end{conjecture}
 
@@ -88,8 +93,7 @@ X_1^2]$, conveniently written as $a z^2 + b z + c$), note that $a z^2
 conjugation, which preserves the sizes of orbits, so it suffices to
 consider degree-2 polynomials of the type $\phi_c(z) = z^2 + c$. In
 this case of $\phi_c(z) = z^2 + c$, the uniform bound is again not
-known, but there are partial results when we further stipulate the
-period.
+known, but there are partial results for specific small periods.
 
 One can easily show that there are one-parameter families of
 $c$-values for which $\phi_c(z)$ has rational periodic point(s) of
@@ -129,9 +133,7 @@ we have
   with $t \in \Q$.
 
   Moreover, for each such $c \in \Q$, $\phi_c(z)$ has exactly four
-  such periodic points (whereas for any $c \in \Q$, $\phi_c(z)$ has
-  at most four periodic points of period 4 defined in some quadratic
-  extension to $\Q$).
+  such periodic points.
 \end{theorem}
 
 For $N = 5$, we have
