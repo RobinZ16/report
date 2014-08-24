@@ -7,7 +7,7 @@
 Recall that the main question we propose in our paper,
 Question~\ref{question}, concerns the quadratic periodic points of
 $\phi_c(z) = z^2 + c$ of exact period $N$. It would be nice to
-enumerate these points computionally, even if the problem cannot be
+enumerate these points computationally, even if the problem cannot be
 fully resolved theoretically. Sometimes we also pick us a few nice
 observations and conjectures not directly related to the original
 problem along the way.
@@ -26,18 +26,18 @@ enumerate all rationals in practice), and to obtain an ordering on the
 rationals, we typically use a height function $h$, conventionally
 defined as $h(p/q) = \max\set{|p|, |q|}$ for $(p, q) = 1$. Then we
 enumerate in the increasing order of height, or use some other
-ordering but terminate at a certain height (enuemrate every rational
-up to some height).
+ordering but terminate at a certain height (i.e., enumerate every
+rational number up to some height).
 
 Enumerating elements of $\U$ is by far the hardest. Elements of $\U$
-can be represented as $\frac{p_1}{q_1} + \frac{p_2}{q_2}\sqrt{d}$,
-where $p_1, q_1, p_2, q_2, d$ are integers with the further
-restrictions that $q_1, q_2 > 0$, $(p_1, q_1) = (p_2, q_2) = 1$, and
-$d$ is squarefree. To enumerate elements of $\U$, the most logical
-ordering as we see it is to first enumerate $d$, then for each $d$,
-define the height function $h$ as $h(\frac{p_1}{q_1} +
-\frac{p_2}{q_2}\sqrt{d}) = \max\set{|p_1|, |q_1|, |p_2|, |q_2|}$, and
-enumerate up to some height.
+can be written as $\frac{p_1}{q_1} + \frac{p_2}{q_2}\sqrt{d}$, where
+$p_1, q_1, p_2, q_2, d$ are integers with the further restrictions
+that $q_1, q_2 > 0$, $(p_1, q_1) = (p_2, q_2) = 1$, and $d$ is
+squarefree. To enumerate elements of $\U$, the most logical ordering
+as we see it is to first enumerate $d$, then for each $d$, define the
+height function $h$ as $h(\frac{p_1}{q_1} + \frac{p_2}{q_2}\sqrt{d}) =
+\max\set{|p_1|, |q_1|, |p_2|, |q_2|}$, and enumerate up to some
+height.
 
 There are two approaches to finding the quadratic periodic points,
 which are explained below.
@@ -62,8 +62,8 @@ confirmed by theory that the number is indeed infinite (see
 Subsection~\ref{subsec:quadratic-4}).
 
 For $N=5$, no quadratic factors were observed, and this provides
-evidence for our conjecture that there are no quadratic periodic
-points of exact period 5 for any $c \in \Q$ (see
+evidence for Conjecture~\ref{cj:n=5-zero} that there are no quadratic
+periodic points of exact period 5 for any $c \in \Q$ (see
 Subsection~\ref{subsec:quadratic-5}).
 
 We also performed the search for $N = 6$ up to height 500. Quadratic
@@ -92,18 +92,18 @@ periodic points of exact period 5 by factorizing $\Phi_5(z, c)$.
 
 To enumerate quadratic points on $C_0(5)$, we enumerate $x \in \U$ as
 described in Subsubsection~\ref{sssec:enum}, and for each specific $x
-\in \Q(\sqrt{d})$, compute $f(x)$ and check if $f(x)$ is a square in
-$\Q(\sqrt{d})$. The last check, which is equivalent to factorizing
-$T^2 - f(x)$ in $\Q(\sqrt{d})[T]$, is a rather expensive
-task. However, observe that if we denote by $N$ the norm in
+\in \Q(\sqrt{d})$, compute $f(x)$ and test if $f(x)$ is a square in
+$\Q(\sqrt{d})$. The square test in $\Q(\sqrt{d})$, which is equivalent
+to factorizing $T^2 - f(x)$ in $\Q(\sqrt{d})[T]$, is a rather
+expensive task. However, observe that if we denote by $N$ the norm in
 $\Q(\sqrt{d})$,\footnote{%
   The norm $N$ in $\Q(\sqrt{d})$, where $d$ is a squarefree integer,
   is defined as $N(a + b \sqrt{d}) = a^2 - b^2 d$ for $a, b \in \Q$.}
-then a necessary condition for $f(x)$ being a square in $\Q(\sqrt{d})$
-is that $N(f(x))$ is a norm in $\Q$. This turns out to be a very good
+then a necessary condition for $f(x)$ to be a square in $\Q(\sqrt{d})$
+is that $N(f(x))$ is a square in $\Q$. This turns out to be a very good
 criterion that filters out most of the noise, and only leaves a very
-limited number of false positives to be ruled out by the definitive
-test.
+limited number of false positives, which we can rule out by running
+the expensive yet definitive test.
 
 On a technical note, we implemented this same algorithm in three
 languages --- C++ with the FLINT library, Mathematica, and Sage (see
@@ -122,9 +122,10 @@ With the C++ program we were able to enumerate squarefree $d \in
 for values of $d$ of special interest, i.e., $d = -87$ and $d = 33$,
 up to height 100. Only eight quadratic points on $C_0(5)$ (excluding
 all the rational points already listed in \cite{MR1480542}) were
-found, which leads to only two rational $c$: -2 and -4/3, neither of
-which yields any quadratic periodic points of exact period 5. This
-once again provides evidence that no such periodic points exist.
+found, which produces only two rational values of $c$ in total, $-2$
+and $-4/3$, neither of which yields any quadratic periodic points of
+exact period 5. This once again provides evidence that no such
+periodic points exist.
 
 Detailed results can be found in \texttt{misc/enum-x-results.txt}.
 
@@ -158,9 +159,8 @@ an explicit parametrization for those periodic points, i.e.,
 \frac{t^4 - t^2 + \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{2t(t^2 - 1)}
 \]
 for $t \in \Q$, as seen in (\ref{eq:4-param}).\footnote{%
-  Since $\phi_c(z) = z^2 + c$ permutes the 4-cycles, every periodic
-  point in one of the four cycles can be viewed as the $z_1$ in
-  (\ref{eq:4-param}).}
+  Since $\phi_c(z) = z^2 + c$ permutes 4-cycles, every periodic point
+  in some 4-cycle can be viewed as the $z_1$ in (\ref{eq:4-param}).}
 In particular, we know that the quadratic extensions to $\Q$
 containing quadratic 4-cycles are given by $\Q(\sqrt{d})$, where $d =
 (t^4 - 1)(t^2 + 2t - 1)$ for some $t \in \Q$.
@@ -191,13 +191,15 @@ value), and let $D_H$ be
 \]
 We expect $D_H$ to cover most, if not all, of the squarefree integers
 of reasonably small height (compared to $H$) that occur in $D_\infty$,
-which is the set of $d$ achievable in this way. To make this intuition
-precise, we take another positive integer $H'$, let $R_{H'}$ be the range
+which we define as the set of all $d$ obtainable in this way (with no
+bound on the height of $p$ and $q$). To make this intuition precise,
+we take another positive integer $H'$, let $R_{H'}$ be the range
 $[-H', H']$ and consider the size of the intersection $D_H \cap
 R_{H'}$, and compared it to the size of the intersection $SF \cap
-R_{H'}$; that is, the number of squarefree integers achievable in the
-range $R_{H'}$ (limited by the values of $(p, q)$ that we enumerate),
-compared to the total number of squarefree integers in this range.
+R_{H'}$; that is, the number of squarefree integers obtainable in the
+range $R_{H'}$ (limited by the height of $p$ and $q$ that we enumerate
+to), compared to the total number of squarefree integers in this
+range.
 
 We coded this up (see \texttt{mma/squarefree.nb}) and obtained the
 results in Table~\ref{tab:squarefree}.
@@ -229,7 +231,7 @@ approach this density theoretically.
 In fact, it seems nontrivial even to prove that certain squarefree
 integers are not obtainable. For instance, the nine numbers that we
 found in the range $[-100, 100]$ are $-15$, $0$, $1$, $10$, $15$,
-$41$, $51$, $70$, $93$.\footnote{%
+$41$, $51$, $70$, and $93$.\footnote{%
   Here we are counting 0 as the squarefree part of itself, and 1 as
   the squarefree part of perfect squares. Since we are mainly
   interested about the asymptotic behavior, these only special cases

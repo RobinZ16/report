@@ -2,9 +2,8 @@
 \label{sec:pre}
 
 In this section, we introduce some preliminary notions and tools
-necessary for further development of the subject. Readers who are
-already familiar with the concepts introduced could safely skip this
-section.
+necessary for further development of the subject. Readers already
+familiar with the concepts introduced may safely skip this section.
 
 \subsection{Genus of curves}
 
@@ -30,7 +29,7 @@ and the \emph{geometric genus}.
   \[
   p_a(X) = 1 - \chi_K(\O_X),
   \]
-  where $\chi_K$ denotes the Euler-Poincar\'e characteristic of the
+  where $\chi_K$ denotes the Euler-Poincar\'e characteristic of a
   coherent sheaf (see p.~205 of \cite{MR1917232}), and $\O_X$ denotes
   the structure sheaf (see p.~37 of \cite{MR1917232}).
 \end{definition}
@@ -50,7 +49,7 @@ and the \emph{geometric genus}.
   \label{rem:abuse}
   While the arithmetic genus is defined for all projective curves, in
   the above definition the geometric genus is only defined for smooth
-  curves. Anyway, by common abuse of concept, we define the
+  curves. Nevertheless, by common abuse of the concept, we define the
   \emph{geometric genus of any curve $X$} to be the geometric genus of
   its normalization (which is smooth).
 \end{remark}
@@ -144,8 +143,8 @@ Another tool that we need is the resultant of two polynomials.
   \]
   in the coefficients of $A$ and $B$, called the \emph{resultant of
     $A$ and $B$}, with the following properties:
-  \begin{enumerate}
-  \item $\res(A, B) = 0$ if and only if $A$ and $B$ have a comman root
+  \begin{enumerate}[(i)]
+  \item $\res(A, B) = 0$ if and only if $A$ and $B$ have a common root
     in $\ol{k}$;
 
   \item If $a_0 b_0 \ne 0$ and if we factor $A$ and $B$ as
@@ -178,7 +177,7 @@ For a proof of this proposition, see Section~2.4 of \cite{MR2316407}.
   respect to $X$ (viewing $X$ as the variable in the above
   definition). Denote it by $\res_X(A, B)$ (we will continue to use
   the $\res_X$ notation when there are more than one variables). Then
-  by Property~(1) of the resultant, there is an $X$ solving both $A$
+  by Property~(i) of the resultant, there is an $X$ solving both $A$
   and $B$ if and only if $Y$ solves $\res_X(A, B)$, which is a
   polynomial in $Y$, since $A$ and $B$ both have coefficients in
   $k[Y]$ when viewed as polynomials in $X$. Therefore, we reduced two

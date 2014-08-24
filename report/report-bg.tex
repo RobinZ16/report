@@ -13,11 +13,10 @@ degree of the morphism. The conjecture is strong in the sense that the
 dependence on the morphism is the bare minimum --- the coefficients of
 the morphism are not referenced at all.
 
-We will define the necessary objects leading up to the Uniform
-Boundedness Conjecture, briefly describe the status of the conjecture,
-and discuss the specific cases that we will concentrate on. At the end
-of this section, our major results will be presented, along with a few
-open conjectures.
+We define the necessary objects leading up to the Uniform Boundedness
+Conjecture, briefly describe the status of the conjecture, and discuss
+the specific cases that we concentrate on. At the end of this section,
+our main results are presented, along with some open conjectures.
 
 \begin{definition}
   The \emph{projective space} $\P^N(K)$ of dimension $N$ over a number
@@ -58,13 +57,13 @@ open conjectures.
   \[
   f_0(X_0, \dots, X_N) = \cdots = f_M(X_0, \dots, X_N) = 0
   \]
-  is the trivial solution $X_0 = \dots, X_N = 0$.
+  is the trivial solution $X_0 = \dots = X_N = 0$.
 \end{definition}
 
 \begin{definition}
   Given any morphism $\phi: \P^N \to \P^N$, the \emph{preperiodic
-    points of $\phi$} in over some field $K$ is the collection of
-  points in $\P^N(K)$ with finite forward orbits, or equivalently,
+    points of $\phi$} over some field $K$ is the collection of points
+  in $\P^N(K)$ with finite forward orbits, or equivalently,
   \[
   \preper(\phi, \P^N(K)) = \set{P \in \P^N(K) : \text{exist $n_1, n_2
       \in \N$ such that $\phi^{n_1}(P) = \phi^{n_2}(P)$}}.
@@ -85,30 +84,32 @@ Now we are ready to state the Uniform Boundedness Conjecture.
 
 Very little is known about this conjecture. In fact, even the simplest
 case $(d, N, D) = (2, 1, 1)$ is not known, that is, the problem of
-bounding the number of rational preperiodic points of degree-2
-rational morphisms. If we specialize to degree-2 polynomials (i.e.,
+bounding the number of rational preperiodic points of quadratic
+rational morphisms. If we specialize to quadratic polynomials (i.e.,
 maps of the type $[X_0, X_1] \mapsto [a X_0^2 + b X_0 X_1 + c X_1^2,
-X_1^2]$, conveniently written as $a z^2 + b z + c$), note that $a z^2
-+ b z + c$ can be reduced to the form $z^2 + c'$ by linear
-conjugation, which preserves the sizes of orbits, so it suffices to
-consider degree-2 polynomials of the type $\phi_c(z) = z^2 + c$. In
-this case of $\phi_c(z) = z^2 + c$, the uniform bound is again not
-known, but there are partial results for specific small periods.
+X_1^2]$, conveniently written as $a z^2 + b z + c$, where $a \ne 0$),
+note that $a z^2 + b z + c$ can be reduced to the form $z^2 + c'$ by
+linear conjugation, which preserves the sizes of orbits, so it
+suffices to consider quadratic polynomials of the type $\phi_c(z) =
+z^2 + c$. In this case of $\phi_c(z) = z^2 + c$, the uniform bound is
+again not known, but there are partial results for specific small
+periods.
 
 One can easily show that there are one-parameter families of
 $c$-values for which $\phi_c(z)$ has rational periodic point(s) of
-exact period 1, 2, or 3. It was shown by Morton~\cite{MR1665198} that
-$\phi_c$ cannot have rational periodic points of exact period 4. The
-non-existence result was extended to exact period 5 by Flynn, Poonen,
-and Schaefer~\cite{MR1480542}, and to exact period 6 (conditional on
-the Birch and Swinnerton-Dyer conjecture for a specific abelian
-variety) by Stoll~\cite{MR2465796}.
+exact period 1, 2, or 3 \cite{MR1199627}. It was shown by
+Morton~\cite{MR1665198} that $\phi_c$ cannot have rational periodic
+points of exact period 4. The non-existence result was extended to
+exact period 5 by Flynn, Poonen, and Schaefer~\cite{MR1480542}, and to
+exact period 6 (conditional on the Birch and Swinnerton-Dyer
+conjecture for a specific abelian variety) by Stoll~\cite{MR2465796}.
 
 We are interested in generalizing the aforementioned results for
-quadratic polynomials and specific small periods to quadratic number
-fields, i.e., the $D = 2$ case. For a more detailed discussion of
-other takes on the Uniform Boundedness Conjecture, along with a list
-of references, see Section 3.3 of \cite{MR2316407}.
+quadratic polynomials and specific small periods to quadratic
+extensions of $\Q$, i.e., the $D = 2$ case. For a more detailed
+discussion of other takes on the Uniform Boundedness Conjecture,
+together with a list of references, see Section 3.3 of
+\cite{MR2316407}.
 
 From now on, unless otherwise stated, the dimension of the projective
 space will always be 1, and we reserve the letter $N$ for the exact
@@ -124,9 +125,9 @@ we have
 
 \begin{theorem}
   \label{th:n=4-infinite}
-  There are infinitely many rational values $c$ such that $\phi_c(z) =
-  z^2 + c$ has periodic points of exact period 4 defined in some
-  quadratic extension to $\Q$. All such $c$ are given by
+  There are infinitely many rational values $c \in \Q$ such that
+  $\phi_c(z) = z^2 + c$ has periodic points of exact period 4 defined
+  in some quadratic extension to $\Q$. All such $c$ are given by
   \[
   c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}
   \]
@@ -140,9 +141,9 @@ For $N = 5$, we have
 
 \begin{theorem}
   \label{th:n=5-finite}
-  There are finitely many rational values $c$ such that $\phi_c(z) =
-  z^2 + c$ has periodic points of exact period 5 defined in some
-  quadratic extension to $\Q$.
+  There are finitely many rational values $c \in \Q$ such that
+  $\phi_c(z) = z^2 + c$ has periodic points of exact period 5 defined
+  in some quadratic extension to $\Q$.
 \end{theorem}
 
 In fact, all empirical evidence points to the following stronger
@@ -186,17 +187,18 @@ occurs, hence the conjecture
 \end{conjecture}
 
 Assuming this conjecture, some problems of finding quadratic points
-(or even higher) may be reduced to finding rational points. In
-particular, it turns out that this conjecture implies
-Conjecture~\ref{cj:n=5-zero}.
+(or even points in higher degree extensions) may be reduced to finding
+rational points. In particular, it turns out that this conjecture
+implies Conjecture~\ref{cj:n=5-zero}.
 
 Before we close the introduction section, note that we have a handful
-of programs, written in C++, Mathematica, or Sage, that accompany this
-report. These programs are available as a repository on GitHub; see
-\cite{src} in the reference list. Whenever we need to refer to such a
-program, we print its path in the repository in monospaced font; for
-instance, \texttt{mma/abc.nb} refers to the Mathematica notebook
-\texttt{abc.nb} in the \texttt{mma} directory of the repository.
+of C++, Mathematica, or Sage programs to verify various results and
+provide empirical evidence for certain conjectures. These programs are
+available in a public repository on GitHub; see \cite{src} in the
+reference list. Whenever we need to refer to such a program, we print
+its path in the repository in monospaced font; for instance,
+\texttt{mma/abc.nb} refers to the Mathematica notebook \texttt{abc.nb}
+in the \texttt{mma/} directory of the repository.
 
 %%% Local Variables:
 %%% TeX-master: "report"

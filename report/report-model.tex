@@ -30,14 +30,14 @@ $\Z[z, c]$, and that all periodic points of exact period $N$ satisfy
 the polynomial equation $\Phi_N(z, c) = 0$.
 
 $\Phi_N(z, c)$ defines an algebraic curve in the $(z,
-c)$-plane. Denote the normalization of this curve by $C_1(N)$. Note
-that since the map $f$ permutes cycles of length $N$, the map $\sigma:
-(z, c) \mapsto (\phi_c(z), c)$ is an automorphism of the curve
-$C_1(N)$, and it generates a group $\tup{\sigma}$ of order $N$. Take
-the quotient curve $C_1(N)/\tup{\sigma}$, and denote the normalization
-of the quotient curve by $C_0(N)$. Note that for a given number field
-$K$, the $K$-points on $C_0(N)$ do not necessarily correspond to
-$K$-points on $C_1(N)$; rather, they correspond to
+c)$-plane. Denote the normalization of this curve by $C_1(N)$. Observe
+that the map $\phi_c$ permutes cycles of length $N$, so the map
+$\sigma: (z, c) \mapsto (\phi_c(z), c)$ is an automorphism of the
+curve $C_1(N)$, and it generates a group $\tup{\sigma}$ of order
+$N$. Take the quotient curve $C_1(N)/\tup{\sigma}$, and denote the
+normalization of the quotient curve by $C_0(N)$. Note that for a given
+number field $K$, the $K$-points on $C_0(N)$ do not necessarily
+correspond to $K$-points on $C_1(N)$; rather, they correspond to
 $\gal(\ol{K}/K)$-stable orbits on $C_1(N)$.
 
 Now that we defined $C_1(N)$ and $C_0(N)$, the study of periodic
@@ -49,9 +49,9 @@ many exceptions due to removal of singularities, to pairs $(z,
 $\phi_c(z) = z^2 + c$ with $c \in K$. $K$-points on $C_0(N)$
 correspond, with finitely many exceptions, to pairs $(\O, \phi_c)$ of
 a $\gal(\ol{K}/K)$-stable orbit $\O$ of size $N$ and a map $\phi_c(z)
-= z^2 + c$ with $c \in K$; obviously these include all such $(\O,
-\phi_c)$ pairs where elements of $\O$ are strictly contained in $K$,
-and hence contain full information about periodic points in $K$.
+= z^2 + c$ with $c \in K$; obviously these include all $(\O, \phi_c)$
+pairs where elements of $\O$ are strictly contained in $K$, and hence
+contain full information about periodic points in $K$.
 
 Next we provide models of $C_1(N)$ or $C_0(N)$ for $N = 4$, $5$, or
 $6$, and briefly discuss what is already known about these models.
@@ -103,10 +103,10 @@ where $g, h, P_0, P_1 \in \Z[x]$ are given by
 \begin{subequations}
   \label{eq:poly-defs}
   \begin{align}
-    & g(x) = 8x^6 + 74x^5 271x^4 + 452x^3 + 325x^2 + 110x + 64,\\
-    & h(x) = 8x^2(x+3)^2,\\
-    & P_0(x) = - x^6 - 10x^5 - 46x^4 - 104x^3 - 95x^2 - 24x - 9,\\
-    & P_1(x) = x^3 + 6x^2 + 3x - 9.
+    g(x) & = 8x^6 + 74x^5 271x^4 + 452x^3 + 325x^2 + 110x + 64,\\
+    h(x) & = 8x^2(x+3)^2,\\
+    P_0(x) & = - x^6 - 10x^5 - 46x^4 - 104x^3 - 95x^2 - 24x - 9,\\
+    P_1(x) & = x^3 + 6x^2 + 3x - 9.
   \end{align}
 \end{subequations}
 
@@ -124,7 +124,7 @@ Therefore,
   5-cycle.
 \end{theorem}
 
-The authors also conjectured that
+The authors also conjectured from there that
 
 \begin{conjecture}[FPS, Conjecture~2 in \cite{MR1480542}]
   If $N \ge 4$, then there are no quadratic polynomials defined over
@@ -143,7 +143,7 @@ birationally equivalent to the curve given by
 where
 \begin{equation}
   \label{eq:c-in-uw}
-  c = \frac{(-u^3-eu^2+5u-10)uw - u^4 + 3u^3 + 8u^2 - 10u +
+  c = \frac{(- u^3 - 2u^2 + 5u - 10)uw - u^4 + 3u^3 + 8u^2 - 10u +
     12}{4u^2(uw+u-3)}.
 \end{equation}
 Again using Chabauty and Coleman's method, and assuming the weak Birch

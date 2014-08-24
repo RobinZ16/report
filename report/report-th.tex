@@ -2,9 +2,9 @@
 \label{sec:th}
 
 We want to extend the results from the previous section by lifting the
-base field from the rational field $\Q$ to quadratic number fields,
-i.e., raising the degree $D$ in the Uniform Boundedness Conjecture
-statement from 1 to 2.
+base field from the rational field $\Q$ to quadratic extensions of
+$\Q$, i.e., raising the degree $D$ in the Uniform Boundedness
+Conjecture statement from 1 to 2.
 
 Let $\U$ be the collection of all rational or quadratic elements in
 $\ol{\Q}$,\footnote{%
@@ -18,8 +18,8 @@ or equivalently,
 \[
 \U = \bigcup_{[K : \Q] = 2}K,
 \]
-where the union is the union of sets, taken over all quadratic number
-fields.
+where the union is the union of sets, taken over all quadratic
+extensions of $\Q$.
 
 We pose the following question:
 
@@ -33,7 +33,7 @@ We pose the following question:
   In the above question, we only asked for the number of $c$. However,
   once $c$ is known, we can immediately determine all the periodic
   points of exact period $N$ from the equation $\Phi_N(z, c) = 0$; and
-  the number of such points is bound above by
+  the number of such points is bounded above by
   \[
   \deg_z \Phi_N(z, c) = \sum_{d|N}2^d \mu(N/d),
   \]
@@ -43,8 +43,8 @@ We pose the following question:
 \end{remark}
 
 \begin{remark}
-  We are not strictly increasing $D$ to 2, since we are still
-  requiring $c \in \Q$.
+  We are not strictly increasing $D$ to 2, as we are still requiring
+  $c \in \Q$.
 
   The rationale is that, for $N = 4$, the problem becomes easy once we
   also allow $c$ to be quadratic; in fact, Corollary~5.11 in
@@ -74,10 +74,11 @@ zero. The details can be found in Subsection~\ref{subsec:quadratic-5}.
 
 Furthermore, when we were studying the proofs that led up to the
 conclusion of the $N = 4$ case, we found an interesting lemma that can
-be made to work, under certain limitations, for any $N$. This result
-is potentially useful for investigating Question~\ref{question} in the
+be adapted to, under certain limitations, any $N$. This result is
+potentially useful for investigating Question~\ref{question} in the
 general case, so we document it with proof in
-Subsection~\ref{subsec:general}.
+Subsection~\ref{subsec:general}, and propose a more powerful version
+of this result as a conjecture.
 
 \subsection{The quadratic $N = 4$ case}
 \label{subsec:quadratic-4}
@@ -112,36 +113,36 @@ follows from Morton's work in \cite{MR1665198}.
   an algebraic result that works universally.
 \end{remark}
 
-Furthermore, Panraksa proved the following lemma:
+Furthermore, Panraksa \cite{MR2982105} proved the following lemma:
 
 \begin{lemma}[Panraksa, Theorem~1.5.1 in \cite{MR2982105}]
   \label{lem:z1+z3}
   Let $c \in \Q$, and let $\set{z_1, z_2, z_3, z_4} \subset K$ be a
-  4-cycle of $\phi_c(z) = z^2 + c$, where $K$ is a quadratic number
-  field. Then $t = z_1 + z_3$ is rational.
+  4-cycle of $\phi_c(z) = z^2 + c$, where $K$ is a quadratic extension
+  to $\Q$. Then $t = z_1 + z_3$ is rational.
 \end{lemma}
 
 So in fact,
 
 \begin{theorem} [Panraksa, Theorem~1.5.2 in \cite{MR2982105}]
   \label{th:all}
-  All combinations of $c \in \Q$ and a corresponding 4-cycle
-  $\set{z_1, z_2, z_3, z_4} \subset K$ for some quadratic number field
-  $K$ are given by ranging $t$ over $\Q$ in the parametrization
-  (\ref{eq:4-param}).
+  All combinations $(c, \set{z_1, z_2, z_3, z_4})$, where $c \in \Q$
+  and $\set{z_1, z_2, z_3, z_4}$ is a corresponding 4-cycle of
+  $\phi_c(z) = z^2 + c$, are given by ranging $t$ over $\Q$ in the
+  parametrization (\ref{eq:4-param}).
 \end{theorem}
 
 Notice that for any $c \in \Q$ and $z \in \U$ a periodic point of
 $\phi_c$ with exact period 4, the orbit to which $z$ belongs, $\set{z,
   \phi_c(z), \phi_c^2(z), \phi_c^3(z)}$, lies in the same quadratic
-number field as $z$. Therefore, the theorem above gives us complete
-information for what we asked about in Question~\ref{question}. In
-particular, allowing $t$ to range over $\Q$, Question~\ref{question}
-is immediately answered by
+extension to $\Q$ as $z$. Therefore, the theorem above gives us
+complete information for what we asked about in
+Question~\ref{question}. In particular, allowing $t$ to range over
+$\Q$, Question~\ref{question} is immediately answered by
 
 \begin{corollary}
-  There are infinitely many $c$ in $\Q$ such that $\phi_c(z) = z^2 +
-  c$ has periodic points in $\U$ of exact period 4. Moreover, all such
+  There are infinitely many $c \in \Q$ such that $\phi_c(z) = z^2 + c$
+  has periodic points in $\U$ of exact period 4. Moreover, all such
   $c$ are given by
   \[
   \label{eq:c-param}
@@ -170,8 +171,8 @@ we obtain the following result:
 \begin{theorem}
   For each $c \in \Q$, $\phi_c(z) = z^2 + c$ has at most one 4-cycle
   with points in $\U$, i.e., with points defined over a quadratic
-  number field. Consequently, for each $c \in \Q$, $\phi_c(z) = z^2 +
-  c$ has at most four periodic points in $\U$ of exact period 4.
+  extension to $\Q$. Consequently, for each $c \in \Q$, $\phi_c(z) =
+  z^2 + c$ has at most four periodic points in $\U$ of exact period 4.
 \end{theorem}
 
 Subsequently, we sought to understand precisely which quadratic fields
@@ -212,10 +213,10 @@ solves the quadratic equation
 \[
 x^2 + a x + b = 0.
 \]
-We have obtained two polynomial equations in $x$, so we may divide
-$[(c \cdot h - P_0)^2 - P_1^2 f]$ by $x^2 + ax + b$ using long
-division, and the remainder must be zero. Since $x^2 + ax + b$ is
-quadratic in $x$, the remainder is linear, in the form
+We have obtained two polynomial equations in $x$, so we may divide $(c
+\cdot h - P_0)^2 - P_1^2 f$ by $x^2 + ax + b$ using long division, and
+the remainder must be zero. Since $x^2 + ax + b$ is quadratic in $x$,
+the remainder is linear, in the form
 \[
 \l_1(a, b, c) x + \l_0(a, b, c),
 \]
@@ -248,25 +249,16 @@ $\l_0(a, b, c)$ are rational, and hence from
 \]
 we conclude that either $x$ is rational, or both $\l_1$ and $\l_0$ are
 zero.\footnote{%
-  The same argument follows through if $c$ is allowed to take value
-  in $\U$ but we further stipulate that $c$ and $x$ are not in the
-  same quadratic extension, i.e., $\Q(c, x)$ has degree 4 over
-  $\Q$. This is because $\l_1$ and $\l_0$ are in $\Q(c)$, so if $\l_1$
-  and $\l_0$ are nonzero, then from $x = -\l_0/\l_1$ we conclude that
-  $x \in \Q(c) \cap \Q(x) = \Q$, which contradicts the assumption that
-  $x \in \U \setminus \Q$.
-
-  However, this method fails when $c$ is allowed to be in the same
-  quardratic extension as $x$, in which case any combination of $a, b
-  \in Q$ and $c \in \U$ trivially produces an $x \in \U$ unless $\l_1
-  = 0$ and $\l_0 \ne 0$. This is one complication of allowing $c$ to
-  be quadratic.
-}
+  In fact, this step of deducing either $x \in \Q$ or $\l_1 = \l_0 =
+  0$ works as long as $\Q(c) \cap \Q(x) = \Q$. This is because $\l_1$
+  and $\l_0$ are in $\Q(c)$ (as $a$ and $b$ are rational), so if
+  $\l_1$ and $\l_0$ are nonzero, then from $x = -\l_0/\l_1$ we have $x
+  \in \Q(c)$, and hence $x \in \Q(c) \cap \Q(x) = \Q$.}
 Thanks to \cite{MR1480542}, we already fully understand the case
 where $x$ is rational (in which case there are no corresponding
 periodic points even in $\U$ --- they are either at infinity or
 defined only in a quintic extension of $\Q$). Therefore, we only
-consider $x \in \U \setminus \Q$, and hence
+consider $x \in \U \setminus \Q$, where we have
 \[
 \l_1(a, b, c) = \l_0(a, b, c) = 0.
 \]
@@ -281,41 +273,42 @@ Now, depending on the degrees of $\l_1$ and $\l_2$ in $c$, we have
 three cases.
 
 \begin{case}
-  The leading coefficient of $\l_1(a, b, c)$, considered as a
-  polynomial in $c$, vanishes. This happens when
+  The leading coefficient of $\l_1(a, b, c)$ (considered as a
+  polynomial in $c$) vanishes. This happens when
   \[
   16(a - 3)(2b - a(a-3)) = 0,
   \]
   i.e., either $a = 3$, or $b = a(a-3)/2$, or both.
 
-  If $a = 3$, plugging $a = 3$ into $\l_1 = \l_2 = 0$ we get two
+  If $a = 3$, substituting $a = 3$ into $\l_1 = \l_2 = 0$ we get two
   polynomial equations in $b$ and $c$. Taking the resultant of the two
   with respect to $c$, we get $- 96b^7 - 1264b^5 - 4256b^5 + 32b^4 +
   13248b^3 + 37632b^2 + 92160b = 0$, which has only one rational root
-  $b = 0$. However, $\l_1(3, 0, c) \equiv -64 \ne 0$, so there is no
-  rational solution in this case.
+  $b = 0$. However, $\l_1(3, 0, c) \equiv -64 \ne 0$, so there are no
+  rational solutions in this case.
 
-  If $b = a(a-3)/2$, plugging this into $\l_1 = \l_2 = 0$ we get two
-  polynomials equations in $a$ and $c$. Again by taking the resultant
-  we can show that there is no rational solution in this case. See the
-  attached Mathematica notebook \texttt{mma/abc.nb} for details.
+  If $b = a(a-3)/2$, substituting this into $\l_1 = \l_2 = 0$ we get
+  two polynomials equations in $a$ and $c$. Again by taking the
+  resultant we can show that there are no rational solutions in this
+  case. See the attached Mathematica notebook \texttt{mma/abc.nb} for
+  details.
 \end{case}
 
 \begin{case}
-  The leading coefficient of $\l_0(a, b, c)$, considered as a
-  polynomial in $c$, vanishes. This happens when
+  The leading coefficient of $\l_0(a, b, c)$ (considered as a
+  polynomial in $c$) vanishes. This happens when
   \[
   16b(b - (a-3)^2) = 0,
   \]
   i.e., either $b = 0$ or $b = (a - 3)^2$. Similar to Case~1, we can
-  easily show that there is no rational solution in this case. See
+  easily show that there are no rational solutions in this case. See
   \texttt{mma/abc.nb} for details.
 \end{case}
 
 \begin{case}
   Both of the leading coefficients of $\l_1(a, b, c)$ and $\l_0(a, b,
-  c)$ (considered as polynomials in $c$), are non-vanishing, i.e.,
-  both $\l_1(a, b, c)$ and $\l_0(a, b, c)$ are quadratic in $c$.
+  c)$ (considered as polynomials in $c$) are non-vanishing, i.e., both
+  $\l_1(a, b, c)$ and $\l_0(a, b, c)$ are quadratic in $c$.
 
   In this case, by Proposition~\ref{prop:res}, $\res_c(\l_1(a, b, c),
   \l_0(a, b, c))$ is given by a polynomial in the six coefficients
@@ -328,8 +321,9 @@ three cases.
   \]
   for some polynomial $P(a, b) \in \Z[a, b]$. This polynomial is far
   too complicated to write down.\footnote{%
-    Expanding $P(a, b)$ here would likely take half a page. Anyway,
-    as always the full details can be found in \texttt{mma/abc.nb}.}
+    Expanding $P(a, b)$ here would likely take half a
+    page. Nevertheless, the full details can be found in
+    \texttt{mma/abc.nb} as always.}
   It has degree $8$ in $a$ and degree $9$ in $b$. So the problem now
   reduces to finding rational points on the curve $C_P$ defined by
   $P(a, b) = 0$ --- for each rational point $(a, b)$ on $C_P$, there
@@ -340,7 +334,7 @@ three cases.
   calculate the genus of $C_P$ (more precisely, the genus of its
   normalization). It turns out that the genus
   \[
-  g(C_P) = 11 > 2,
+  g(C_P) = 11 \ge 2,
   \]
   so $C_P$ is a high genus curve; hence by Faltings' theorem
   (Theorem~\ref{th:faltings}), the number of rational points on $C_P$
@@ -355,7 +349,7 @@ number. We first tried to find such $c$ computationally; the efforts
 are documented in Subsection~\ref{subsec:seek-quadratic},
 ``Desperately seeking quadratic periodic points''. The computational
 results strengthened our belief that $c \in \Q$ such that $\phi_c$ has
-periodic points in $\U$ of exact period 5 simply does not exist, hence
+periodic points in $\U$ of exact period 5 simply do not exist, hence
 Conjecture~\ref{cj:n=5-zero}.
 
 To actually prove the conjecture, one promising direction is to study
@@ -381,16 +375,18 @@ to apply Chabauty and Coleman's method to get a rough bound on the
 number of rational points. The computational complexity seems out of
 reach at this point even if we assume the Birch and Swinnerton-Dyer
 conjecture. Even if the method does work, the bound is estimated to be
-at least about 50. This is too far from 8,
-%% TODO: need to check this carefully (I pulled the number out of my
-%% memory when I first wrote this --- in particular, I believe there
-%% are only two rational points at infinity, but this needs to be
-%% checked.)
-which is what we believe to be the number of rational points on the
+at least about 50. This is too far from 11, which is what we believe
+to be the maximal possible number of rational points on the
 normalization of $C_P$, after accounting for points at infinity and
-the node at $(3, 0)$.\footnote{%
-  We are naively assuming that the node at $(3, 0)$ lifts to two
-  rational points on the normalization.}
+singularities.\footnote{%
+  We know five regular rational points on $C_P$: $(0, 0)$,
+  $(4, \frac{1}{3})$, $(1, \frac{8}{3})$, $(6, 9)$, and a point at
+  infinity $[0, 1, 0]$; and three singular rational points on $C_P$
+  that turns out to be nodes: $(3, 0)$, and two points
+  at infinity --- $[1, 3, 0]$ and $[1, 0, 0]$. For each node there are
+  at most two rational points ``upstairs'' in the normalization, so we
+  expect the normalization of $C_P$ to have at most 11 rational
+  points. See \texttt{mma/pab-ratpoint.nb} for details.}
 It seems that radically new ideas are needed to solve this problem.
 
 Another completely different approach to the non-existence conjecture
@@ -404,15 +400,15 @@ At any rate, the conjecture itself looks very solid.
 \subsection{General results}
 \label{subsec:general}
 
-While studying the quadratic N = 4 case, we tried to mimic results
-to the quadratic N = 6 case. In particular, the following result by
-Panraksa was crucial in proving Lemma~\ref{lem:z1+z3}, which was later
-used to establish a complete understanding of the $N = 4$ case:
+While studying the quadratic N = 4 case, we tried to mimic results to
+the general case. In particular, the following result by Panraksa was
+crucial to proving Lemma~\ref{lem:z1+z3}, which was later used to
+establish a complete understanding of the $N = 4$ case:
 
-\begin{theorem} [Panraksa, Lemma~2.3.1 in \cite{MR2982105}]
+\begin{lemma} [Panraksa, Lemma~2.3.1 in \cite{MR2982105}]
   Let $c \in \Q$, and let $\set{z_1, z_2, z_3, z_4} \subset K$ be a
-  4-cycle of $\phi_c(z) = z^2 + c$, where $K$ is a quadratic number
-  field. Then exactly one of the following holds:
+  4-cycle of $\phi_c(z) = z^2 + c$, where $K$ is a quadratic extension
+  to $\Q$. Then exactly one of the following holds:
   \begin{enumerate}[(i)]
   \item $z_3 = \ol{z_1}$;\footnote{%
       $\ol{z_1}$ denotes the Galois conjugate of $z_1$ in $K$, which
@@ -421,7 +417,7 @@ used to establish a complete understanding of the $N = 4$ case:
   \item $\{z_1, z_2, z_3, z_4\} \cap \{\ol{z_1}, \ol{z_2}, \ol{z_3},
     \ol{z_4}\} =\es.$
   \end{enumerate}
-\end{theorem}
+\end{lemma}
 
 Panraksa then proves that the second case $\{z_1, z_2, z_3, z_4\} \cap
 \{\ol{z_1}, \ol{z_2}, \ol{z_3}, \ol{z_4}\} = \es$ is impossible, from
@@ -475,8 +471,8 @@ much more general version of his lemma:
   \]
   Let $r$ be the remainder of $kd$ modulo $N$. If $r$ is nonzero, then
   $\set{z_0, \dots, z_{r-1}}$ forms a cycle of $\phi_c$ with length $r
-  < N$, violating the requirement that $\set{z_0, \dots, z_{N-1}}$ is
-  an exact $N$-cycle. Therefore, $r = 0$, i.e., $N \mid kd$, and hence
+  < N$, violating the premise that $\set{z_0, \dots, z_{N-1}}$ is an
+  exact $N$-cycle. Therefore, $r = 0$, i.e., $N \mid kd$, and hence
   $\nd \mid k$. Since $0 \le k \le N - 1$, we have $k = i \cdot \nd$
   for some $0 \le i \le (N, d) - 1$. Consequently, $\t(z_0) = z_k =
   z_{i\nd}$, (i) is true, and we are done.
@@ -499,7 +495,7 @@ the 5-cycles described by Flynn, Poonen, and Schaefer
 \end{conjecture}
 
 If the conjecture is true, then in particular we have some interesting
-consequences for $d = 2$, i.e., $K$ is quadratic, which is the case we
+consequences for $d = 2$, i.e., $K$ quadratic, which is the case we
 are most interested in. In this case, $K$ is automatically Galois, so
 the conjecture can be applied unconditionally.
 
@@ -555,7 +551,8 @@ Conjecture~\ref{cj:galois-conjugate}:
   $J$; and Conjecture~\ref{cj:galois-conjugate} holds, then the only
   $c \in \Q$ such that $\phi_c(z) = z^2 + c$ has periodic points of
   exact period 6 in $\U$ is $-\frac{71}{48}$, and the corresponding
-  periodic points are $z_0, \dots, z_5$ defined in (\ref{eq:6-cycle}).
+  periodic points are $z_0, \dots, z_5$ as defined in
+  (\ref{eq:6-cycle}).
 \end{corollary}
 
 At the time of writing, though, little is known about how to approach
