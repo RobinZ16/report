@@ -157,24 +157,38 @@ conjecture:
 
 One general result we produced is that
 
-\begin{theorem}
-  Let $c \in \Q$, and $K$ be a Galois extension of $\Q$ with degree $d
-  = [K : \Q]$. Let $N$ be a multiple of $d$, and $\set{z_0, \dots,
-    z_{N-1}} \subset K$ be an exact $N$-cycle of $\phi_c(z) = z^2 +
-  c$. Then exactly one of the following holds:
-  \begin{enumerate}[(i)]
-  \item $z_{i\frac{N}{d}} = \t(z_0)$ for some $0 \le i \le d-1$ and
-    some nontrivial $\t \in \gal(K/\Q)$;
+\newcommand{\nd}{\frac{N}{(N, d)}}
 
-  \item $\set{z_0, \dots, z_{N-1}} \cap \set{\t(z_0), \dots, \t(z_{N-1})} =
-    \es$ for all nontrivial $\t \in \gal(K/\Q)$.
+\begin{theorem}
+  Let $N \in \N^*$, $c \in \Q$, $K$ be a Galois extension of $\Q$ with
+  degree $d = [K : \Q]$, and $\set{z_0, \dots, z_{N-1}} \subset K$ be
+  an exact $N$-cycle of $\phi_c(z) = z^2 + c$. Then exactly one of the
+  following holds:
+  \begin{enumerate}[(i)]
+  \item $z_{i\nd} = \t(z_0)$ for some $0 \le i \le (N, d)-1$ and some
+    nontrivial $\t \in \gal(K/\Q)$;
+
+  \item $\set{z_0, \dots, z_{N-1}} \cap \set{\t(z_0), \dots,
+      \t(z_{N-1})} = \es$ for all nontrivial $\t \in \gal(K/\Q)$.
   \end{enumerate}
 \end{theorem}
 
 In fact, we have good reasons to believe that the second case never
-occurs, and assuming this conjecture, some problems of finding
-quadratic points (or even higher) may be reduced to finding rational
-points.
+occurs, hence the conjecture
+
+\begin{conjecture}
+  \label{cj:galois-conjugate}
+  Let $N \in \N^*$, $c \in \Q$, $K$ be a Galois extension of $\Q$ with
+  degree $d = [K : \Q]$, and $\set{z_0, \dots, z_{N-1}} \subset K$ be
+  an exact $N$-cycle of $\phi_c(z) = z^2 + c$. Then $z_{i\nd} =
+  \t(z_0)$ for some $0 \le i \le (N, d)-1$ and some nontrivial $\t \in
+  \gal(K/\Q)$.
+\end{conjecture}
+
+Assuming this conjecture, some problems of finding quadratic points
+(or even higher) may be reduced to finding rational points. In
+particular, it turns out that this conjecture implies
+Conjecture~\ref{cj:n=5-zero}.
 
 Before we close the introduction section, note that we have a handful
 of programs, written in C++, Mathematica, or Sage, that accompany this

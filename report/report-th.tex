@@ -388,9 +388,18 @@ at least about 50. This is too far from 8,
 %% checked.)
 which is what we believe to be the number of rational points on the
 normalization of $C_P$, after accounting for points at infinity and
-the node at $(3, 0)$. It seems that radical new ideas are needed to
-solve this problem. At any rate, the conjecture itself looks very
-solid.
+the node at $(3, 0)$.\footnote{%
+  We are naively assuming that the node at $(3, 0)$ lifts to two
+  rational points on the normalization.}
+It seems that radically new ideas are needed to solve this problem.
+
+Another completely different approach to the non-existence conjecture
+is to prove Conjecture~\ref{cj:galois-conjugate} (of a completely
+different flavor) in Subsection~\ref{subsec:general}, which implies
+the non-existence of quadratic 5-cycles. The implication will also be
+demonstrated in Subsection~\ref{subsec:general}.
+
+At any rate, the conjecture itself looks very solid.
 
 \subsection{General results}
 \label{subsec:general}
@@ -419,33 +428,22 @@ Panraksa then proves that the second case $\{z_1, z_2, z_3, z_4\} \cap
 which Lemma~\ref{lem:z1+z3} immediately follows. We managed to prove a
 much more general version of his lemma:
 
-\newcommand{\nd}{\frac{N}{d}}
+%\newcommand{\nd}{\frac{N}{(N, d)}}
 
 \begin{theorem}
-  Let $c \in \Q$, and $K$ be a Galois extension of $\Q$ with degree $d
-  = [K : \Q]$. Let $N$ be a multiple of $d$, and $\set{z_0, \dots,
-    z_{N-1}} \subset K$ be an exact $N$-cycle of $\phi_c(z) = z^2 +
-  c$. Then exactly one of the following holds:
+  Let $N \in \N^*$, $c \in \Q$, $K$ be a Galois extension of $\Q$ with
+  degree $d = [K : \Q]$, and $\set{z_0, \dots, z_{N-1}} \subset K$ be
+  an exact $N$-cycle of $\phi_c(z) = z^2 + c$. Then exactly one of the
+  following holds:
   \begin{enumerate}[(i)]
-  \item $z_{i\nd} = \t(z_0)$ for some $0 \le i \le d-1$ and some
+  \item $z_{i\nd} = \t(z_0)$ for some $0 \le i \le (N, d)-1$ and some
     nontrivial $\t \in \gal(K/\Q)$;
 
-  \item $\set{z_0, \dots, z_{N-1}} \cap \set{\t(z_0), \dots, \t(z_{N-1})} =
-    \es$ for all nontrivial $\t \in \gal(K/\Q)$.
+  \item $\set{z_0, \dots, z_{N-1}} \cap \set{\t(z_0), \dots,
+      \t(z_{N-1})} = \es$ for all nontrivial $\t \in \gal(K/\Q)$.
   \end{enumerate}
 \end{theorem}
 
-%%% TODO
-%
-% Looking at the proof, K being Galois and d dividing N can be relaxed
-% to give something more general. For instance, if we do not assume $d
-% | N$, then we only need to replace $N/d$ by $N/gcd(N,d)$.
-%
-% (Note that those two conditions are arbitrary to begin with. They
-% were introduced as makeshift fixes for holes in the original
-% "proof", and were never carefully considered later.)
-%
-% I will address this when I have time.
 \begin{proof}
   For notational convenience, we let $z_{j+N} = z_j$ for all $j \in
   \Z$, i.e., if $j = q \cdot N + r$ with $0 \le r \le N-1$, then $z_j
@@ -478,9 +476,10 @@ much more general version of his lemma:
   Let $r$ be the remainder of $kd$ modulo $N$. If $r$ is nonzero, then
   $\set{z_0, \dots, z_{r-1}}$ forms a cycle of $\phi_c$ with length $r
   < N$, violating the requirement that $\set{z_0, \dots, z_{N-1}}$ is
-  an exact $N$-cycle. Therefore, $r = 0$, i.e., $N$ divides
-  $kd$. Since $d$ divides $N$, we have $k = i \cdot \nd$ for some $i$,
-  so $\t(z_0) = z_k = z_{i\nd}$. Then (i) is true, and we are done.
+  an exact $N$-cycle. Therefore, $r = 0$, i.e., $N \mid kd$, and hence
+  $\nd \mid k$. Since $0 \le k \le N - 1$, we have $k = i \cdot \nd$
+  for some $0 \le i \le (N, d) - 1$. Consequently, $\t(z_0) = z_k =
+  z_{i\nd}$, (i) is true, and we are done.
 \end{proof}
 
 In fact, we believe that the second case never occurs in
@@ -492,19 +491,38 @@ the 5-cycles described by Flynn, Poonen, and Schaefer
 
 \begin{conjecture}
   \label{cj:galois-conjugate}
-  Let $c \in \Q$, and $K$ be a Galois extension of $\Q$ with degree $d
-  = [K : \Q]$. Let $N$ be a multiple of $d$, and $\set{z_0, \dots,
-    z_{N-1}} \subset K$ be an exact $N$-cycle of $\phi_c(z) = z^2 +
-  c$. Then $z_{i\nd} = \t(z_0)$ for some $0 \le i \le d-1$ and some
-  nontrivial $\t \in \gal(K/\Q)$.
+  Let $N \in \N^*$, $c \in \Q$, $K$ be a Galois extension of $\Q$ with
+  degree $d = [K : \Q]$, and $\set{z_0, \dots, z_{N-1}} \subset K$ be
+  an exact $N$-cycle of $\phi_c(z) = z^2 + c$. Then $z_{i\nd} =
+  \t(z_0)$ for some $0 \le i \le (N, d)-1$ and some nontrivial $\t \in
+  \gal(K/\Q)$.
 \end{conjecture}
 
-If the conjecture is true, then one consequence is that, for $N$ even
-and $d = 2$ (i.e., $K$ is quadratic, which is the case we are most
-interested in; moreover, $K$ is automatically Galois), we have either
-$z_0 = \ol{z_0}$, in which case the cycle is defined over $\Q$; or
-$z_0 = \ol{z_{\frac{N}{2}}}$, in which case $z_0 + z_{\frac{N}{2}}$
-is rational, and consequently the trace $z_0 + \phi_c(z_0) + \cdots +
+If the conjecture is true, then in particular we have some interesting
+consequences for $d = 2$, i.e., $K$ is quadratic, which is the case we
+are most interested in. In this case, $K$ is automatically Galois, so
+the conjecture can be applied unconditionally.
+
+If $N$ is odd, then $(N, d) = 1$, so we have $z_0 = \ol{z_0}$, i.e.,
+$z_0$ is rational. Consequently the entire cycle defined over $\Q$,
+and we can reduce the problem of finding quadratic $N$-cycles to
+purely finding rational $N$-cycles. In particular, for $N = 5$, we
+already know there are no rational 5-cycles, so
+Conjecture~\ref{cj:n=5-zero}, the main conjecture of
+Subsection~\ref{subsec:quadratic-5} that says no quadratic 5-cycles
+exist for $c \in \Q$, follows automatically. We record this corollary
+as follows:
+
+\begin{corollary}
+  If Conjecture~\ref{cj:galois-conjugate} holds, then there are no $c
+  \in \Q$ such that $\phi_c(z) = z^2 + c$ has periodic points in $\U$
+  of exact period 5.
+\end{corollary}
+
+If $N$ is even, then $(N, d) = 2$, and we have either $z_0 =
+\ol{z_0}$, in which case the cycle is defined over $\Q$; or $z_0 =
+\ol{z_{\frac{N}{2}}}$, in which case $z_0 + z_{\frac{N}{2}}$ is
+rational, and consequently the trace $z_0 + \phi_c(z_0) + \cdots +
 \phi_c^{N-1}(z_0)$ is rational. In either case, the point on $C_0(N)$
 that corresponds to $c$ and the cycle is a rational point, so finding
 quadratic periodic points of exact period $N$ is reduced to studying
@@ -534,10 +552,10 @@ Conjecture~\ref{cj:galois-conjugate}:
   Let $J$ be the Jacobian of $C_0(6)$. If the $L$-series $L(J, s)$
   extends to an entire function and satisfies the standard functional
   equation; the weak Birch and Swinnerton-Dyer conjecture is valid for
-  $J$; and Conjecture~\ref{cj:galois-conjugate} is true, then only $c
-  \in \Q$ such that $\phi_c(z) = z^2 + c$ has periodic points of exact
-  period 6 in $\U$ is $-\frac{71}{48}$, and the corresponding periodic
-  points are $z_0, \dots, z_5$ defined in (\ref{eq:6-cycle}).
+  $J$; and Conjecture~\ref{cj:galois-conjugate} holds, then the only
+  $c \in \Q$ such that $\phi_c(z) = z^2 + c$ has periodic points of
+  exact period 6 in $\U$ is $-\frac{71}{48}$, and the corresponding
+  periodic points are $z_0, \dots, z_5$ defined in (\ref{eq:6-cycle}).
 \end{corollary}
 
 At the time of writing, though, little is known about how to approach
