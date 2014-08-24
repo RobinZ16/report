@@ -1,6 +1,51 @@
 \section{Directions from here}
 \label{sec:map}
 
+On the other hand, when we were trying to generalize the $N = 5$ proof
+to accommodate the case where $c$ is also allowed to be quadratic, we
+encountered several intrinsic difficulties in our method that disabled
+the generalization. Nevertheless, we found a remotely related problem
+that is interesting on its own right.
+
+\begin{question}
+  \label{q:z-c-same-extension}
+  Recall the polynomial $\Phi_N(z, c)$ from
+  Subsection~\ref{subsec:model-general}. Is it true that for $z, c \in
+  \U$ solving $\Phi_N(z, c) = 0$, $z$ and $c$ must be in the same
+  quadratic extension, i.e., $\Q(z, c)$ has degree at most two over
+  $\Q$?
+\end{question}
+
+For a fixed $N$ this may be reduced to a finite computation as
+follows. Suppose not, then we can write $z = a_1 + \sqrt{b_1}$ and $c
+= a_2 + \sqrt{b_2}$, where $a_1, b_1, a_2, b_2$ are rational,
+$[\Q(\sqrt{b_1}) : \Q] = [\Q(\sqrt{b_2}) : \Q] = 2$, and
+$\Q(\sqrt{b_1}) \ne \Q(\sqrt{b_2})$. Plugging these into $\Phi_N(z,
+c)$ we have $\Phi_N(z, c) \in \Q(\sqrt{b_1}, \sqrt{b_2})$, where
+$\Q(\sqrt{b_1}, \sqrt{b_2})$ has a basis $1, \sqrt{b_1}, \sqrt{b_2},
+\sqrt{b_1 b_2}$ over $\Q$. Since $\Phi_N(z, c) = 0$, the four
+coefficients with respect to the above basis must all be zero, so we
+obtain four polynomial equations in four unknowns $a_1, b_1, a_2,
+b_2$. Taking the resultant three times, we end up with a polynomial
+equation in one variable (this polynomial could be gigantic even for
+small $N$), and we only need to check for its finitely many rational
+roots. If it turns out that we have no rational solutions satisfying
+our requirements, then we can conclude that the original assumption is
+false, and hence $z$ and $c$ must lie in the same quadratic extension.
+
+This method might be computational infeasible as $N$
+grows large, but it is useful to try this for small $N$ to see if it
+always happens that $z$ and $c$ lie in the same extension.
+
+A more general question to ask is which polynomials $P$ in $\Q[X, Y]$
+have the property that if $X, Y \in \U$ solve $P(X, Y) = 0$, then $X,
+Y$ lie in the same extension. (This is obviously not always true; for
+instance, $X^2 + Y^2 - 5$ is irreducible, and admits a solution $(X,
+Y) = (\sqrt{2}, \sqrt{3})$.) In particular, it is interesting to see
+if this holds true for general dynatomic polynomials\footnote{%
+  See Section~4.1 of \cite{MR2316407} for the definition of dynatomic
+  polynomials.}.
+
 %%% Local Variables:
 %%% TeX-master: "report"
 %%% End:
