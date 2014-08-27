@@ -1,10 +1,10 @@
-TeX_sources := $(wildcard *.tex) bibliography.bib
+TeX_sources := $(wildcard *.tex)
 
 .PHONY: all clean distclean
 
 all: report.pdf
 
-report.pdf: $(TeX_sources)
+report.pdf: $(TeX_sources) ../preamble.tex ../custom.tex ../bibliography.bib
 	pdflatex report
 	bibtex report
 	pdflatex report
