@@ -1,0 +1,63 @@
+% colors
+% taken from https://identity.stanford.edu/overview/color
+\definecolor{cardinal}{HTML}{8C1515}
+\definecolor{sandstone}{HTML}{D2C295}
+\definecolor{westar}{HTML}{DAD7CB}
+
+\mode<presentation>
+% basics, courtesy of the CambridgeUS theme
+\useoutertheme{infolines}
+\useinnertheme[shadow=false]{rounded}
+\setbeamerfont{block title}{size={}}
+% custom colors
+\usecolortheme{beaver}
+\setbeamercolor{frametitle}{fg=cardinal,bg=sandstone!20}
+\setbeamercolor{local structure}{fg=black}
+\setbeamercolor{palette primary}{fg=cardinal,bg=sandstone}
+\setbeamercolor{palette secondary}{fg=cardinal,bg=westar}
+\setbeamercolor{palette tertiary}{fg=white,bg=cardinal}
+\setbeamercolor{titlelike}{fg=cardinal,bg=sandstone!20}
+% kill certain unprofessional elements
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{bibliography item}{}
+\setbeamertemplate{section in toc}%
+{\inserttocsectionnumber.~\inserttocsection}
+\setbeamertemplate{subsection in toc}%
+{\hspace{1em}$\bullet$~\inserttocsubsection\par}
+\setbeamertemplate{itemize items}{$\bullet$}
+
+% plain and definition theorem styles in sandstone
+\makeatletter
+\def\th@plain{
+  \normalfont
+  \setbeamercolor{block title example}{bg=sandstone,fg=white}
+  \setbeamercolor{block body example}{bg=sandstone!20,fg=black}
+  \def\inserttheoremblockenv{exampleblock}
+}
+\theoremstyle{plain}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{proposition}{Proposition}
+
+\def\th@definition{
+  \normalfont
+  \setbeamercolor{block title example}{bg=sandstone,fg=white}
+  \setbeamercolor{block body example}{bg=sandstone!20,fg=black}
+  \def\inserttheoremblockenv{exampleblock}
+}
+\theoremstyle{definition}
+
+% highlight theorem style in cardinal
+\makeatletter
+\def\th@highlight{
+  \normalfont
+  \setbeamercolor{block title example}{bg=cardinal,fg=white}
+  \setbeamercolor{block body example}{bg=cardinal!20,fg=black}
+  \def\inserttheoremblockenv{exampleblock}
+}
+\makeatother
+\theoremstyle{highlight}
+\newtheorem{hconjecture}{Conjecture}
+\newtheorem{hcorollary}{Corollary}
+\newtheorem{htheorem}{Theorem}
+\newtheorem{question}{Question}
+\newtheorem{answer}{Answer}
