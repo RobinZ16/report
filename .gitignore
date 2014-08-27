@@ -2,15 +2,23 @@
 *.dvi
 *.pdf
 
-# pdflatex auto generated junk
-*.aux
+# TeX junk
 *.log
-*.out
+
+# LaTeX junk
+*.aux
 *.toc
 
-# bibtex auto generated junk
+# BibTeX junk
 *.bbl
 *.blg
+
+# hyperref junk
+*.out
+
+# beamer junk
+*.snm
+*.nav
 
 # AUCTeX and preview-latex junk
 *.prv
