@@ -1,0 +1,145 @@
+\input{../preamble.tex}
+\input{../custom.tex}
+
+\begin{document}
+
+\section{Disclaimer}
+\label{sec:disc}
+
+We are the number theory group working on \emph{arithmetic dynamics}.
+For today's presentation, we will not include a lot of the 
+material or background from our previous talks. We will focus on 
+our main results and the new directions that we have come upon in 
+the last few weeks. 
+
+\section{Define the problem}
+\label{sec:defprob}
+
+Our goal this summer was to study the points in quadratic number 
+fields (fields of the form $\Q(\sqrt{d})$ with $d$ a squarefree 
+integer) with exact period $N$ on quadratic polynomials. We call 
+each orbit of periodic points an ``$N$-cycle'', and we want to see 
+how many $N$-cycles can arise over quadratic number fields for each 
+$N$.
+
+Our study is simplified by the fact that quadratic polynomials $a_0z
+^2 + a_1z + a_2$ can be reduced to the form $z^2 + c$ by linear 
+conjugation. Linear conjugation preserves the length of orbits, so 
+it suffices to only consider quadratic polynomials of the form $\phi
+_c(z) = z^2 + c$. For our project, we will only consider the case
+when $c \in \Q$.
+
+\section{General model}
+\label{sec:model}
+
+In this section, we set up models to study periodic points of
+$\phi_c(z) = z^2 + c$ of exact period $N$. We first set up a general
+model, and then specialize to $N = 4$, $5$, and $6$. These models have
+already been set up in the literature. We also discuss the results
+associated to these models in the literature.
+
+\section{The general model}
+\label{sec:model-general}
+
+Let $\phi_c(z) = z^2 + c$. Let $\phi_c^N(z)$ denote the $N$-th
+iteration of $f$. Then all periodic points of periodic $N$ (including
+points of exact period $d$ such that $d | N$) satisfy the polynomial
+equation
+\[
+\phi_c^N(z) - z = 0.
+\]
+By the M\"obius inversion formula, we have
+\[
+\phi_c^N(z) - z = \prod_{d|N} \Phi_d(z, c),
+\]
+where
+\[
+\Phi_d(z, c) = \prod_{m|d}(\phi_c^m(z) - z)^{\mu(d/m)}.
+\]
+With a little bit of effort we can show that $\Phi_d(z, c)$ resides in
+$\Z[z, c]$, and that all periodic points of exact period $N$ satisfy
+the polynomial equation $\Phi_N(z, c) = 0$.
+
+$\Phi_N(z, c)$ defines an algebraic curve in the $(z,
+c)$-plane. Denote the normalization of this curve by $C_1(N)$. We 
+take the quotient curve of $C_1(N)$ by associating points within an 
+orbit, and denote the normalization of the quotient curve by $C_0(N)$.
+
+Next we provide models of $C_1(N)$ or $C_0(N)$ for $N = 4$, $5$, or
+$6$, and briefly discuss what is already known about these models.
+
+\section{Previous Results}
+\label{sec:prevres}
+
+\subsection{N = 4}
+\begin{theorem}[Morton]
+  There are no finite rational solutions $(z, c)$ of the equation
+  $\Phi_4(z, c) = 0$. In other words, there are no quadratic
+  polynomials defined over $\Q$ with a rational 4-cycle.
+\end{theorem}
+
+\subsection{N = 5}
+\begin{theorem}[Flynn, Poonen, Schaefer]
+  There are no quadratic polynomials defined over $\Q$ with a rational
+  5-cycle.
+\end{theorem}
+
+\subsection{N = 6}
+\begin{theorem}[Stoll]
+  Let $J$ be the Jacobian of $C_0(6)$. If the $L$-series $L(J,s)$
+  extends to an entire function and satisfies the standard functional
+  equation, and if the weak Birch and Swinnerton-Dyer conjecture is
+  valid for $J$, then there are no quadratic polynomials defined over
+  $\Q$ with a rational 6-cycle.
+\end{theorem}
+
+\section{Our question}
+\label{sec:ourq}
+
+We want to extend the previous results by lifting the base field 
+from the rational field $\Q$ to quadratic extensions of $\Q$.
+
+Let $\U$ be the collection of all rational or quadratic elements in
+$\ol{\Q}$,
+\[
+\U = \set{\alpha \in \ol{\Q}: \text{$a \alpha^2 + b \alpha + c = 0$
+    for some $a, b, c \in \Q$}},
+\]
+or equivalently,
+\[
+\U = \bigcup_{[K : \Q] = 2}K,
+\]
+where the union is the union of sets, taken over all quadratic
+extensions of $\Q$.
+
+We pose the following question:
+
+\begin{question}
+  \label{question}
+  How many $c \in \Q$ are there such that $\phi_c(z) = z^2 + c$ has
+  periodic points in $\U$ of exact period $N$?
+\end{question}
+
+\begin{remark}
+  In the above question, we only asked for the number of $c$. However,
+  once $c$ is known, we can immediately determine the number of
+	periodic points of exact period $N$ from the equation $\Phi_N(z, c)
+	= 0$; and the number of such points is bounded above by
+  \[
+  \deg_z \Phi_N(z, c) = \sum_{d|N}2^d \mu(N/d),
+  \]
+  which is a constant only depending on $N$.
+\end{remark}
+
+It turns out that we can fully answer Questions~\ref{question} for
+$N = 4$, and partially answer it for $N = 5$.
+
+For $N = 4$, the answer is infinite, since an explicit parametrization
+of $c$ is available to us.
+
+For $N = 5$, the answer is finite, but right now we do not have a 
+concrete bound. We conjecture that the answer is zero.
+
+We also have some general results from extending previous results on
+$N = 4$. More to follow later...
+\end{document}

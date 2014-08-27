@@ -14,6 +14,9 @@ presentation-1.pdf: presentation-1.tex
 presentation-2.pdf: presentation-2.tex
 	pdflatex $<
 
+notes.pdf: notes.tex
+	pdflatex $<
+
 final.pdf: final.tex ../custom.tex ../bibliography.bib style.sty
 	pdflatex final
 	bibtex final.aux
