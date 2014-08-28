@@ -384,7 +384,11 @@ Stanford University\\
 
   \pause
 
-  $\bullet$ Taking $N = 5$ and $d = 2$,
+  $\bullet$ Taking $N$ odd and $d = 2$, we have $z_0 = \ol{z_0}$, so
+  $z_0 \in \Q$ and hence every quadratic periodic point is in fact
+  rational, so finding quadratic periodic points is reduced to finding
+  rational points on $C_1(N)$. In particular, for $N = 5$, the
+  rational points on $C_1(5)$ are already known due to FPS:
 
   \begin{hcorollary}
     If Conjecture~\ref{cj:galois-conjugate} holds, then there are no
@@ -396,7 +400,11 @@ Stanford University\\
 
   \pause\
 
-  $\bullet$ Taking $N = 6$ and $d = 2$,
+  $\bullet$ Taking $N$ even and $d = 2$, we have $z_0 = \ol{z_0}$ or
+  $z_0 = \ol{z_{N/2}}$, either case the trace $\sum_{i=0}^{N-1}z_i$
+  is rational, so finding quadratic periodic points is reduced to
+  finding rational points on $C_0(N)$. In particular, for $N = 6$, the
+  rational points on $C_0(6)$ are already known due to Stoll:
 
   \begin{hcorollary}
     \label{cor:6-cycle}
@@ -407,6 +415,26 @@ Stanford University\\
     then the only $c \in \Q$ such that $\phi_c(z) = z^2 + c$ has
     periodic points of exact period 6 in $\U$ is $-\frac{71}{48}$.
   \end{hcorollary}
+\end{frame}
+
+\section{Directions from here}
+
+\begin{frame}
+  \frametitle{An interesting question}
+
+  \pause
+
+  \begin{question}
+    \label{q:z-c-same-extension}
+    Is it true that for $z, c \in \U$ solving $\Phi_N(z, c) = 0$, $z$
+    and $c$ must be in the same quadratic extension, i.e., $\Q(z, c)$
+    has degree at most two over $\Q$?
+  \end{question}
+\end{frame}
+
+\begin{frame}
+  \center
+  \Huge{Thank you for your attention!}
 \end{frame}
 
 \bibliography{../bibliography}{}
