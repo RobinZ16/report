@@ -1,17 +1,17 @@
 \section{Introduction}
 \label{sec:bg}
 
-Our entire research project has its roots in the study of the dynamics
-of morphisms over projective spaces, specifically the periodic points
-(or more generally, preperiodic points) of such morphisms. One
-profound conjecture in this field is the Uniform Boundedness
-Conjecture, put forth by Morton and Silverman in
-1994~\cite{MR1264933}, which bounds the number of preperiodic points
-of a morphism in terms of the the degree of the base field (over the
-rational field $\Q$), the dimension of the projective space, and the
-degree of the morphism. The conjecture is strong in the sense that the
-dependence on the morphism is the bare minimum --- the coefficients of
-the morphism are not referenced at all.
+This work has its roots in the study of the dynamics of morphisms over
+projective spaces, specifically the periodic points (or more
+generally, preperiodic points) of such morphisms. One profound
+conjecture in this field is the Uniform Boundedness Conjecture, put
+forth by Morton and Silverman in 1994~\cite{MR1264933}, which bounds
+the number of preperiodic points of a morphism in terms of the the
+degree of the base field (over the rational field $\Q$), the dimension
+of the projective space, and the degree of the morphism. The
+conjecture is strong in the sense that the dependence on the morphism
+is the bare minimum --- the coefficients of the morphism are not
+referenced at all.
 
 We define the necessary objects leading up to the Uniform Boundedness
 Conjecture, briefly describe the status of the conjecture, and discuss
@@ -43,15 +43,16 @@ our main results are presented, along with some open conjectures.
   \]
   where $p \in P$ is any element of the equivalence class $P$, and
   $f_0, \dots, f_M \in \ol{K}[X_0, \dots, X_N]$ are homogeneous
-  polynomials of degree $d$ with no common factors. (Well-definedness
-  is guaranteed by homogeneity.)
+  polynomials of degree $d$ with no common factors (well-definedness
+  is guaranteed by homogeneity). If all the coefficients of $f_0,
+  \dots, f_M$ lie in $K$, we say that $\phi$ is \emph{defined over}
+  $K$. Given a point $P$, if at least one of the values $f_0(p),
+  \dots, f_M(p)$ is nonzero, then we say that $\phi$ is \emph{defined
+    at} $P$.
+\end{definition}
 
-  If all the coefficients of $f_0, \dots, f_M$ lie in $K$, we say that $\phi$ is \emph{defined over} $K$.
-
-  The rational map $\phi$ is \emph{defined at} $P$ if at least one of
-  the values $f_0(p), \dots, f_M(p)$ is nonzero.
-
-  The rational map $\phi$ is called a \emph{morphism} if it is defined
+\begin{definition}
+  A rational map $\phi$ is called a \emph{morphism} if it is defined
   everywhere in $\P^N(\ol{K})$, or equivalently, if the only solution
   in $\ol{K}$ to the simultaneous equations
   \[
@@ -112,8 +113,8 @@ together with a list of references, see Section 3.3 of
 \cite{MR2316407}.
 
 From now on, unless otherwise stated, the dimension of the projective
-space will always be 1, and we reserve the letter $N$ for the exact
-period of periodic points.
+space is always 1, and we reserve the letter $N$ for the exact period
+of periodic points.
 
 \subsection{Main results}
 \label{subsec:results}
@@ -121,7 +122,7 @@ period of periodic points.
 Below are our main results.
 
 For $N = 4$, by putting together and re-interpreting others' results,
-we have
+we have the following theorem.
 
 \begin{theorem}
   \label{th:n=4-infinite}
@@ -137,7 +138,7 @@ we have
   such periodic points.
 \end{theorem}
 
-For $N = 5$, we have
+For $N = 5$, we were able to prove the following theorem.
 
 \begin{theorem}
   \label{th:n=5-finite}
@@ -146,8 +147,9 @@ For $N = 5$, we have
   in some quadratic extension to $\Q$.
 \end{theorem}
 
-In fact, all empirical evidence points to the following stronger
-conjecture:
+In fact, all empirical evidence (see
+Subsection~\ref{subsec:seek-quadratic} and \ref{subsec:pab-ratpoint})
+points to the following stronger conjecture that no such $c$ exists.
 
 \begin{conjecture}
   \label{cj:n=5-zero}
@@ -156,7 +158,7 @@ conjecture:
   extension to $\Q$.
 \end{conjecture}
 
-One general result we produced is that
+One general result we produced is the following.
 
 \newcommand{\nd}{\frac{N}{(N, d)}}
 
@@ -175,7 +177,7 @@ One general result we produced is that
 \end{theorem}
 
 In fact, we have good reasons to believe that the second case never
-occurs, hence the conjecture
+occurs, hence we propose the following conjecture.
 
 \begin{conjecture}
   \label{cj:galois-conjugate}

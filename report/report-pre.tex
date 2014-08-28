@@ -3,12 +3,16 @@
 
 In this section, we introduce some preliminary notions and tools
 necessary for further development of the subject. Readers already
-familiar with the concepts introduced may safely skip this section.
+familiar with them may safely skip this section. Note that not all
+advanced objects apprearing in this paper are defined in here; for
+those that are not crucial to the understanding of this paper, we
+provide references (in parentheses) when they first appear.
 
 \subsection{Genus of curves}
 
 First we sketch the notions of the normalization and genus of a
-projective curve.
+projective curve (see p.~56 of \cite{MR1917232} for the definition of
+a projective curve, and more generally, a projective variety).
 
 Normalization is a widely used technique in algebraic geometry to
 desingularize algebraic curves (and more generally, schemes). For each
@@ -57,8 +61,9 @@ and the \emph{geometric genus}.
 It turns out that for $X$ smooth and geometrically connected, we have
 $p_a(X) = p_g(X)$ (see Subsection 7.3.2 of \cite{MR1917232}). In
 particular, for the normalization of a curve $C$, the arithmetic genus
-and the geometric genus coincide. Therefore, from now on we use the
-following notation:
+and the geometric genus coincide. Therefore, when we are only
+concerned about the normalization (most of the time we are in this
+paper), we do not need to distinguish between the two types of genus.
 
 \begin{definition}
   Let $C$ be a projective curve over a field $K$ (not necessarily
@@ -115,11 +120,9 @@ happens at each of the finitely many singularities.
 \begin{remark}
   Faltings' theorem is ineffective, since it does not provide an
   explicit bound on the number of rational points; nor does it present
-  a method to find such a bound.
-
-  Under certain circumstances, there are methods to find an explicit
-  bound (usually not sharp), most notably Chabauty and Coleman's
-  method \cite{MR808103}.
+  a method to find such a bound. Under certain circumstances, though,
+  there are methods to find an explicit (but usually not sharp) bound,
+  most notably Chabauty and Coleman's method \cite{MR808103}.
 \end{remark}
 
 \subsection{Resultant of polynomials}

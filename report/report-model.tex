@@ -11,9 +11,9 @@ associated to these models in the literature.
 \label{subsec:model-general}
 
 Let $\phi_c(z) = z^2 + c$. Let $\phi_c^N(z)$ denote the $N$-th
-iteration of $f$. Then all periodic points of periodic $N$ (including
-points of exact period $d$ such that $d | N$) satisfy the polynomial
-equation
+iteration of $\phi_c$. Then all periodic points of period $N$
+(including points of exact period $d$ such that $d \mid N$) satisfy
+the polynomial equation
 \[
 \phi_c^N(z) - z = 0.
 \]
@@ -25,18 +25,18 @@ where
 \[
 \Phi_d(z, c) = \prod_{m|d}(\phi_c^m(z) - z)^{\mu(d/m)}.
 \]
-With a little bit of effort we can show that $\Phi_d(z, c)$ resides in
+With a little bit of effort we can show that $\Phi_d(z, c)$ belongs to
 $\Z[z, c]$, and that all periodic points of exact period $N$ satisfy
 the polynomial equation $\Phi_N(z, c) = 0$.
 
-$\Phi_N(z, c)$ defines an algebraic curve in the $(z,
-c)$-plane. Denote the normalization of this curve by $C_1(N)$. Observe
-that the map $\phi_c$ permutes cycles of length $N$, so the map
-$\sigma: (z, c) \mapsto (\phi_c(z), c)$ is an automorphism of the
-curve $C_1(N)$, and it generates a group $\tup{\sigma}$ of order
-$N$. Take the quotient curve $C_1(N)/\tup{\sigma}$, and denote the
-normalization of the quotient curve by $C_0(N)$. Note that for a given
-number field $K$, the $K$-points on $C_0(N)$ do not necessarily
+The polynomial equation $\Phi_N(z, c)$ defines an algebraic curve in
+the $(z, c)$-plane. Denote the normalization of this curve by
+$C_1(N)$. Observe that the map $\phi_c$ permutes cycles of length $N$,
+so the map $\sigma: (z, c) \mapsto (\phi_c(z), c)$ is an automorphism
+of the curve $C_1(N)$, and it generates a group $\tup{\sigma}$ of
+order $N$. Take the quotient curve $C_1(N)/\tup{\sigma}$, and denote
+the normalization of the quotient curve by $C_0(N)$. Note that for a
+given number field $K$, the $K$-points on $C_0(N)$ do not necessarily
 correspond to $K$-points on $C_1(N)$; rather, they correspond to
 $\gal(\ol{K}/K)$-stable orbits on $C_1(N)$.
 
@@ -60,21 +60,25 @@ $6$, and briefly discuss what is already known about these models.
 \label{subsec:model-4}
 
 Morton showed in \cite{MR1665198} that $C_1(4)$, which has genus 2, is
-birationally equivalent over $\Q$ to the curve
+birationally equivalent (see Section~I.4 of \cite{MR0463157} for the
+definition of birational equivalence) over $\Q$ to the curve
 \begin{equation}
   \label{eq:c1(4)}
   v^2 = u(u^2 + 1)(1 + 2u - u^2),
 \end{equation}
-which is also an equation for the modular curve $X_1(16)$. $X_1(16)$
-is known to have only six rational points $(0, 0)$, $(\pm 1, \pm 2)$,
-and the point at infinity. Tracing back to $(z, c)$, Morton was able
-to show that none of these six rational points correspond to affine
-rational points on the original $(z, c)$-curve, hence
+which is also an equation for the modular curve $X_1(16)$ (see
+\cite{2013arXiv1308.3267B} for the definition of modular curves
+$X_1(M)$, where $M \in \N^*$). $X_1(16)$ is known to have only six
+rational points $(0, 0)$, $(\pm 1, \pm 2)$, and the point at
+infinity. Tracing back to $(z, c)$, Morton was able to show that none
+of these six rational points correspond to affine rational points on
+the original $(z, c)$-curve, hence the following theorem.
 
 \begin{theorem}[Morton, Theorem~4 in \cite{MR1665198}]
   There are no finite rational solutions $(z, c)$ of the equation
   $\Phi_4(z, c) = 0$. In other words, there are no quadratic
-  polynomials defined over $\Q$ with a rational 4-cycle.
+  polynomials defined over $\Q$ with rational periodic points of exact
+  period 4.
 \end{theorem}
 
 \begin{remark}
@@ -103,7 +107,7 @@ where $g, h, P_0, P_1 \in \Z[x]$ are given by
 \begin{subequations}
   \label{eq:poly-defs}
   \begin{align}
-    g(x) & = 8x^6 + 74x^5 271x^4 + 452x^3 + 325x^2 + 110x + 64,\\
+    g(x) & = 8x^6 + 74x^5 + 271x^4 + 452x^3 + 325x^2 + 110x + 64,\\
     h(x) & = 8x^2(x+3)^2,\\
     P_0(x) & = - x^6 - 10x^5 - 46x^4 - 104x^3 - 95x^2 - 24x - 9,\\
     P_1(x) & = x^3 + 6x^2 + 3x - 9.
@@ -117,14 +121,14 @@ to prove that there are only six rational points on $y^2 = f(x)$: $(0,
 were able to prove that none of these corresponds to affine rational
 points on the original $(z, c)$-curve (the corresponding points are
 either at infinity, or only defined in a degree-5 extension of $\Q$).
-Therefore,
+Therefore, they established the following theorem.
 
 \begin{theorem}[FPS, Theorem~1 in \cite{MR1480542}]
-  There are no quadratic polynomials defined over $\Q$ with a rational
-  5-cycle.
+  There are no quadratic polynomials defined over $\Q$ with rational
+  periodic points of exact period 5.
 \end{theorem}
 
-The authors also conjectured from there that
+From there, the authors also proposed the following conjecture.
 
 \begin{conjecture}[FPS, Conjecture~2 in \cite{MR1480542}]
   If $N \ge 4$, then there are no quadratic polynomials defined over
@@ -147,24 +151,22 @@ where
     12}{4u^2(uw+u-3)}.
 \end{equation}
 Again using Chabauty and Coleman's method, and assuming the weak Birch
-and Swinnerton-Dyer conjecture\footnote{%
-  For a description of the Birch and Swinnerton-Dyer conjecture, see
-  \cite{MR2238272}.}
-for the Jacobian of $C_0(6)$,\footnote{%
-  See p.~299 of \cite{MR1917232} for the definition of Jacobian.
-}
-Stoll was able to show that there are only ten rational points on the
-curve given by (\ref{eq:c0(6)}): $(0, \infty)$, $(0, -1)$, $(0, 3)$,
-$(\infty, 0)$, $(1, 2)$, $(2, 1)$, $(1, \infty)$, $(\infty, -1)$,
-$(-1, \infty)$, and $(-4/5, -1)$. None of them corresponds to affine
-rational points on the original $(z, c)$-curve, so
+and Swinnerton-Dyer conjecture (see \cite{MR2238272} for a description
+of this famous conjecture) for the Jacobian of $C_0(6)$ (See p.~299 of
+\cite{MR1917232} for the definition of Jacobian), Stoll was able to
+show that there are only ten rational points on the curve given by
+(\ref{eq:c0(6)}): $(0, \infty)$, $(0, -1)$, $(0, 3)$, $(\infty, 0)$,
+$(1, 2)$, $(2, 1)$, $(1, \infty)$, $(\infty, -1)$, $(-1, \infty)$, and
+$(-4/5, -1)$. None of these points corresponds to affine rational
+points on the original $(z, c)$-curve, which establishes the following
+theorem.
 
 \begin{theorem}[Stoll, Theorem~7 in \cite{MR2465796}]
   Let $J$ be the Jacobian of $C_0(6)$. If the $L$-series $L(J,s)$
   extends to an entire function and satisfies the standard functional
   equation, and if the weak Birch and Swinnerton-Dyer conjecture is
   valid for $J$, then there are no quadratic polynomials defined over
-  $\Q$ with a rational 6-cycle.
+  $\Q$ with rational periodic points of exact period 6.
 \end{theorem}
 
 %%% Local Variables:

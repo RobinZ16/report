@@ -7,10 +7,7 @@ $\Q$, i.e., raising the degree $D$ in the Uniform Boundedness
 Conjecture statement from 1 to 2.
 
 Let $\U$ be the collection of all rational or quadratic elements in
-$\ol{\Q}$,\footnote{%
-  The set $\U$ has very little structure itself. We only refer to it
-  to simplify our statements.}
-i.e.,
+$\ol{\Q}$, i.e.,
 \[
 \U = \set{\alpha \in \ol{\Q}: \text{$a \alpha^2 + b \alpha + c = 0$
     for some $a, b, c \in \Q$}},
@@ -22,7 +19,7 @@ or equivalently,
 where the union is the union of sets, taken over all quadratic
 extensions of $\Q$.
 
-We pose the following question:
+We now pose the following question.
 
 \begin{question}
   \label{question}
@@ -45,11 +42,9 @@ We pose the following question:
 
 \begin{remark}
   We are not strictly increasing $D$ to 2, as we are still requiring
-  $c \in \Q$.
-
-  The rationale is that, for $N = 4$, the problem becomes easy once we
-  also allow $c$ to be quadratic; in fact, Corollary~5.11 in
-  \cite{2013arXiv1308.3267B} tells us that the number of quadratic
+  $c \in \Q$. The rationale is that, for $N = 4$, the problem becomes
+  easy once we also allow $c$ to be quadratic; in fact, Corollary~5.11
+  in \cite{2013arXiv1308.3267B} tells us that the number of quadratic
   points on $X_1(16)$ is infinite (recall that $C_1(4)$ is
   birationally equivalent to $X_1(16)$; see
   Subsection~\ref{subsec:model-4}).
@@ -114,7 +109,7 @@ follows from Morton's work in \cite{MR1665198}.
   an algebraic result that works universally.
 \end{remark}
 
-Furthermore, Panraksa \cite{MR2982105} proved the following lemma:
+Furthermore, Panraksa \cite{MR2982105} proved the following lemma.
 
 \begin{lemma}[Panraksa, Theorem~1.5.1 in \cite{MR2982105}]
   \label{lem:z1+z3}
@@ -123,7 +118,7 @@ Furthermore, Panraksa \cite{MR2982105} proved the following lemma:
   to $\Q$. Then $t = z_1 + z_3$ is rational.
 \end{lemma}
 
-So in fact,
+One immediate consequence of this lemma is the following theorem.
 
 \begin{theorem} [Panraksa, Theorem~1.5.2 in \cite{MR2982105}]
   \label{th:all}
@@ -140,7 +135,7 @@ $\phi_c$ with exact period 4, the orbit to which $z$ belongs, $\set{z,
 extension to $\Q$ as $z$. Therefore, the theorem above gives us
 complete information for what we asked about in
 Question~\ref{question}. In particular, allowing $t$ to range over
-$\Q$, Question~\ref{question} is immediately answered by
+$\Q$ immediately gives a concrete answer to Question~\ref{question}.
 
 \begin{corollary}
   There are infinitely many $c \in \Q$ such that $\phi_c(z) = z^2 + c$
@@ -168,7 +163,7 @@ $\Phi_4(z, c)$ in $\Q[z]$. This was also partially done by Panraksa,
 who showed that (Theorem~2.3.5 in \cite{MR2982105}) for any $c \in
 \Q$, $\Phi_4(z, c)$ cannot factor as $\set{2, 2, 2, 2, 4}$ over $\Q$
 (list of degrees of factors, not necessarily irreducible). Therefore,
-we obtain the following result:
+we obtain the following result.
 
 \begin{theorem}
   For each $c \in \Q$, $\phi_c(z) = z^2 + c$ has at most one 4-cycle
@@ -241,7 +236,7 @@ and
   & 20 a b^{2} + b^{3} - 104 a b - 46 b^{2} + 95 b - 9) c -
   (8 a^{4} b - 74 a^{3} b - 24 a^{2} b^{2} + \\
   & 271 a^{2} b + 148 a b^{2} + 8 b^{3} - 452 a b - 271 b^{2} + 325 b
-  - 64)
+  - 64).
 \end{aligned}
 \]
 Note that $a$, $b$, and $c$ are all rational, so $\l_1(a, b, c)$ and
@@ -250,13 +245,7 @@ $\l_0(a, b, c)$ are rational, and hence from
 \l_1(a, b, c) x + \l_0(a, b, c) = 0
 \]
 we conclude that either $x$ is rational, or both $\l_1$ and $\l_0$ are
-zero.\footnote{%
-  In fact, this step of deducing either $x \in \Q$ or $\l_1 = \l_0 =
-  0$ works as long as $\Q(c) \cap \Q(x) = \Q$. This is because $\l_1$
-  and $\l_0$ are in $\Q(c)$ (as $a$ and $b$ are rational), so if
-  $\l_1$ and $\l_0$ are nonzero, then from $x = -\l_0/\l_1$ we have $x
-  \in \Q(c)$, and hence $x \in \Q(c) \cap \Q(x) = \Q$.}
-Thanks to \cite{MR1480542}, we already fully understand the case
+zero. Thanks to \cite{MR1480542}, we already fully understand the case
 where $x$ is rational (in which case there are no corresponding
 periodic points even in $\U$ --- they are either at infinity or
 defined only in a quintic extension of $\Q$). Therefore, we only
@@ -264,13 +253,11 @@ consider $x \in \U \setminus \Q$, where we have
 \[
 \l_1(a, b, c) = \l_0(a, b, c) = 0.
 \]
-
 Notice that $c$ is a common root to $\l_1$ and $\l_0$, so by
 Proposition~\ref{prop:res}, we have
 \[
 \res_c(\l_1(a, b, c), \l_2(a, b, c)) = 0.
 \]
-
 Now, depending on the degrees of $\l_1$ and $\l_2$ in $c$, we have
 three cases.
 
@@ -310,27 +297,23 @@ three cases.
 \begin{case}
   Both of the leading coefficients of $\l_1(a, b, c)$ and $\l_0(a, b,
   c)$ (considered as polynomials in $c$) are non-vanishing, i.e., both
-  $\l_1(a, b, c)$ and $\l_0(a, b, c)$ are quadratic in $c$.
-
-  In this case, by Proposition~\ref{prop:res}, $\res_c(\l_1(a, b, c),
-  \l_0(a, b, c))$ is given by a polynomial in the six coefficients
-  (three of $\l_1$ and three of $\l_0$). Mathematica is capable of
-  computing this polynomial (see \texttt{mma/abc.nb}), and when we
-  plug in the six coefficients, we get
+  $\l_1(a, b, c)$ and $\l_0(a, b, c)$ are quadratic in $c$. In this
+  case, by Proposition~\ref{prop:res}, $\res_c(\l_1(a, b, c), \l_0(a,
+  b, c))$ is given by a polynomial in the six coefficients (three of
+  $\l_1$ and three of $\l_0$). Mathematica is capable of computing
+  this polynomial (see \texttt{mma/abc.nb}), and when we plug in the
+  six coefficients, we get
   \[
   \label{eq:pab}
   \res_c(\l_1(a, b, c), \l_0(a, b, c)) = P(a, b)
   \]
   for some polynomial $P(a, b) \in \Z[a, b]$. This polynomial is far
-  too complicated to write down.\footnote{%
-    Expanding $P(a, b)$ here would likely take half a
-    page. Nevertheless, the full details can be found in
-    \texttt{mma/abc.nb} as always.}
-  It has degree $8$ in $a$ and degree $9$ in $b$. So the problem now
-  reduces to finding rational points on the curve $C_P$ defined by
-  $P(a, b) = 0$ --- for each rational point $(a, b)$ on $C_P$, there
-  are at most two rational $c$ solving $\l_1(a, b, c) = 0$ and
-  $\l_0(a, b, c) = 0$.
+  too complicated to write down (see the full details in
+  \texttt{mma/abc.nb}). It has degree $8$ in $a$ and degree $9$ in
+  $b$. So the problem now reduces to finding rational points on the
+  curve $C_P$ defined by $P(a, b) = 0$ --- for each rational point
+  $(a, b)$ on $C_P$, there are at most two rational $c$ solving
+  $\l_1(a, b, c) = 0$ and $\l_0(a, b, c) = 0$.
 
   Using Sage (see \texttt{sage/pab-genus.sage}), we were able to
   calculate the genus of $C_P$ (more precisely, the genus of its
@@ -345,16 +328,27 @@ three cases.
   Theorem~\ref{th:n=5-finite}.
 \end{case}
 
+\begin{remark}
+  In fact, the proof also works if $x \in \U \setminus \Q$ and $\Q(c)
+  \cap \Q(x) = \Q$. This is because all arguments work the same until
+  the step $\l_1(a, b, c) x + \l_0(a, b, c) = 0$ for some $a, b \in
+  \Q$. At this point, notice that $\l_1$ and $\l_0$ are in $\Q(c)$, so
+  if $\l_1$ and $\l_0$ are nonzero, then from $x = -\l_0/\l_1$ we have
+  $x \in \Q(c)$, and hence $x \in \Q(c) \cap \Q(x) = \Q$,
+  contradicting our assumption that $x \not\in \Q$. The rest of the
+  proof then follows through.
+\end{remark}
+
 Having established Theorem~\ref{th:n=5-finite}, which is a finiteness
-theorem, the next natural thing to do is to find the actual finite
-number. We first tried to find such $c$ computationally; the efforts
-are documented in Subsection~\ref{subsec:seek-quadratic},
+theorem, the next natural thing to do is to find the precise number of
+such $c \in \Q$. We first tried to find such $c$ computationally; the
+efforts are documented in Subsection~\ref{subsec:seek-quadratic},
 ``Desperately seeking quadratic periodic points''. The computational
 results strengthened our belief that $c \in \Q$ such that $\phi_c$ has
 periodic points in $\U$ of exact period 5 simply do not exist, hence
 Conjecture~\ref{cj:n=5-zero}.
 
-To actually prove the conjecture, one promising direction is to study
+In order to prove this conjecture, one promising direction to study is
 the rational points on $C_P$, which, once fully understood, will give
 us complete information on all the values of $c$ that we want.
 
@@ -367,10 +361,10 @@ are all the affine rational points on $C_P$. None of these points
 produce $c$ that we want.
 
 However, proving that there are only five affine rational points on
-$C_P$ is very hard. See \cite{MR1956273} (2002) and \cite{MR2780629}
-(2011) for surveys of contemporary methods of bounding the number of
-rational points on algebraic curves. These methods usually work badly
-for curves of genus greater than 2, if at all.
+$C_P$ is very hard. See the recent papers \cite{MR1956273} and
+\cite{MR2780629} for surveys of contemporary methods of bounding the
+number of rational points on algebraic curves. These methods usually
+work badly for curves of genus greater than 2, if at all.
 
 For our particular curve at hand, at the time of writing we are trying
 to apply Chabauty and Coleman's method to get a rough bound on the
@@ -405,18 +399,15 @@ At any rate, the conjecture itself looks very solid.
 While studying the quadratic N = 4 case, we tried to mimic results to
 the general case. In particular, the following result by Panraksa was
 crucial to proving Lemma~\ref{lem:z1+z3}, which was later used to
-establish a complete understanding of the $N = 4$ case:
+establish a complete understanding of the $N = 4$ case.
 
 \begin{lemma} [Panraksa, Lemma~2.3.1 in \cite{MR2982105}]
   Let $c \in \Q$, and let $\set{z_1, z_2, z_3, z_4} \subset K$ be a
   4-cycle of $\phi_c(z) = z^2 + c$, where $K$ is a quadratic extension
   to $\Q$. Then exactly one of the following holds:
   \begin{enumerate}[(i)]
-  \item $z_3 = \ol{z_1}$;\footnote{%
-      For $z \in K$, where $K$ is a quadratic extension to $\Q$, we
-      denote by $\ol{z}$ the Galois conjugate of $z$. This is
-      unambiguous since $\gal(K/\Q)$ contains only one nontrivial
-      element.}
+  \item $z_3 = \ol{z_1}$, where $\ol{z_1}$ denotes the Galois
+    conjugate of $z_1$ in $K$;
 
   \item $\{z_1, z_2, z_3, z_4\} \cap \{\ol{z_1}, \ol{z_2}, \ol{z_3},
     \ol{z_4}\} =\es.$
@@ -426,7 +417,7 @@ establish a complete understanding of the $N = 4$ case:
 Panraksa then proves that the second case $\{z_1, z_2, z_3, z_4\} \cap
 \{\ol{z_1}, \ol{z_2}, \ol{z_3}, \ol{z_4}\} = \es$ is impossible, from
 which Lemma~\ref{lem:z1+z3} immediately follows. We managed to prove a
-much more general version of his lemma:
+much more general version of his lemma.
 
 %\newcommand{\nd}{\frac{N}{(N, d)}}
 
@@ -465,7 +456,8 @@ much more general version of his lemma:
   z_{N+k-j}$, so we may set $j$ to 0 and $k$ to the remainder of
   $N+k-j$ modulo $N$. Assuming $j = 0$, we have $\t(z_0) = z_k$; this,
   together with the fact that $\t$ commutes with $\phi_c$, implies
-  that $\t = \phi_c^k$ on the whole cycle $\set{z_0, \dots, z_{N-1}}$.
+  that $\t \equiv \phi_c^k$ on the whole cycle $\set{z_0, \dots,
+    z_{N-1}}$.
 
   Now recall that $K$ is Galois, so the order of the Galois group
   $\gal(K/\Q)$ is exactly $[K : \Q] = d$. Therefore, by Lagrange's
@@ -490,7 +482,7 @@ the 5-cycles described by Flynn, Poonen, and Schaefer
 \cite{MR2465796}). We state our conjecture as follows.
 
 \begin{conjecture}
-  \label{cj:galois-conjugate}
+  \label{cj:galois-conjugate-re}
   Let $N \in \N^*$, $c \in \Q$, $K$ be a Galois extension of $\Q$ with
   degree $d = [K : \Q]$, and $\set{z_0, \dots, z_{N-1}} \subset K$ be
   an exact $N$-cycle of $\phi_c(z) = z^2 + c$. Then $z_{i\nd} =
@@ -511,10 +503,10 @@ already know there are no rational 5-cycles, so
 Conjecture~\ref{cj:n=5-zero}, the main conjecture of
 Subsection~\ref{subsec:quadratic-5} that says no quadratic 5-cycles
 exist for $c \in \Q$, follows automatically. We record this corollary
-as follows:
+as follows.
 
 \begin{corollary}
-  If Conjecture~\ref{cj:galois-conjugate} holds, then there are no $c
+  If Conjecture~\ref{cj:galois-conjugate-re} holds, then there are no $c
   \in \Q$ such that $\phi_c(z) = z^2 + c$ has periodic points in $\U$
   of exact period 5.
 \end{corollary}
@@ -543,16 +535,15 @@ quadratic 6-cycle is defined over $\Q(\sqrt{33})$, with $c =
   z_4 = \ol{z_1},\,
   z_5 = \ol{z_2}.
 \end{equation}
-
-This establishes the following corollary to
-Conjecture~\ref{cj:galois-conjugate}:
+This establishes yet another corollary to
+Conjecture~\ref{cj:galois-conjugate-re}.
 
 \begin{corollary}
   \label{cor:6-cycle}
   Let $J$ be the Jacobian of $C_0(6)$. If the $L$-series $L(J, s)$
   extends to an entire function and satisfies the standard functional
   equation; the weak Birch and Swinnerton-Dyer conjecture is valid for
-  $J$; and Conjecture~\ref{cj:galois-conjugate} holds, then the only
+  $J$; and Conjecture~\ref{cj:galois-conjugate-re} holds, then the only
   $c \in \Q$ such that $\phi_c(z) = z^2 + c$ has periodic points of
   exact period 6 in $\U$ is $-\frac{71}{48}$, and the corresponding
   periodic points are $z_0, \dots, z_5$ as defined in

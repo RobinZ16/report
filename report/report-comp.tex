@@ -8,9 +8,7 @@ Recall that the main question we propose in our paper,
 Question~\ref{question}, concerns the quadratic periodic points of
 $\phi_c(z) = z^2 + c$ of exact period $N$. It would be nice to
 enumerate these points computationally, even if the problem cannot be
-fully resolved theoretically. Sometimes we also pick us a few nice
-observations and conjectures not directly related to the original
-problem along the way.
+fully resolved theoretically.
 
 \subsubsection{Basic enumeration strategy}
 \label{sssec:enum}
@@ -56,19 +54,16 @@ but it is still doable for small $N$.
 
 We performed the search for $N =$ 4 and 5, enumerating $c$ up to
 height 1000. (See the Mathematica notebook \texttt{mma/enum-c.nb}.)
-
-For $N = 4$, we found many $c$ with quadratic points, and it was later
+For $N = 4$, we found many $c$ with quadratic points, and it was
 confirmed by theory that the number is indeed infinite (see
-Subsection~\ref{subsec:quadratic-4}).
-
-For $N=5$, no quadratic factors were observed, and this provides
-evidence for Conjecture~\ref{cj:n=5-zero} that there are no quadratic
-periodic points of exact period 5 for any $c \in \Q$ (see
-Subsection~\ref{subsec:quadratic-5}).
-
-We also performed the search for $N = 6$ up to height 500. Quadratic
-factor was found only for $c = -71/48$, the quadratic 6-cycle of which
-is given in (\ref{eq:6-cycle}).
+Subsection~\ref{subsec:quadratic-4}). For $N=5$, no quadratic factors
+were observed, and this provides evidence for
+Conjecture~\ref{cj:n=5-zero} that there are no quadratic periodic
+points of exact period 5 for any $c \in \Q$ (see
+Subsection~\ref{subsec:quadratic-5}). We also performed the search for
+$N = 6$ up to height 500. Quadratic factor was found only for $c =
+-71/48$, the quadratic 6-cycle of which is given in
+(\ref{eq:6-cycle}).
 
 \subsubsection{Enumerating $x \in \U$ on $C_0(5)$}
 
@@ -95,13 +90,10 @@ described in Subsubsection~\ref{sssec:enum}, and for each specific $x
 \in \Q(\sqrt{d})$, compute $f(x)$ and test if $f(x)$ is a square in
 $\Q(\sqrt{d})$. The square test in $\Q(\sqrt{d})$, which is equivalent
 to factorizing $T^2 - f(x)$ in $\Q(\sqrt{d})[T]$, is a rather
-expensive task. However, observe that if we denote by $N$ the norm in
-$\Q(\sqrt{d})$,\footnote{%
-  The norm $N$ in $\Q(\sqrt{d})$, where $d$ is a squarefree integer,
-  is defined as $N(a + b \sqrt{d}) = a^2 - b^2 d$ for $a, b \in \Q$.}
-then a necessary condition for $f(x)$ to be a square in $\Q(\sqrt{d})$
-is that $N(f(x))$ is a square in $\Q$. This turns out to be a very good
-criterion that filters out most of the noise, and only leaves a very
+expensive task. Nevertheless, observe that a necessary condition for
+$f(x)$ to be a square in $\Q(\sqrt{d})$ is that the norm of $f(x)$ in
+$\Q(\sqrt{d})$ is a square in $\Q$. This turns out to be a very good
+criterion that filters out most of the noise, and leaves only a very
 limited number of false positives, which we can rule out by running
 the expensive yet definitive test.
 
@@ -183,7 +175,7 @@ $H$ (in this case, the height for an integer is simply its absolute
 value), and let $D_H$ be
 \[
 \begin{aligned}
-  D_H = \{ d \in \Z \mid\ &
+  D_H = \{ d \in \Z \setminus \set{0} \mid\ &
   \text{$d$ is the squarefree part of $(p^4 - q^4)(p^2 + 2pq - q^2)$},
   \\
   & \text{where $-H \le p, q \le H$}\}.
@@ -209,14 +201,14 @@ results in Table~\ref{tab:squarefree}.
   \begin{tabular}{| c | c | c | c |}
     \hline
     $H$ & $H'$ & $\# D_H \cap R_{H'}$ & $\# SF \cap R_{H'}$ \\ \hline
-    100 & 100 & 9 & 123 \\ \hline
-    100 & 1000 & 20 & 1217 \\ \hline
-    100 & 10000 & 53 & 12167 \\ \hline
-    100 & 100000 & 131 & 121589 \\ \hline
-    1000 & 100 & 9 & 123 \\ \hline
-    1000 & 1000 & 20 & 1217 \\ \hline
-    1000 & 10000 & 55 & 12167 \\ \hline
-    1000 & 100000 & 140 & 121589 \\ \hline
+    100 & 100 & 8 & 122 \\ \hline
+    100 & 1000 & 19 & 1216 \\ \hline
+    100 & 10000 & 52 & 12166 \\ \hline
+    100 & 100000 & 130 & 121588 \\ \hline
+    1000 & 100 & 8 & 122 \\ \hline
+    1000 & 1000 & 19 & 1216 \\ \hline
+    1000 & 10000 & 54 & 12166 \\ \hline
+    1000 & 100000 & 139 & 121588 \\ \hline
   \end{tabular}
   \caption{Distribution of $d = (p^4 - q^4)(p^2 + 2pq - q^2)$ up to
     squares.}
@@ -224,21 +216,16 @@ results in Table~\ref{tab:squarefree}.
 \end{table}
 
 These results clearly suggests that the squarefree integers obtainable
-this way is very sparse out of all squarefree integers; the density of
-$D_\infty$ in $SF$ should be zero. However, It is not clear how to
+this way are very sparse out of all squarefree integers; the density
+of $D_\infty$ in $SF$ should be zero. However, It is not clear how to
 approach this density theoretically.
 
 In fact, it seems nontrivial even to prove that certain squarefree
-integers are not obtainable. For instance, the nine numbers that we
-found in the range $[-100, 100]$ are $-15$, $0$, $1$, $10$, $15$,
-$41$, $51$, $70$, and $93$.\footnote{%
-  Here we are counting 0 as the squarefree part of itself, and 1 as
-  the squarefree part of perfect squares. Since we are mainly
-  interested about the asymptotic behavior, these only special cases
-  do not matter.}
-It is almost certain empirically that, for instance, 2 should never
-occur. To prove this, we essentially need to prove that the
-Diophantine equation
+integers are not obtainable. For instance, the eight numbers that we
+found in the range $[-100, 100]$ are $-15$, $1$, $10$, $15$, $41$,
+$51$, $70$, and $93$. It is almost certain empirically that, for
+instance, 2 should never occur. To prove this, we essentially need to
+prove that the Diophantine equation
 \[
 (p^4 - q^4)(p^2 + 2pq - q^2) = 2 k^2
 \]

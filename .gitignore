@@ -17,14 +17,15 @@
 *.out
 
 # beamer junk
-*.snm
 *.nav
+*.snm
 
 # AUCTeX and preview-latex junk
-*.prv
-auto
-_region_.tex
 *.fmt
+*.prv
+_region_.*
+auto
+prv_*
 
 # SyncTeX junk
 *.synctex.gz
