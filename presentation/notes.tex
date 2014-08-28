@@ -140,4 +140,161 @@ concrete bound. We conjecture that the answer is zero.
 
 We also have some general results from extending previous results on
 $N = 4$. More to follow later...
+
+\section{General Results}
+\label{sec:genres}
+
+While studying the quadratic N = 4 case, we tried to mimic results to
+the general case. In particular, the following result by Panraksa was
+crucial to proving his main result.
+
+\begin{lemma} [Panraksa]
+  Let $c \in \Q$, and let $\set{z_1, z_2, z_3, z_4} \subset K$ be a
+  4-cycle of $\phi_c(z) = z^2 + c$, where $K$ is a quadratic extension
+  to $\Q$. Then exactly one of the following holds:
+  \begin{enumerate}[(i)]
+  \item $z_3 = \ol{z_1}$, where $\ol{z_1}$ denotes the Galois
+    conjugate of $z_1$ in $K$;
+
+  \item $\{z_1, z_2, z_3, z_4\} \cap \{\ol{z_1}, \ol{z_2}, \ol{z_3},
+    \ol{z_4}\} =\es.$
+  \end{enumerate}
+\end{lemma}
+
+Panraksa then proves that the second case $\{z_1, z_2, z_3, z_4\} \cap
+\{\ol{z_1}, \ol{z_2}, \ol{z_3}, \ol{z_4}\} = \es$ is impossible, from
+which his main result immediately follows. We managed to prove a
+much more general version of his lemma.
+
+\newcommand{\nd}{\frac{N}{(N, d)}}
+
+\begin{theorem}
+  Let $N \in \N^*$, $c \in \Q$, $K$ be a Galois extension of $\Q$ with
+  degree $d = [K : \Q]$, and $\set{z_0, \dots, z_{N-1}} \subset K$ be
+  an exact $N$-cycle of $\phi_c(z) = z^2 + c$. Then exactly one of the
+  following holds:
+  \begin{enumerate}[(i)]
+  \item $z_{i\nd} = \t(z_0)$ for some $0 \le i \le (N, d)-1$ and some
+    nontrivial $\t \in \gal(K/\Q)$;
+
+  \item $\set{z_0, \dots, z_{N-1}} \cap \set{\t(z_0), \dots,
+      \t(z_{N-1})} = \es$ for all nontrivial $\t \in \gal(K/\Q)$.
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  First note that (i) and (ii) cannot be simultaneously true. In fact,
+  if (i) is true, i.e., $z_{i\nd} = \t(z_0)$ for some $i$ and
+  nontrivial $\t \in \gal(K/\Q)$, then $z_{i\nd} \in \set{z_0, \dots,
+    z_{N-1}} \cap \set{\t(z_0), \dots, \t(z_{N-1})}$, so (ii) is
+  false.
+
+  If (ii) is true, then we are done. Otherwise, (ii) is false, so we
+  have some nontrivial $\t \in \gal(K/\Q)$ such that $z_k = \t(z_j)$
+  for some $j$ and $k$ satisfying $0 \le j, k \le N-1$. Note that $\t$
+  commutes with $\phi_c$ (as $\phi_c$ is defined over $\Q$ and $\t$ is
+  a field automorphism fixing the base field $\Q$), so we may assume
+  $j = 0$. Assuming $j = 0$, we have $\t(z_0) = z_k$; this,
+  together with the fact that $\t$ commutes with $\phi_c$, implies
+  that $\t \equiv \phi_c^k$ on the whole cycle $\set{z_0, \dots,
+    z_{N-1}}$.
+
+  Now recall that $K$ is Galois, so the order of the Galois group
+  $\gal(K/\Q)$ is exactly $[K : \Q] = d$. Therefore, by Lagrange's
+  theorem, $\t^d = Id$, and hence
+  \[
+  z_0 = \t^d(z_0) = (\phi_c^k)^d(z_0) = z_{kd}.
+  \]
+  Let $r$ be the remainder of $kd$ modulo $N$. If $r$ is nonzero, then
+  $\set{z_0, \dots, z_{r-1}}$ forms a cycle of $\phi_c$ with length $r
+  < N$, violating the premise that $\set{z_0, \dots, z_{N-1}}$ is an
+  exact $N$-cycle. Therefore, $r = 0$, i.e., $N \mid kd$, and hence
+  $\nd \mid k$. Since $0 \le k \le N - 1$, we have $k = i \cdot \nd$
+  for some $0 \le i \le (N, d) - 1$. Consequently, $\t(z_0) = z_k =
+  z_{i\nd}$, (i) is true, and we are done.
+\end{proof}
+
+In fact, we believe that the second case never occurs in
+general. Although the supply of examples is limited, all of the
+examples that we currently know satisfy the first case (all 4-cycles,
+the 5-cycles described by Flynn, Poonen, and Schaefer, and the 6-
+cycles described by Stoll). We state our conjecture as follows.
+
+\begin{conjecture}
+  \label{cj:galois-conjugate-re}
+  Let $N \in \N^*$, $c \in \Q$, $K$ be a Galois extension of $\Q$ with
+  degree $d = [K : \Q]$, and $\set{z_0, \dots, z_{N-1}} \subset K$ be
+  an exact $N$-cycle of $\phi_c(z) = z^2 + c$. Then $z_{i\nd} =
+  \t(z_0)$ for some $0 \le i \le (N, d)-1$ and some nontrivial $\t \in
+  \gal(K/\Q)$.
+\end{conjecture}
+
+If the conjecture is true, then in particular we have some interesting
+consequences for $d = 2$, i.e., $K$ quadratic, which is the case we
+are most interested in. In this case, $K$ is automatically Galois, so
+the conjecture can be applied unconditionally.
+
+If $N$ is odd, then $(N, d) = 1$, so we have $z_0 = \ol{z_0}$, i.e.,
+$z_0$ is rational. Consequently the entire cycle is defined over $\Q$,
+and we can reduce the problem of finding quadratic $N$-cycles to
+purely finding rational $N$-cycles ($C_1(N)$). In particular, for $N = 5$,
+we already know there are no rational 5-cycles, so
+the conjecture that says no quadratic 5-cycles
+exist for $c \in \Q$, follows automatically. We record this corollary
+as follows.
+
+\begin{corollary}
+  If Conjecture~\ref{cj:galois-conjugate-re} holds, then there are no $c
+  \in \Q$ such that $\phi_c(z) = z^2 + c$ has periodic points in $\U$
+  of exact period 5.
+\end{corollary}
+
+If $N$ is even, then $(N, d) = 2$, and we have either $z_0 =
+\ol{z_0}$, in which case the cycle is defined over $\Q$; or $z_0 =
+\ol{z_{\frac{N}{2}}}$, in which case $z_0 + z_{\frac{N}{2}}$ is
+rational, and consequently the trace $z_0 + \phi_c(z_0) + \cdots +
+\phi_c^{N-1}(z_0)$ is rational. In either case, the point on $C_0(N)$
+that corresponds to $c$ and the cycle is a rational point, so finding
+quadratic periodic points of exact period $N$ is reduced to studying
+rational points on $C_0(N)$.
+
+In particular, for $N = 6$, since the rational points on $C_0(6)$ are
+already understood due to Stoll's work (conditional
+on the weak Birch and Swinnerton-Dyer conjecture on the Jacobian of
+$C_0(6)$), then we can easily show by exhaustion that the only
+quadratic 6-cycle is defined over $\Q(\sqrt{33})$, with $c =
+-\frac{71}{48}$ and
+\begin{equation}
+  \label{eq:6-cycle}
+  z_0 = -1 + \frac{\sqrt{33}}{12},\,
+  z_1 = -\frac{1}{4} - \frac{\sqrt{33}}{6},\,
+  z_2 = -\frac{1}{2} + \frac{\sqrt{33}}{12},\,
+  z_3 = \ol{z_0},\,
+  z_4 = \ol{z_1},\,
+  z_5 = \ol{z_2}.
+\end{equation}
+This establishes yet another corollary to
+Conjecture~\ref{cj:galois-conjugate-re}.
+
+\begin{corollary}
+  \label{cor:6-cycle}
+  Let $J$ be the Jacobian of $C_0(6)$. If the $L$-series $L(J, s)$
+  extends to an entire function and satisfies the standard functional
+  equation; the weak Birch and Swinnerton-Dyer conjecture is valid for
+  $J$; and Conjecture~\ref{cj:galois-conjugate-re} holds, then the only
+  $c \in \Q$ such that $\phi_c(z) = z^2 + c$ has periodic points of
+  exact period 6 in $\U$ is $-\frac{71}{48}$, and the corresponding
+  periodic points are $z_0, \dots, z_5$ as defined in
+  (\ref{eq:6-cycle}).
+\end{corollary}
+
+At the time of writing, though, little is known about how to approach
+the conjecture. The known proof in the $N = 4$ case relies on a
+special structure of $\Phi_4(z, c)$, and cannot be generalized even to
+$N = 6$. It might be useful to first check the conjecture for finite
+fields; if the conjecture is true for infinitely many different
+characteristics, some Chebotarev density-type argument might yield the
+full conjecture over number fields (which have characteristic zero).
+
+
 \end{document}
