@@ -16,7 +16,7 @@ final.pdf: final.tex ../custom.tex ../bibliography.bib style.sty
 	pdflatex final
 
 clean:
-	@- $(RM) $(TeX_sources:.tex=.pdf) $(TeX_sources:.tex=.aux) $(TeX_sources:.tex=.log) $(TeX_sources:.tex=.out) $(TeX_sources:.tex=.toc) $(TeX_sources:.tex=.bbl) $(TeX_sources:.tex=.blg)
+	@- $(RM) $(TeX_sources:.tex=.pdf) $(TeX_sources:.tex=.aux) $(TeX_sources:.tex=.log) $(TeX_sources:.tex=.out) $(TeX_sources:.tex=.toc) $(TeX_sources:.tex=.bbl) $(TeX_sources:.tex=.blg) final-print.pdf
 
 distclean: clean
 
