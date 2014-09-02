@@ -1,13 +1,6 @@
-TeX_sources := $(wildcard *.tex)
-objects := $(TeX_sources:.tex=.pdf)
-
 .PHONY: all clean distclean print
 
-all: $(objects)
-
-presentation-0.pdf presentation-1.pdf presentation-2.pdf notes.pdf: %.pdf : %.tex
-	pdflatex $<
-	pdflatex $<
+all: final.pdf
 
 final.pdf: final.tex ../custom.tex ../bibliography.bib style.sty
 	pdflatex final
@@ -16,7 +9,7 @@ final.pdf: final.tex ../custom.tex ../bibliography.bib style.sty
 	pdflatex final
 
 clean:
-	@- $(RM) $(TeX_sources:.tex=.pdf) $(TeX_sources:.tex=.aux) $(TeX_sources:.tex=.log) $(TeX_sources:.tex=.out) $(TeX_sources:.tex=.toc) $(TeX_sources:.tex=.bbl) $(TeX_sources:.tex=.blg) $(TeX_sources:.tex=.nav) $(TeX_sources:.tex=.snm) final-print.pdf
+	@- $(RM) final.pdf final.aux final.bbl final.blg final.log final.nav final.out final.pdf final.snm final.toc final-print.pdf
 
 distclean: clean
 
