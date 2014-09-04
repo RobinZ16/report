@@ -2,7 +2,7 @@
 \label{sec:bg}
 
 This work has its roots in the study of the dynamics of morphisms over
-projective spaces, specifically the periodic points (or more
+projective spaces, in particular the periodic points (or more
 generally, preperiodic points) of such morphisms. One profound
 conjecture in this field is the Uniform Boundedness Conjecture, put
 forth by Morton and Silverman in 1994~\cite{MR1264933}, which bounds
@@ -22,13 +22,14 @@ our main results are presented, along with some open conjectures.
   The \emph{projective space} $\P^N(K)$ of dimension $N$ over a number
   field $K$ is the space of equivalence classes $(K^{N+1} \setminus
   \set{0})/\sim$ in $K^{N+1} \setminus \set{0}$, where the equivalence
-  relation $\sim$ is given by
+  relation $\sim$ is given by $(x_0, \dots, x_N) \sim (y_0, \dots,
+  y_N)$ if and only if
   \[
-  (x_0, \dots, x_N) \sim (y_0, \dots, y_N)
+  x_i y_j = x_j y_i
   \]
-  if and only if $x_i y_j = x_j y_i$ for all $0 \le i, j \le N$. We
-  denote such an equivalence class by $[x_0, \dots, x_N]$, where
-  $(x_0, \dots, x_N)$ is any element of the equivalence class.
+  for all $0 \le i, j \le N$. We denote such an equivalence class by
+  $[x_0, \dots, x_N]$, where $(x_0, \dots, x_N)$ is any element of the
+  equivalence class.
 \end{definition}
 
 \begin{definition}
@@ -199,8 +200,8 @@ provide empirical evidence for certain conjectures. These programs are
 available in a public repository on GitHub; see \cite{src} in the
 reference list. Whenever we need to refer to such a program, we print
 its path in the repository in monospaced font; for instance,
-\texttt{mma/abc.nb} refers to the Mathematica notebook \texttt{abc.nb}
-in the \texttt{mma/} directory of the repository.
+\texttt{mma/abc.m} refers to the Mathematica package \texttt{abc.m} in
+the \texttt{mma/} directory of the repository.
 
 %%% Local Variables:
 %%% TeX-master: "report"

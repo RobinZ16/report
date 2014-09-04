@@ -85,23 +85,23 @@ follows from Morton's work in \cite{MR1665198}.
 
 \begin{proposition}
   For $\phi_c(z) = z^2 + c$, all combinations of $c$ and a
-  corresponding 4-cycle $\set{z_1, z_2, z_3, z_4}$ of $\phi_c(z)$ can
+  corresponding 4-cycle $\set{z_0, z_1, z_2, z_3}$ of $\phi_c(z)$ can
   be parametrized over $\C$ by
   \begin{equation}
     \label{eq:4-param}
     \begin{gathered}
       c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}, \\
-      z_1 = \frac{t^4 - t^2 + \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{2t(t^2 -
+      z_0 = \frac{t^4 - t^2 + \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{2t(t^2 -
         1)},\,
-      z_2 = \frac{1 - t^2 + t \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{4t^2(t^2
+      z_1 = \frac{1 - t^2 + t \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{4t^2(t^2
         - 1)}, \\
-      z_3 = \frac{t^4 - t^2 - \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{2t(t^2 -
+      z_2 = \frac{t^4 - t^2 - \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{2t(t^2 -
         1)},\,
-      z_4 = \frac{1 - t^2 - t \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{4t^2(t^2
+      z_3 = \frac{1 - t^2 - t \sqrt{(t^4 - 1)(t^2 + 2t - 1)}}{4t^2(t^2
         - 1)},
     \end{gathered}
   \end{equation}
-  where $t = z_1 + z_3$.
+  where $t = z_0 + z_2$.
 \end{proposition}
 
 \begin{remark}
@@ -112,18 +112,18 @@ follows from Morton's work in \cite{MR1665198}.
 Furthermore, Panraksa \cite{MR2982105} proved the following lemma.
 
 \begin{lemma}[Panraksa, Theorem~1.5.1 in \cite{MR2982105}]
-  \label{lem:z1+z3}
-  Let $c \in \Q$, and let $\set{z_1, z_2, z_3, z_4} \subset K$ be a
+  \label{lem:z0+z2}
+  Let $c \in \Q$, and let $\set{z_0, z_1, z_2, z_3} \subset K$ be a
   4-cycle of $\phi_c(z) = z^2 + c$, where $K$ is a quadratic extension
-  to $\Q$. Then $t = z_1 + z_3$ is rational.
+  to $\Q$. Then $t = z_0 + z_2$ is rational.
 \end{lemma}
 
 One immediate consequence of this lemma is the following theorem.
 
 \begin{theorem} [Panraksa, Theorem~1.5.2 in \cite{MR2982105}]
   \label{th:all}
-  All combinations $(c, \set{z_1, z_2, z_3, z_4})$, where $c \in \Q$
-  and $\set{z_1, z_2, z_3, z_4} \subset K$ is a corresponding 4-cycle
+  All combinations $(c, \set{z_0, z_1, z_2, z_3})$, where $c \in \Q$
+  and $\set{z_0, z_1, z_2, z_3} \subset K$ is a corresponding 4-cycle
   of $\phi_c(z) = z^2 + c$ with $K$ being a quadratic extension to
   $\Q$, are given by ranging $t$ over $\Q$ in the parametrization
   (\ref{eq:4-param}).
@@ -150,11 +150,11 @@ $\Q$ immediately gives a concrete answer to Question~\ref{question}.
 
 Furthermore, we can specify how many quadratic periodic points of
 exact period 4 exist for each such $c \in \Q$. Recall that Panraksa
-showed that for a 4-cycle $\set{z_1, z_2, z_3, z_4} \subset \U$, $z_1
-+ z_3$ must be rational (i.e., $z_1$ and $z_3$ must be of the form $a
-\pm b \sqrt{d}$ for some $a, b, d \in \Q$), and similarly for $z_2$
-and $z_4$. Therefore, $(z - z_1)(z - z_3) \in \Q[z]$ and $(z - z_2)(z
-- z_4) \in \Q[z]$, and hence each 4-cycle in $\U$ shows up as two
+showed that for a 4-cycle $\set{z_0, z_1, z_2, z_3} \subset \U$, $z_0
++ z_2$ must be rational (i.e., $z_0$ and $z_2$ must be of the form $a
+\pm b \sqrt{d}$ for some $a, b, d \in \Q$), and similarly for $z_1$
+and $z_3$. Therefore, $(z - z_0)(z - z_2) \in \Q[z]$ and $(z - z_1)(z
+- z_3) \in \Q[z]$, and hence each 4-cycle in $\U$ shows up as two
 quadratic factors (not necessarily irreducible) in the factorization
 of $\Phi_4(z, c)$ in $\Q[z]$. We can get a hold on the number of
 4-cycles (and consequently the number of 4-periodic points) by
@@ -249,7 +249,7 @@ zero. Thanks to \cite{MR1480542}, we already fully understand the case
 where $x$ is rational (in which case there are no corresponding
 periodic points even in $\U$ --- they are either at infinity or
 defined only in a quintic extension of $\Q$). Therefore, we only
-consider $x \in \U \setminus \Q$, where we have
+consider $x \in \U \setminus \Q$, in which case
 \[
 \l_1(a, b, c) = \l_0(a, b, c) = 0.
 \]
@@ -279,7 +279,7 @@ three cases.
   If $b = a(a-3)/2$, substituting this into $\l_1 = \l_2 = 0$ we get
   two polynomials equations in $a$ and $c$. Again by taking the
   resultant we can show that there are no rational solutions in this
-  case. See the attached Mathematica notebook \texttt{mma/abc.nb} for
+  case. See the attached Mathematica package \texttt{mma/abc.m} for
   details.
 \end{case}
 
@@ -291,7 +291,7 @@ three cases.
   \]
   i.e., either $b = 0$ or $b = (a - 3)^2$. Similar to Case~1, we can
   easily show that there are no rational solutions in this case. See
-  \texttt{mma/abc.nb} for details.
+  \texttt{mma/abc.m} for details.
 \end{case}
 
 \begin{case}
@@ -301,7 +301,7 @@ three cases.
   case, by Proposition~\ref{prop:res}, $\res_c(\l_1(a, b, c), \l_0(a,
   b, c))$ is given by a polynomial in the six coefficients (three of
   $\l_1$ and three of $\l_0$). Mathematica is capable of computing
-  this polynomial (see \texttt{mma/abc.nb}), and when we plug in the
+  this polynomial (see \texttt{mma/abc.m}), and when we plug in the
   six coefficients, we get
   \[
   \label{eq:pab}
@@ -309,7 +309,7 @@ three cases.
   \]
   for some polynomial $P(a, b) \in \Z[a, b]$. This polynomial is far
   too complicated to write down (see the full details in
-  \texttt{mma/abc.nb}). It has degree $8$ in $a$ and degree $9$ in
+  \texttt{mma/abc.m}). It has degree $8$ in $a$ and degree $9$ in
   $b$. So the problem now reduces to finding rational points on the
   curve $C_P$ defined by $P(a, b) = 0$ --- for each rational point
   $(a, b)$ on $C_P$, there are at most two rational $c$ solving
@@ -382,11 +382,11 @@ singularities.\footnote{%
   0]$ and $[1, 0, 0]$. For each node there are at most two rational
   points ``upstairs'' in the normalization, so we expect the
   normalization of $C_P$ to have at most 11 rational points. See
-  \texttt{mma/pab-ratpoint.nb} for details.}
+  \texttt{mma/abc.m} for details.}
 It seems that radically new ideas are needed to solve this problem.
 
 Another completely different approach to the non-existence conjecture
-is to prove Conjecture~\ref{cj:galois-conjugate} (of a completely
+is to prove Conjecture~\ref{cj:galois-conjugate-re} (of a completely
 different flavor) in Subsection~\ref{subsec:general}, which implies
 the non-existence of quadratic 5-cycles. The implication will also be
 demonstrated in Subsection~\ref{subsec:general}.
@@ -398,25 +398,25 @@ At any rate, the conjecture itself looks very solid.
 
 While studying the quadratic N = 4 case, we tried to mimic results to
 the general case. In particular, the following result by Panraksa was
-crucial to proving Lemma~\ref{lem:z1+z3}, which was later used to
+crucial to proving Lemma~\ref{lem:z0+z2}, which was later used to
 establish a complete understanding of the $N = 4$ case.
 
 \begin{lemma} [Panraksa, Lemma~2.3.1 in \cite{MR2982105}]
-  Let $c \in \Q$, and let $\set{z_1, z_2, z_3, z_4} \subset K$ be a
+  Let $c \in \Q$, and let $\set{z_0, z_1, z_2, z_3} \subset K$ be a
   4-cycle of $\phi_c(z) = z^2 + c$, where $K$ is a quadratic extension
   to $\Q$. Then exactly one of the following holds:
   \begin{enumerate}[(i)]
-  \item $z_3 = \ol{z_1}$, where $\ol{z_1}$ denotes the Galois
-    conjugate of $z_1$ in $K$;
+  \item $z_2 = \ol{z_0}$, where $\ol{z_0}$ denotes the Galois
+    conjugate of $z_0$ in $K$;
 
-  \item $\{z_1, z_2, z_3, z_4\} \cap \{\ol{z_1}, \ol{z_2}, \ol{z_3},
-    \ol{z_4}\} =\es.$
+  \item $\{z_0, z_1, z_2, z_3\} \cap \{\ol{z_0}, \ol{z_1}, \ol{z_2},
+    \ol{z_3}\} =\es.$
   \end{enumerate}
 \end{lemma}
 
-Panraksa then proves that the second case $\{z_1, z_2, z_3, z_4\} \cap
-\{\ol{z_1}, \ol{z_2}, \ol{z_3}, \ol{z_4}\} = \es$ is impossible, from
-which Lemma~\ref{lem:z1+z3} immediately follows. We managed to prove a
+Panraksa then proves that the second case $\{z_0, z_1, z_2, z_3\} \cap
+\{\ol{z_0}, \ol{z_1}, \ol{z_2}, \ol{z_3}\} = \es$ is impossible, from
+which Lemma~\ref{lem:z0+z2} immediately follows. We managed to prove a
 much more general version of his lemma.
 
 %\newcommand{\nd}{\frac{N}{(N, d)}}
@@ -456,12 +456,12 @@ much more general version of his lemma.
   z_{N+k-j}$, so we may set $j$ to 0 and $k$ to the remainder of
   $N+k-j$ modulo $N$. Assuming $j = 0$, we have $\t(z_0) = z_k$; this,
   together with the fact that $\t$ commutes with $\phi_c$, implies
-  that $\t \equiv \phi_c^k$ on the whole cycle $\set{z_0, \dots,
+  that $\t \equiv \phi_c^k$ on the entire cycle $\set{z_0, \dots,
     z_{N-1}}$.
 
   Now recall that $K$ is Galois, so the order of the Galois group
   $\gal(K/\Q)$ is exactly $[K : \Q] = d$. Therefore, by Lagrange's
-  theorem, $\t^d = Id$, and hence
+  theorem, $\t^d = id$, and hence
   \[
   z_0 = \t^d(z_0) = (\phi_c^k)^d(z_0) = z_{kd}.
   \]
@@ -496,14 +496,13 @@ are most interested in. In this case, $K$ is automatically Galois, so
 the conjecture can be applied unconditionally.
 
 If $N$ is odd, then $(N, d) = 1$, so we have $z_0 = \ol{z_0}$, i.e.,
-$z_0$ is rational. Consequently the entire cycle is defined over $\Q$,
-and we can reduce the problem of finding quadratic $N$-cycles to
-purely finding rational $N$-cycles. In particular, for $N = 5$, we
-already know there are no rational 5-cycles, so
-Conjecture~\ref{cj:n=5-zero}, the main conjecture of
-Subsection~\ref{subsec:quadratic-5} that says no quadratic 5-cycles
-exist for $c \in \Q$, follows automatically. We record this corollary
-as follows.
+$z_0$ is rational. Consequently the entire cycle lies in $\Q$, and we
+can reduce the problem of finding quadratic $N$-cycles to purely
+finding rational $N$-cycles. In particular, for $N = 5$, we already
+know there are no rational 5-cycles, so Conjecture~\ref{cj:n=5-zero},
+the main conjecture of Subsection~\ref{subsec:quadratic-5} that says
+no quadratic 5-cycles exist for $c \in \Q$, follows automatically. We
+record this corollary as follows.
 
 \begin{corollary}
   If Conjecture~\ref{cj:galois-conjugate-re} holds, then there are no $c
@@ -512,10 +511,10 @@ as follows.
 \end{corollary}
 
 If $N$ is even, then $(N, d) = 2$, and we have either $z_0 =
-\ol{z_0}$, in which case the cycle is defined over $\Q$; or $z_0 =
+\ol{z_0}$, in which case the entire cycle lies in $\Q$; or $z_0 =
 \ol{z_{\frac{N}{2}}}$, in which case $z_0 + z_{\frac{N}{2}}$ is
 rational, and consequently the trace $z_0 + \phi_c(z_0) + \cdots +
-\phi_c^{N-1}(z_0)$ is rational. In either case, the point on $C_0(N)$
+\phi_c^{N-1}(z_0)$ is rational. Either case, the point on $C_0(N)$
 that corresponds to $c$ and the cycle is a rational point, so finding
 quadratic periodic points of exact period $N$ is reduced to studying
 rational points on $C_0(N)$.
@@ -523,9 +522,8 @@ rational points on $C_0(N)$.
 In particular, for $N = 6$, since the rational points on $C_0(6)$ are
 already understood due to Stoll's work \cite{MR2465796} (conditional
 on the weak Birch and Swinnerton-Dyer conjecture on the Jacobian of
-$C_0(6)$), then we can easily show by exhaustion that the only
-quadratic 6-cycle is defined over $\Q(\sqrt{33})$, with $c =
--\frac{71}{48}$ and
+$C_0(6)$), we can easily show by exhaustion that the only quadratic
+6-cycle is defined over $\Q(\sqrt{33})$, with $c = -\frac{71}{48}$ and
 \begin{equation}
   \label{eq:6-cycle}
   z_0 = -1 + \frac{\sqrt{33}}{12},\,
@@ -555,8 +553,9 @@ the conjecture. The known proof in the $N = 4$ case relies on a
 special structure of $\Phi_4(z, c)$, and cannot be generalized even to
 $N = 6$. It might be useful to first check the conjecture for finite
 fields; if the conjecture is true for infinitely many different
-characteristics, some Chebotarev density-type argument might yield the
-full conjecture over number fields (which have characteristic zero).
+characteristics, then some Chebotarev density-type argument might
+yield the full conjecture over number fields (which have
+characteristic zero).
 
 %%% Local Variables:
 %%% TeX-master: "report"

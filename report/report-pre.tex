@@ -62,14 +62,14 @@ It turns out that for $X$ smooth and geometrically connected, we have
 $p_a(X) = p_g(X)$ (see Subsection 7.3.2 of \cite{MR1917232}). In
 particular, for the normalization of a curve $C$, the arithmetic genus
 and the geometric genus coincide. Therefore, when we are only
-concerned about the normalization (most of the time we are in this
-paper), we do not need to distinguish between the two types of genus.
+concerned about the normalization (in this paper, most of the time we
+are), we do not need to distinguish between the two types of genus.
 
 \begin{definition}
   Let $C$ be a projective curve over a field $K$ (not necessarily
-  smooth). Then we define $g(C)$ to be the \emph{geometric genus} of a
-  curve $C$ (which, recall from Remark~\ref{rem:abuse}, is actually
-  the geometric genus of the normalization of $C$.)
+  smooth). Then we define $g(C)$ to be the \emph{geometric genus} of
+  the curve $C$ (which, recall from Remark~\ref{rem:abuse}, is
+  actually the geometric genus of the normalization of $C$.)
 \end{definition}
 
 \begin{remark}
@@ -138,8 +138,8 @@ Another tool that we need is the resultant of two polynomials.
     B(X) = b_0 X^m + b_1 X^{m-1} + \cdots + b_m
   \end{gathered}
   \]
-  be polynomials of degrees $n$ and $m$ with coefficients
-  in a field $k$. There exists a polynomial
+  be polynomials of degrees $n$ and $m$ in $k[X]$, where $k$ is a
+  field. There exists a polynomial
   \[
   \res(a_0, \dots, a_n, b_0, \dots, b_m) \in \Z[a_0, \dots, a_n, b_0,
   \dots, b_m],
@@ -150,7 +150,7 @@ Another tool that we need is the resultant of two polynomials.
   \item $\res(A, B) = 0$ if and only if $A$ and $B$ have a common root
     in $\ol{k}$;
 
-  \item If $a_0 b_0 \ne 0$ and if we factor $A$ and $B$ as
+  \item If we factor $A$ and $B$ as
     \[
     A = a_0 \prod_{i=1}^n (X - \alpha_i),\,
     B = b_0 \prod_{i=1}^m (X - \beta_j),
@@ -166,15 +166,15 @@ Another tool that we need is the resultant of two polynomials.
 For a proof of this proposition, see Section~2.4 of \cite{MR2316407}.
 
 \begin{remark}
-  Since $\res(A, B)$ is a polynomial in the coefficients of $A$ and
-  $B$, when the dimensions $n$ and $m$ are reasonably small, $\res(A,
-  B)$ can be computed efficiently by computer algebra
-  systems. Computer algebra systems capable of computing the resultant
-  of two polynomials include, but are not limited to, Magma,
-  Mathematica, and Sage.
+  $\res(A, B)$ is a polynomial in the coefficients of $A$ and $B$, so
+  when the dimensions $n$ and $m$ are reasonably small, $\res(A, B)$
+  can be computed efficiently by computer algebra systems. Computer
+  algebra systems capable of computing the resultant of two
+  polynomials include, but are not limited to, Magma, Mathematica, and
+  Sage.
 
-  As the resultant can be computed efficiently, it is a good way to
-  reduce the number of variables in a set of simultaneous polynomial
+  As the resultant can be computed efficiently, it is a good tool for
+  reducing the number of variables in a set of simultaneous polynomial
   equations. For instance, if we have two polynomial equations $A(X,
   Y) = 0$ and $B(X, Y) = 0$, then we may take the resultant with
   respect to $X$ (viewing $X$ as the variable in the above
@@ -182,8 +182,8 @@ For a proof of this proposition, see Section~2.4 of \cite{MR2316407}.
   the $\res_X$ notation when there are more than one variables). Then
   by Property~(i) of the resultant, there is an $X$ solving both $A$
   and $B$ if and only if $Y$ solves $\res_X(A, B)$, which is a
-  polynomial in $Y$, since $A$ and $B$ both have coefficients in
-  $k[Y]$ when viewed as polynomials in $X$. Therefore, we reduced two
+  polynomial in $Y$, as $A$ and $B$ both have coefficients in $k[Y]$
+  when viewed as polynomials in $X$. Therefore, we reduced two
   equations in two unknowns to one equation in one unknown. Similar
   argument applies when there are more variables.
 \end{remark}

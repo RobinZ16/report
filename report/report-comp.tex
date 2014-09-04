@@ -53,9 +53,9 @@ blows up quickly since $\deg_z \Phi_N(z, c)$ grows roughly as $2^N$,
 but it is still doable for small $N$.
 
 We performed the search for $N =$ 4 and 5, enumerating $c$ up to
-height 1000. (See the Mathematica notebook \texttt{mma/enum-c.nb}.)
-For $N = 4$, we found many $c$ with quadratic points, and it was
-confirmed by theory that the number is indeed infinite (see
+height 1000. (See the Mathematica package \texttt{mma/enum-c.m}.)  For
+$N = 4$, we found many $c$ with quadratic points, and it was confirmed
+by theory that the number is indeed infinite (see
 Subsection~\ref{subsec:quadratic-4}). For $N=5$, no quadratic factors
 were observed, and this provides evidence for
 Conjecture~\ref{cj:n=5-zero} that there are no quadratic periodic
@@ -98,12 +98,12 @@ limited number of false positives, which we can rule out by running
 the expensive yet definitive test.
 
 On a technical note, we implemented this same algorithm in three
-languages --- C++ with the FLINT library, Mathematica, and Sage (see
-\texttt{cpp/enum-x.cpp}, \texttt{mma/enum-x.nb}, and
-\texttt{sage/enum-x.sage}). On our test machine (see
+languages --- C++ with the FLINT library (\texttt{cpp/enum-x/}),
+Mathematica (\texttt{mma/enum-x.m}), and Sage
+(\texttt{sage/enum-x.sage}). On our test machine (see
 \texttt{misc/env.md} for details about the environment, including
 software versions), it turned out that Mathematica was consistently
-about 20 times faster than Sage, and C++ with FLINT (using the
+about 10 times faster than Sage, and C++ with FLINT (using the
 \texttt{fmpzxx} and \texttt{fmpqxx} classes) was consistently about 50
 times faster than Mathematica, from which we conclude that FLINT is
 the performance-wise winner when it comes to multiprecision rational
@@ -114,9 +114,9 @@ With the C++ program we were able to enumerate squarefree $d \in
 for values of $d$ of special interest, i.e., $d = -87$ and $d = 33$,
 up to height 100. Only eight quadratic points on $C_0(5)$ (excluding
 all the rational points already listed in \cite{MR1480542}) were
-found, which produces only two rational values of $c$ in total, $-2$
-and $-4/3$, neither of which yields any quadratic periodic points of
-exact period 5. This once again provides evidence that no such
+found, which give rise to only two rational values of $c$ in total,
+$-2$ and $-4/3$, neither of which yields any quadratic periodic points
+of exact period 5. This once again provides evidence that no such
 periodic points exist.
 
 Detailed results can be found in \texttt{misc/enum-x-results.txt}.
@@ -131,7 +131,7 @@ periodic points in $\U$ of exact period 5.
 
 Since we are looking for rational points, we can simply enumerate $b
 \in \Q$, and solve the polynomial equation for rational $a$. We
-enumerated $b$ up to height $10000$ (see \texttt{mma/pab-ratpoint.nb})
+enumerated $b$ up to height $10000$ (see \texttt{mma/pab-ratpoint.m})
 and only found five rational points, all with very small heights:
 \[
 (3, 0),\, (0, 0),\, (4, 1/3),\, (1, 8/3),\, (6, 9),
@@ -152,7 +152,7 @@ an explicit parametrization for those periodic points, i.e.,
 \]
 for $t \in \Q$, as seen in (\ref{eq:4-param}).\footnote{%
   Since $\phi_c(z) = z^2 + c$ permutes 4-cycles, every periodic point
-  in some 4-cycle can be viewed as the $z_1$ in (\ref{eq:4-param}).}
+  in some 4-cycle can be viewed as the $z_0$ in (\ref{eq:4-param}).}
 In particular, we know that the quadratic extensions to $\Q$
 containing quadratic 4-cycles are given by $\Q(\sqrt{d})$, where $d =
 (t^4 - 1)(t^2 + 2t - 1)$ for some $t \in \Q$.
@@ -161,11 +161,11 @@ We naturally ask about the distribution of such quadratic extensions
 within all possible quadratic extensions, or the distribution of such
 $d$ in $\Q$. Can we obtain all rational numbers in this way?
 
-Since $\Q(\sqrt{d})$ stays the same when we multiply $d$ by a rational
-square, we actually only care about $d$ up to rational
-squares. Therefore, the problem can be formulated purely inside $\Z$
-instead: let $SF$ be the set of all squarefree integers, then what can
-we say about the distribution of $d$ within $SF$, where $d$ is the
+Since $\Q(\sqrt{d})$ stays the same when we multiply $d$ by the square
+of a rational, we actually only care about $d$ up to rational
+squares. Therefore, the problem can be instead formulated purely
+inside $\Z$: let $SF$ be the set of all squarefree integers, then what
+can we say about the distribution of $d$ within $SF$, where $d$ is the
 squarefree part of $(p^4 - q^4)(p^2 + 2pq - q^2)$, with $p$ and $q$
 ranging over $\Z$?
 
@@ -184,16 +184,19 @@ value), and let $D_H$ be
 We expect $D_H$ to cover most, if not all, of the squarefree integers
 of reasonably small height (compared to $H$) that occur in $D_\infty$,
 which we define as the set of all $d$ obtainable in this way (with no
-bound on the height of $p$ and $q$). To make this intuition precise,
-we take another positive integer $H'$, let $R_{H'}$ be the range
-$[-H', H']$ and consider the size of the intersection $D_H \cap
-R_{H'}$, and compared it to the size of the intersection $SF \cap
-R_{H'}$; that is, the number of squarefree integers obtainable in the
-range $R_{H'}$ (limited by the height of $p$ and $q$ that we enumerate
-to), compared to the total number of squarefree integers in this
-range.
+bound on the height of $p$ and $q$), or
+\[
+D_\infty = \bigcup_{H \in \N} D_H.
+\]
+To make this intuition precise, we take another positive integer $H'$,
+let $R_{H'}$ be the range $[-H', H']$ and consider the size of the
+intersection $D_H \cap R_{H'}$, and compared it to the size of the
+intersection $SF \cap R_{H'}$; that is, the number of squarefree
+integers obtainable in the range $R_{H'}$ (limited by the height of
+$p$ and $q$ that we enumerate to), compared to the total number of
+squarefree integers in the same range.
 
-We coded this up (see \texttt{mma/squarefree.nb}) and obtained the
+We coded this up (see \texttt{mma/squarefree.m}) and obtained the
 results in Table~\ref{tab:squarefree}.
 
 \begin{table}[hbtp]
@@ -227,12 +230,11 @@ $51$, $70$, and $93$. It is almost certain empirically that, for
 instance, 2 should never occur. To prove this, we essentially need to
 prove that the Diophantine equation
 \[
-(p^4 - q^4)(p^2 + 2pq - q^2) = 2 k^2
+(p^4 - q^4)(p^2 + 2pq - q^2) = d k^2
 \]
-is not solvable in $\Z$. This seems very hard. It will be really
-interesting if elements of $D_\infty$ (the squarefree integers that
-are obtainable as squarefree parts of $(p^4 - q^4)(p^2 + 2pq - q^2)$)
-have some special property that makes them stand out.
+where $d = 2$ if we focus on 2, is not solvable in $\Z$. This seems
+very hard. It would be really interesting if the elements of
+$D_\infty$ had some special property that made them stand out.
 
 %%% Local Variables:
 %%% TeX-master: "report"

@@ -27,7 +27,9 @@ where
 \]
 With a little bit of effort we can show that $\Phi_d(z, c)$ belongs to
 $\Z[z, c]$, and that all periodic points of exact period $N$ satisfy
-the polynomial equation $\Phi_N(z, c) = 0$.
+the polynomial equation $\Phi_N(z, c) = 0$ (but not necessarily the
+other way round --- $\Phi_d(z, c)$ might still contain roots with
+exact period smaller than $N$).
 
 The polynomial equation $\Phi_N(z, c)$ defines an algebraic curve in
 the $(z, c)$-plane. Denote the normalization of this curve by
@@ -103,7 +105,7 @@ where the original $c$ is given in terms of $x$ and $y$ by
   c = \frac{g(x)}{2(P_0(x) - P_1(x) y)}
   = \frac{P_0(x) + P_1(x) y}{h(x)},
 \end{equation}
-where $g, h, P_0, P_1 \in \Z[x]$ are given by
+where $g, h, P_0, P_1 \in \Z[x]$ are defined as
 \begin{subequations}
   \label{eq:poly-defs}
   \begin{align}
@@ -155,11 +157,11 @@ and Swinnerton-Dyer conjecture (see \cite{MR2238272} for a description
 of this famous conjecture) for the Jacobian of $C_0(6)$ (See p.~299 of
 \cite{MR1917232} for the definition of Jacobian), Stoll was able to
 show that there are only ten rational points on the curve given by
-(\ref{eq:c0(6)}): $(0, \infty)$, $(0, -1)$, $(0, 3)$, $(\infty, 0)$,
-$(1, 2)$, $(2, 1)$, $(1, \infty)$, $(\infty, -1)$, $(-1, \infty)$, and
-$(-4/5, -1)$. None of these points corresponds to affine rational
-points on the original $(z, c)$-curve, which establishes the following
-theorem.
+(\ref{eq:c0(6)}): $(u, w) = (0, \infty)$, $(0, -1)$, $(0, 3)$,
+$(\infty, 0)$, $(1, 2)$, $(2, 1)$, $(1, \infty)$, $(\infty, -1)$,
+$(-1, \infty)$, and $(-4/5, -1)$. None of these points corresponds to
+affine rational points on the original $(z, c)$-curve, from which the
+following theorem is established.
 
 \begin{theorem}[Stoll, Theorem~7 in \cite{MR2465796}]
   Let $J$ be the Jacobian of $C_0(6)$. If the $L$-series $L(J,s)$
