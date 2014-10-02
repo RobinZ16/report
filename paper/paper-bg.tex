@@ -1,0 +1,175 @@
+\section{Introduction}
+\label{sec:bg}
+
+This work has its roots in the study of the dynamics of morphisms over
+projective spaces, in particular the periodic points (or more
+generally, preperiodic points) of such morphisms. One profound
+conjecture in this field is the Uniform Boundedness Conjecture, put
+forth by Morton and Silverman in 1994~\cite{MR1264933}, which bounds
+the number of preperiodic points of a morphism in terms of the the
+degree of the base field (over the rational field $\Q$), the dimension
+of the projective space, and the degree of the morphism. The
+conjecture is strong in the sense that the dependence on the morphism
+is the bare minimum --- the coefficients of the morphism are not
+referenced at all.
+
+We define the necessary objects leading up to the Uniform Boundedness
+Conjecture, briefly describe the status of the conjecture, and discuss
+the specific cases that we concentrate on. At the end of this section,
+our main results are presented, along with some open conjectures.
+
+
+\begin{definition}
+  A rational map $\phi$ is called a \emph{morphism} if it is defined
+  everywhere in $\P^N(\ol{K})$, or equivalently, if the only solution
+  in $\ol{K}$ to the simultaneous equations
+  \[
+  f_0(X_0, \dots, X_N) = \cdots = f_M(X_0, \dots, X_N) = 0
+  \]
+  is the trivial solution $X_0 = \dots = X_N = 0$.
+\end{definition}
+
+\begin{definition}
+  Given any morphism $\phi: \P^N \to \P^N$, the \emph{preperiodic
+    points of $\phi$} over some field $K$ is the collection of points
+  in $\P^N(K)$ with finite forward orbits, or equivalently,
+  \[
+  \preper(\phi, \P^N(K)) = \set{P \in \P^N(K) : \text{exist $n_1, n_2
+      \in \N$ such that $\phi^{n_1}(P) = \phi^{n_2}(P)$}}.
+  \]
+\end{definition}
+
+Now we are ready to state the Uniform Boundedness Conjecture.
+
+\begin{conjecture}[Morton-Silverman, 1994 ~\cite{MR1264933}]
+  Fix integers $d \ge 2$, $N \ge 1$, and $D \ge 1$. There is a
+  constant $C(d, N, D)$ such that for all number fields $K/\Q$ of
+  degree at most $D$ and all morphisms $\P^N \to \P^N$ of degree $d$
+  defined over $K$,
+  \[
+  \#\preper(\phi, \P^N(K)) \le C(d, N, D).
+  \]
+\end{conjecture}
+
+Very little is known about this conjecture. In fact, even the simplest
+case $(d, N, D) = (2, 1, 1)$ is not known, that is, the problem of
+bounding the number of rational preperiodic points of quadratic
+rational morphisms. If we specialize to quadratic polynomials (i.e.,
+maps of the type $[X_0, X_1] \mapsto [a X_0^2 + b X_0 X_1 + c X_1^2,
+X_1^2]$, conveniently written as $a z^2 + b z + c$, where $a \ne 0$),
+note that $a z^2 + b z + c$ can be reduced to the form $z^2 + c'$ by
+linear conjugation, which preserves the sizes of orbits, so it
+suffices to consider quadratic polynomials of the type $\phi_c(z) =
+z^2 + c$. In this case of $\phi_c(z) = z^2 + c$, the uniform bound is
+again not known, but there are partial results for specific small
+periods.
+
+One can easily show that there are one-parameter families of
+$c$-values for which $\phi_c(z)$ has rational periodic point(s) of
+exact period 1, 2, or 3 \cite{MR1199627}. It was shown by
+Morton~\cite{MR1665198} that $\phi_c$ cannot have rational periodic
+points of exact period 4. The non-existence result was extended to
+exact period 5 by Flynn, Poonen, and Schaefer~\cite{MR1480542}, and to
+exact period 6 (conditional on the Birch and Swinnerton-Dyer
+conjecture for a specific abelian variety) by Stoll~\cite{MR2465796}.
+
+We are interested in generalizing the aforementioned results for
+quadratic polynomials and specific small periods to quadratic
+extensions of $\Q$, i.e., the $D = 2$ case. For a more detailed
+discussion of other takes on the Uniform Boundedness Conjecture,
+together with a list of references, see Section 3.3 of
+\cite{MR2316407}.
+
+From now on, unless otherwise stated, the dimension of the projective
+space is always 1, and we reserve the letter $N$ for the exact period
+of periodic points.
+
+\subsection{Main results}
+\label{subsec:results}
+
+Below are our main results.
+
+For $N = 4$, by putting together and re-interpreting others' results,
+we have the following theorem.
+
+\begin{theorem}
+  \label{th:n=4-infinite}
+  There are infinitely many rational values $c \in \Q$ such that
+  $\phi_c(z) = z^2 + c$ has periodic points of exact period 4 defined
+  in some quadratic extension to $\Q$. All such $c$ are given by
+  \[
+  c = \frac{1 - 4t^3 - t^6}{4t^2(t^2 - 1)}
+  \]
+  with $t \in \Q$.
+
+  Moreover, for each such $c \in \Q$, $\phi_c(z)$ has exactly four
+  such periodic points.
+\end{theorem}
+
+For $N = 5$, we were able to prove the following theorem.
+
+\begin{theorem}
+  \label{th:n=5-finite}
+  There are finitely many rational values $c \in \Q$ such that
+  $\phi_c(z) = z^2 + c$ has periodic points of exact period 5 defined
+  in some quadratic extension to $\Q$.
+\end{theorem}
+
+In fact, all empirical evidence (see
+Subsection~\ref{subsec:seek-quadratic} and \ref{subsec:pab-ratpoint})
+points to the following stronger conjecture that no such $c$ exists.
+
+\begin{conjecture}
+  \label{cj:n=5-zero}
+  There are no rational values $c$ such that $\phi_c(z) = z^2 + c$ has
+  periodic points of exact period 5 defined in some quadratic
+  extension to $\Q$.
+\end{conjecture}
+
+One general result we produced is the following.
+
+\newcommand{\nd}{\frac{N}{(N, d)}}
+
+\begin{theorem}
+  Let $N \in \N^*$, $c \in \Q$, $K$ be a Galois extension of $\Q$ with
+  degree $d = [K : \Q]$, and $\set{z_0, \dots, z_{N-1}} \subset K$ be
+  an exact $N$-cycle of $\phi_c(z) = z^2 + c$. Then exactly one of the
+  following holds:
+  \begin{enumerate}[(i)]
+  \item $z_{i\nd} = \t(z_0)$ for some $0 \le i \le (N, d)-1$ and some
+    nontrivial $\t \in \gal(K/\Q)$;
+
+  \item $\set{z_0, \dots, z_{N-1}} \cap \set{\t(z_0), \dots,
+      \t(z_{N-1})} = \es$ for all nontrivial $\t \in \gal(K/\Q)$.
+  \end{enumerate}
+\end{theorem}
+
+In fact, we have good reasons to believe that the second case never
+occurs, hence we propose the following conjecture.
+
+\begin{conjecture}
+  \label{cj:galois-conjugate}
+  Let $N \in \N^*$, $c \in \Q$, $K$ be a Galois extension of $\Q$ with
+  degree $d = [K : \Q]$, and $\set{z_0, \dots, z_{N-1}} \subset K$ be
+  an exact $N$-cycle of $\phi_c(z) = z^2 + c$. Then $z_{i\nd} =
+  \t(z_0)$ for some $0 \le i \le (N, d)-1$ and some nontrivial $\t \in
+  \gal(K/\Q)$.
+\end{conjecture}
+
+Assuming this conjecture, some problems of finding quadratic points
+(or even points in higher degree extensions) may be reduced to finding
+rational points. In particular, it turns out that this conjecture
+implies Conjecture~\ref{cj:n=5-zero}.
+
+Before we close the introduction section, note that we have a handful
+of C++, Mathematica, or Sage programs to verify various results and
+provide empirical evidence for certain conjectures. These programs are
+available in a public repository on GitHub; see \cite{src} in the
+reference list. Whenever we need to refer to such a program, we print
+its path in the repository in monospaced font; for instance,
+\texttt{mma/abc.m} refers to the Mathematica package \texttt{abc.m} in
+the \texttt{mma/} directory of the repository.
+
+%%% Local Variables:
+%%% TeX-master: "report"
+%%% End:

@@ -1,0 +1,193 @@
+\section{Background}
+\label{sec:pre}
+
+In this section, we introduce some preliminary notions and tools
+necessary for further development of the subject. Readers already
+familiar with them may safely skip this section. Note that not all
+advanced objects appearing in this paper are defined here; for those
+that are not crucial to the understanding of this paper, we provide
+references (in parentheses) when they first appear.
+
+\subsection{Genus of curves}
+
+First we sketch the notions of the normalization and genus of a
+projective curve (see p.~56 of \cite{MR1917232} for the definition of
+a projective curve, and more generally, a projective variety).
+
+Normalization is a widely used technique in algebraic geometry to
+desingularize algebraic curves (and more generally, schemes). For each
+curve $C$ with finitely many singularities, there is a canonical way
+to construct a nonsingular curve $\tilde{C}$, called the
+\emph{normalization of $C$}, along with a surjection $\varphi:
+\tilde{C} \to C$, called the \emph{normalization morphism}, such that
+$\varphi$ is an isomorphism outside the finitely many singularities of
+$C$. For a rigorous treatment of normalization, see Subsection 4.1.2
+of \cite{MR1917232}.
+
+There are two different notions of genus, the \emph{arithmetic genus}
+and the \emph{geometric genus}.
+
+\begin{definition}
+  Let $X$ be a projective curve over a field $K$. The \emph{arithmetic
+    genus} of $X$ is defined to be the integer
+  \[
+  p_a(X) = 1 - \chi_K(\O_X),
+  \]
+  where $\chi_K$ denotes the Euler-Poincar\'e characteristic of a
+  coherent sheaf (see p.~205 of \cite{MR1917232}), and $\O_X$ denotes
+  the structure sheaf (see p.~37 of \cite{MR1917232}).
+\end{definition}
+
+\begin{definition}
+  Let $Y$ be a smooth projective curve over a field $K$. The
+  \emph{geometric genus} of $Y$ is defined to be
+  \[
+  p_g(Y) = \dim_K H^0(Y, \omega_{Y/K}),
+  \]
+  where $H^0$ denotes the zeroth cohomology group (see p.~182 of
+  \cite{MR1917232}), and $\omega_{Y/K}$ denotes the canonical sheaf
+  (see p.~239 of \cite{MR1917232}).
+\end{definition}
+
+\begin{remark}
+  \label{rem:abuse}
+  While the arithmetic genus is defined for all projective curves, in
+  the above definition the geometric genus is only defined for smooth
+  curves. Nevertheless, by common abuse of the concept, we define the
+  \emph{geometric genus of any curve $X$} to be the geometric genus of
+  its normalization (which is smooth).
+\end{remark}
+
+It turns out that for $X$ smooth and geometrically connected, we have
+$p_a(X) = p_g(X)$ (see Subsection 7.3.2 of \cite{MR1917232}). In
+particular, for the normalization of a curve $C$, the arithmetic genus
+and the geometric genus coincide. Therefore, when we are only
+concerned about the normalization (in this paper, most of the time we
+are), we do not need to distinguish between the two types of genus.
+
+\begin{definition}
+  Let $C$ be a projective curve over a field $K$ (not necessarily
+  smooth). Then we define $g(C)$ to be the \emph{geometric genus} of
+  the curve $C$ (which, recall from Remark~\ref{rem:abuse}, is
+  actually the geometric genus of the normalization of $C$.)
+\end{definition}
+
+\begin{remark}
+  It is worth noting that $g(C)$ can be computed reasonably
+  efficiently, provided that we have an explicit equation for $C$. For
+  instance, if the polynomial equation $p(x, y) = 0$ defines an affine
+  model of $C$ (not necessarily smooth), then we may feed the
+  polynomial $p(x, y)$ into some computer algebra system to obtain
+  $g(C)$. Computer algebra systems capable of computing the geometric
+  genus of an algebraic curve include, but are not limited to, Magma
+  and Sage (using its interface to Singular).\footnote{%
+    These computer algebra systems are also capable of computing the
+    arithmetic genus of algebraic curves, but that is not very
+    relevant to our usage cases, as we are mostly interested in the
+    normalization (see Theorem~\ref{th:faltings} and related
+    discussions).}
+\end{remark}
+
+The reason that we are interested in the geometric genus of a curve is
+due to the following theorem.
+
+\begin{theorem}[Faltings, 1983 \cite{MR718935}]
+  \label{th:faltings}
+  Let $C$ be a non-singular algebraic curve of genus $g$ over
+  $\Q$. Then the set of rational points $C(\Q)$ on $C$ satisfy:
+  \begin{enumerate}
+  \item If $g = 0$, then either $C(\Q) = \es$, or $|C(\Q)| = \infty$,
+    in which case $C$ is isomorphic over $\Q$ to the projective line
+    $\P^1$;
+
+  \item If $g = 1$, then either $C(\Q) = \es$, or $C$ is an
+    \emph{elliptic curve}, in which case $C(\Q)$ is a finitely
+    generated abelian group;
+
+  \item If $g \ge 2$, then $|C(\Q)| < \infty$.
+  \end{enumerate}
+\end{theorem}
+
+Faltings' theorem shows that the genus of a curve gives us information
+about the number of rational points on it. In particular, there are
+only finitely many rational points on a high genus curve (from now on
+we refer to a curve with geometric genus $g \ge 2$ as a \emph{high
+  genus curve}). Note that this works for any high genus curve
+(singular or not), since once we have the finitely many rational
+points on the normalization, it is fairly easy to investigate what
+happens at each of the finitely many singularities.
+
+\begin{remark}
+  Faltings' theorem is ineffective, since it does not provide an
+  explicit bound on the number of rational points; nor does it present
+  a method to find such a bound. Under certain circumstances, though,
+  there are methods to find an explicit (but usually not sharp) bound,
+  most notably Chabauty and Coleman's method \cite{MR808103}.
+\end{remark}
+
+\subsection{Resultant of polynomials}
+
+Another tool that we need is the resultant of two polynomials.
+
+\begin{proposition}
+  \label{prop:res}
+  Let
+  \[
+  \begin{gathered}
+    A(X) = a_0 X^n + a_1 X^{n-1} + \cdots + a_n,\\
+    B(X) = b_0 X^m + b_1 X^{m-1} + \cdots + b_m
+  \end{gathered}
+  \]
+  be polynomials of degrees $n$ and $m$ in $k[X]$, where $k$ is a
+  field. There exists a polynomial
+  \[
+  \res(a_0, \dots, a_n, b_0, \dots, b_m) \in \Z[a_0, \dots, a_n, b_0,
+  \dots, b_m],
+  \]
+  in the coefficients of $A$ and $B$, called the \emph{resultant of
+    $A$ and $B$}, with the following properties:
+  \begin{enumerate}[(i)]
+  \item $\res(A, B) = 0$ if and only if $A$ and $B$ have a common root
+    in $\ol{k}$;
+
+  \item If we factor $A$ and $B$ as
+    \[
+    A = a_0 \prod_{i=1}^n (X - \alpha_i),\,
+    B = b_0 \prod_{i=1}^m (X - \beta_j),
+    \]
+  \end{enumerate}
+  then
+  \[
+  \res(A, B) = a_0^m b_0^n \prod_{i=1}^n \prod_{j=1}^m (\alpha_i -
+  \beta_j).
+  \]
+\end{proposition}
+
+For a proof of this proposition, see Section~2.4 of \cite{MR2316407}.
+
+\begin{remark}
+  $\res(A, B)$ is a polynomial in the coefficients of $A$ and $B$, so
+  when the dimensions $n$ and $m$ are reasonably small, $\res(A, B)$
+  can be computed efficiently by computer algebra systems. Computer
+  algebra systems capable of computing the resultant of two
+  polynomials include, but are not limited to, Magma, Mathematica, and
+  Sage.
+
+  As the resultant can be computed efficiently, it is a good tool for
+  reducing the number of variables in a set of simultaneous polynomial
+  equations. For instance, if we have two polynomial equations $A(X,
+  Y) = 0$ and $B(X, Y) = 0$, then we may take the resultant with
+  respect to $X$ (viewing $X$ as the variable in the above
+  definition). Denote it by $\res_X(A, B)$ (we will continue to use
+  the $\res_X$ notation when there are more than one variables). Then
+  by Property~(i) of the resultant, there is an $X$ solving both $A$
+  and $B$ if and only if $Y$ solves $\res_X(A, B)$, which is a
+  polynomial in $Y$, as $A$ and $B$ both have coefficients in $k[Y]$
+  when viewed as polynomials in $X$. Therefore, we reduced two
+  equations in two unknowns to one equation in one unknown. Similar
+  argument applies when there are more variables.
+\end{remark}
+
+%%% Local Variables:
+%%% TeX-master: "report"
+%%% End:
