@@ -29,3 +29,7 @@ prv_*
 
 # SyncTeX junk
 *.synctex.gz
+
+# OS junk
+.DS_Store
+Thumbs.db
